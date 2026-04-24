@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb3959575631007146</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>GoogleSignIn</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.798859462102-rs1gja4t5613r25sf2jlmbh9pufjntpj</string>
+			</array>
+		</dict>
+	</array>
+	<key>CLIENT_ID</key>
+	<string>798859462102-rs1gja4t5613r25sf2jlmbh9pufjntpj.apps.googleusercontent.com</string>
+	<key>FacebookAdvertiserIDCollectionEnabled</key>
+	<false/>
+	<key>FacebookAppID</key>
+	<string>3959575631007146</string>
+	<key>FacebookClientToken</key>
+	<string>2ae78933ade801765ac489bf38f46191</string>
+	<key>FacebookDisplayName</key>
+	<string>DocHyve</string>
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<false/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Montserrat-Bold.ttf</string>
+		<string>Montserrat-Medium.ttf</string>
+		<string>Montserrat-Regular.ttf</string>
+		<string>Montserrat-SemiBold.ttf</string>
+		<string>Montserrat-Black.ttf</string>
+		<string>Montserrat-Light.ttf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+		<string>fetch</string>
+	</array>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>App need microphone access for calling</string>
+	<key>NSCameraUsageDescription</key>
+	<string>App need camera for profile picture upload and calling</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>App need camera for profile picture.</string>
+</dict>
+</plist>

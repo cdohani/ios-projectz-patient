@@ -306,6 +306,17 @@ public extension NSDictionary {
     }
 }
 extension String {
+    
+    func removingPlusOnePrefix() -> String {
+         let trimmed = self.trimmingCharacters(in: .whitespaces)
+         
+         if trimmed.hasPrefix("+1") {
+             return String(trimmed.dropFirst(2))
+         }
+         
+         return trimmed
+     }
+    
     func convertToDate(format: String , inputFormate: String = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ") -> String? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format

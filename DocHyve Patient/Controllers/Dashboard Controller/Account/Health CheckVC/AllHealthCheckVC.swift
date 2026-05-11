@@ -13,16 +13,16 @@ class AllHealthCheckVC: ParentViewController {
     @IBOutlet var lblHeading: UILabel!
     @IBOutlet var tblDetail: UITableView!
     
-    
-    
     //MARK: Variable
     var arrData = [AllHealthRecordDetail]()
     var selectedIndex = -1
+    var memberID : Int?
+    var currentUserName = ""
     
     //MARK: VCLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        lblHeading.text = "\(currentUserName)'s Health Records"
         getHealthData()
     }
     
@@ -30,7 +30,7 @@ class AllHealthCheckVC: ParentViewController {
     func getHealthData(){
         showLoadingView("")
         let endPoint = Constants.URLs.allHealthHistory
-        GetAllHealthRecordService().getData(apiEndPoint: endPoint, completion: { (response) in
+        GetAllHealthRecordService().getData(memberID: memberID, apiEndPoint: endPoint, completion: { (response) in
             DispatchQueue.main.async { [self] in
                 self.removeLoadingView()
                 

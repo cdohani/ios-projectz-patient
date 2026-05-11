@@ -173,6 +173,7 @@ class HomeVC: ParentViewController {
     func setScreenData(){
         if isUserLoggedIn(){
             lblUserName.text = dashboardData.userInfo.firstName + " " + dashboardData.userInfo.lastName
+            UserDefaults.standard.set(lblUserName.text, forKey: "userName")
             if dashboardData.userInfo.age > 0 {
                 lblUserAgeGender.text = "\(dashboardData.userInfo.age) Years -  \(dashboardData.userInfo.gender.capitalized)"
             }else{
@@ -192,12 +193,12 @@ class HomeVC: ParentViewController {
             }else{
                 lblUserInsurance.text  = "N/A"
             }
-            if dashboardData.userInfo.isProfileUpdated == 0{
-                showAlertViewWithCompletion(message: "Please update your profile to continue") {
-                    let nextVC = self.getProfileVC()
-                    self.navigationController?.pushViewController(nextVC, animated: true)
-                }
-            }
+//            if dashboardData.userInfo.isProfileUpdated == 0{
+//                showAlertViewWithCompletion(message: "Please update your profile to continue") {
+//                    let nextVC = self.getProfileVC()
+//                    self.navigationController?.pushViewController(nextVC, animated: true)
+//                }
+//            }
         }else{
             lblUserName.text = "Guest User"
             lblUserAgeGender.text = ""

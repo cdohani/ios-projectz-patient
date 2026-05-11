@@ -289,6 +289,11 @@ extension UIViewController {
         return vc
     }
     
+    func getAccountDeactivateReasonVC() -> AccountDeactivateReasonVC {
+        let vc = UIStoryboard.account.instantiateViewController(withIdentifier: "AccountDeactivateReasonVC") as! AccountDeactivateReasonVC
+        return vc
+    }
+    
     
     public var isVisible: Bool {
         if isViewLoaded {

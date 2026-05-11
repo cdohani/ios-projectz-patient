@@ -110,11 +110,15 @@ class VideoApptDetailVC: ParentViewController {
             vwStack.alpha = 0
             vwAppointmentInfo.alpha = 0
             vwAppointmentInfoHeight.constant = 0
+            lblWhatCanDoAfterAppt.alpha = 1
+            btnBookFollowup.alpha = 1
         }else{
             vwTopContainerHeight.constant = 250
             vwStack.alpha = 1
             vwAppointmentInfo.alpha = 1
             vwAppointmentInfoHeight.constant = 100
+            lblWhatCanDoAfterAppt.alpha = 0
+            btnBookFollowup.alpha = 0
         }
     }
     func addEventToCalemder(){
@@ -208,6 +212,8 @@ class VideoApptDetailVC: ParentViewController {
     @IBAction func btnBookFollowupAction(_ sender: Any) {
         let nextVC = getDoctorAvailableSlotsVC()
         nextVC.providerID = appointmentData.providerInfo.id
+        nextVC.isForFollowUp = true
+        nextVC.appointmentData = self.appointmentData
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     @IBAction func btnCloseModifyApptAction(_ sender: Any) {

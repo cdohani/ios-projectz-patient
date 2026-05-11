@@ -8,18 +8,15 @@
 
 import Foundation
 
-class GetAllHealthRecordService: GenericService, @unchecked Sendable {
+class GetDeactivateAccountService: GenericService, @unchecked Sendable {
     
-    func getData(memberID:Int?,apiEndPoint:String,completion: @escaping CompletionBlock, failure: @escaping FailureBlock) {
+    func getData(completion: @escaping CompletionBlock, failure: @escaping FailureBlock) {
          //creating payload
         let requestBodyDict  = NSMutableDictionary()
         let jsonString = getJsonStringFromDictionary(requestBodyDict)
         
-        var queryItems: [URLQueryItem] = []
-        if let memID = memberID {
-            queryItems.append(URLQueryItem(name: "member_id", value: "\(memID)"))
-        }
-        var endPoint = String(format: apiEndPoint)
+        let queryItems: [URLQueryItem] = []
+        var endPoint = String(format: Constants.URLs.getDeactivetAccountReason)
         var urlComponents = URLComponents(string: endPoint)
         urlComponents?.queryItems = queryItems
         endPoint = urlComponents?.url?.absoluteString ?? ""
@@ -75,54 +72,38 @@ class GetAllHealthRecordService: GenericService, @unchecked Sendable {
      }
 }
 
-extension GetAllHealthRecordService {
+extension GetDeactivateAccountService {
     
-    fileprivate func parseUserInformationFromJsonString (jsonString: String) -> AllHealthRecordReponseModel{
+    fileprivate func parseUserInformationFromJsonString (jsonString: String) -> DropDownResponseModel{
         
-       var data = AllHealthRecordReponseModel()
+       var data = DropDownResponseModel()
         
         do {
             if let dictionary = try JSONSerialization.jsonObject(with: jsonString.data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!, options: .allowFragments) as? [String: Any] {
                 if let status = dictionary["status"] as? Int {
-                    data.response.status = status
+                    data.responseData.status = status
                 }
                 if let status = dictionary["message"] as? String {
-                    data.response.message = status
+                    data.responseData.message = status
                 }
-               
-                if let historyDic = dictionary["data"] as? [String: Any] {
+                if let dataDic = dictionary["data"] as? [String: Any] {
                     
-                    
-                    if let visitDic = historyDic["data"] as? [[String: Any]] {
-                        var dataList = AllHealthRecordDetail()
-                        for healthRecord in visitDic{
-                            dataList = AllHealthRecordDetail()
-                            if let item = healthRecord["name"] as? String {
-                                dataList.name = item
+                    if let ratingInfo = dataDic["reasons"] as? [[String: Any]] {
+                        var rating = DropDownModel()
+                        for item in ratingInfo{
+                            rating = DropDownModel()
+                            if let val = item["id"] as? Int {
+                                rating.id = val
                             }
-                            
-                            if let record = healthRecord["records"] as? [[String: Any]] {
-                                for item in record{
-                                    var list = HealthCheckModel()
-                                    
-                                    if let val = item["id"] as? Int {
-                                        list.id = val
-                                    }
-                                    if let val = item["name"] as? String {
-                                        list.name = val
-                                    }
-                                    
-                                    dataList.arrData.append(list)
-                                }
+                            if let val = item["label"] as? String {
+                                rating.name = val
                             }
-                            data.arrHealthRecord.append(dataList)
+                           
+                            data.arrData.append(rating)
                         }
-                        
-                        
-                        
                     }
-                }
                     
+                }
                 //SessionID
             } else {
                 //an exception has occured
@@ -133,7 +114,6 @@ extension GetAllHealthRecordService {
             //an exception has occured
             return data
         }
-        
         return data
     }
 }

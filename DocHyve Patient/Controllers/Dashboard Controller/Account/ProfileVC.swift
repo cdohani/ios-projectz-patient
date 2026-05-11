@@ -90,14 +90,14 @@ class ProfileVC: ParentViewController {
 
     func setScreenData(){
         imgUser.loadImage(from: userProfile.profileImage)
-        if userProfile.nicImage != ""{
-            imgNic.loadImage(from: userProfile.nicImage)
-            btnRemoveImage.isHidden = false
-            lblUploadNic.isHidden = true
-        }else{
-            btnRemoveImage.isHidden = true
-            lblUploadNic.isHidden = false
-        }
+//        if userProfile.nicImage != ""{
+//            imgNic.loadImage(from: userProfile.nicImage)
+//            btnRemoveImage.isHidden = false
+//            lblUploadNic.isHidden = true
+//        }else{
+//            btnRemoveImage.isHidden = true
+//            lblUploadNic.isHidden = false
+//        }
         
         lblUserName.text = userProfile.firstName + " " + userProfile.lastName
         txtFirstName.text = userProfile.firstName
@@ -140,8 +140,8 @@ class ProfileVC: ParentViewController {
         
         let endPoint = Constants.URLs.saveUserProfile
         let images: [(key: String, image: UIImage)] = [
-            (key: "profile_image", image: imgUser.image!),
-            (key: "nic_image", image: imgNic.image!)
+            (key: "profile_image", image: imgUser.image!)
+//            (key: "nic_image", image: imgNic.image!)
         ]
         showLoadingView("")
         AddProfileService().addData(endPoint: endPoint,mimeType: "image/jpeg", images: images, parameters: param) { reponse in
@@ -178,12 +178,7 @@ class ProfileVC: ParentViewController {
         }
     }
     @IBAction func btnUpdateAction(_ sender: Any) {
-        if imgNic.image == nil{
-            showAlertView(message: "Please upload your NIC, Passport or driving licence for verification.")
-        }else{
-            callApi()
-        }
-        
+        callApi()
     }
     @IBAction func btnGenderAction(_ sender: UIButton) {
         for button in btnGender {
@@ -256,20 +251,23 @@ extension ProfileVC: UITextFieldDelegate {
         if textField == txtPhoneNo {
             guard let currentText = textField.text else { return true }
             guard let stringRange = Range(range, in: currentText) else { return false }
+            
             let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
             let formatted = formatPhoneNumber(updatedText)
+            
+            // Extract only digits
             let cleanDigits = formatted.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
             
-            // Remove the "+1" prefix to count only the actual phone number digits
-            let phoneDigits = cleanDigits.hasPrefix("1") ? String(cleanDigits.dropFirst()) : cleanDigits
-            guard phoneDigits.count <= 10 else { return false }
+            // Limit to 10 digits only
+            guard cleanDigits.count <= 10 else { return false }
             
             textField.text = formatted
+            
             DispatchQueue.main.async { [textField] in
                 let end = textField.endOfDocument
                 textField.selectedTextRange = textField.textRange(from: end, to: end)
-                print("textField.text \(textField.text?.count ?? 0)")
             }
+            
             return false
         }
         return true
@@ -279,21 +277,12 @@ extension ProfileVC: UITextFieldDelegate {
         // Remove all non-digit characters
         let digits = input.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
         
-        guard !digits.isEmpty else { return "+1 " }
+        guard !digits.isEmpty else { return "" }
         
-        // If user enters "1" as first digit, just show "+1 "
-        // Otherwise, automatically prepend "1" to any digits entered
-        var phoneDigits = digits
-        if phoneDigits.hasPrefix("1") {
-            phoneDigits = String(phoneDigits.dropFirst())
-        }
+        var result = ""
         
-        guard !phoneDigits.isEmpty else { return "+1 " }
-        
-        var result = "+1 "
-        
-        // Format as: +1 (XXX) XXX-XXXX
-        for (index, char) in phoneDigits.enumerated() {
+        // Format as: (XXX) XXX-XXXX
+        for (index, char) in digits.enumerated() {
             switch index {
             case 0: result += "(\(char)"
             case 1, 2: result += "\(char)"

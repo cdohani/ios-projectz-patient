@@ -194,6 +194,36 @@ class ParentViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
+    func showAlertViewWithContine(message: String, completion: @escaping () -> ()) {
+        
+        let alertController = UIAlertController(
+            title: Constants.GenericStrings.alertTitle,
+            message: message,
+            preferredStyle: .alert
+        )
+        
+        // Cancel Button
+        let cancelAction = UIAlertAction(
+            title: "Cancel",
+            style: .cancel,
+            handler: nil
+        )
+        
+        // Continue Button
+        let continueAction = UIAlertAction(
+            title: "Continue",
+            style: .default
+        ) { _ in
+            DispatchQueue.main.async {
+                completion()
+            }
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(continueAction)
+        
+        present(alertController, animated: true)
+    }
 
     
  

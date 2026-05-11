@@ -25,12 +25,14 @@ class AddedMedicationVC: ParentViewController {
     //MARK: Variable
  
     var arrData = [MedicineDetailModel]()
-    
+    var memberID : Int?
+    var currentUserName = ""
     //MARK: VCLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
        //e arrData = [1,2,3]
+        lblHeading.text = "\(currentUserName)'s Medication"
         tblMedication.isHidden = true
         vwMedicationTop.isHidden = true
         getMedicineData()
@@ -46,7 +48,7 @@ class AddedMedicationVC: ParentViewController {
     func getMedicineData(){
         showLoadingView("")
         let endPoint = Constants.URLs.getMedicationHistory
-        GetMedicationHistoryService().getData(apiEndPoint: endPoint, completion: { (response) in
+        GetMedicationHistoryService().getData(memberID: memberID, apiEndPoint: endPoint, completion: { (response) in
             DispatchQueue.main.async { [self] in
                 self.removeLoadingView()
                 
@@ -100,14 +102,17 @@ class AddedMedicationVC: ParentViewController {
     }
     @IBAction func btnAddMedicationAction(_ sender: Any) {
         let nextVC = getAddNewMedicationVC()
+        nextVC.memberID = memberID
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     @IBAction func btnAddMedAction(_ sender: Any) {
         let nextVC = getAddNewMedicationVC()
+        nextVC.memberID = memberID
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     @IBAction func btnEditMedicationAction(_ sender: UIButton) {
         let nextVC = getAddNewMedicationVC()
+        nextVC.memberID = memberID
         nextVC.isForEdit = true
         nextVC.medicineInfo = arrData[sender.tag]
         self.navigationController?.pushViewController(nextVC, animated: true)

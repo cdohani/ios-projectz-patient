@@ -52,6 +52,7 @@
 		044383E32DBA800B00CACA96 /* MoreGenderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044383E22DBA800B00CACA96 /* MoreGenderService.swift */; };
 		044383E52DBA802D00CACA96 /* GenderDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044383E42DBA802D00CACA96 /* GenderDataModel.swift */; };
 		044383E72DBA811100CACA96 /* GetSelectedGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044383E62DBA811100CACA96 /* GetSelectedGender.swift */; };
+		0443A76E2FACC519003DABDD /* GetDeactivateAccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443A76D2FACC519003DABDD /* GetDeactivateAccountService.swift */; };
 		044FF4192E9537EF00D60A75 /* GetAllReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044FF4182E9537EE00D60A75 /* GetAllReviewService.swift */; };
 		045302872B987DE90026DC52 /* AcceptedInsuranceCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045302862B987DE90026DC52 /* AcceptedInsuranceCCell.swift */; };
 		045302892B98861B0026DC52 /* ReviewsCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045302882B98861B0026DC52 /* ReviewsCCell.swift */; };
@@ -187,6 +188,8 @@
 		04E952422EABF89E00619C77 /* GetAllHealthRecordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E952412EABF89E00619C77 /* GetAllHealthRecordService.swift */; };
 		04E9F87D2BA06CD400139073 /* AddedMemberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E9F87C2BA06CD400139073 /* AddedMemberVC.swift */; };
 		04E9F87F2BA06CF600139073 /* AddMemberTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E9F87E2BA06CF600139073 /* AddMemberTCell.swift */; };
+		04EE1FEC2FA8EF3C0097BA6A /* AccountDeactivateReasonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EE1FEB2FA8EF3C0097BA6A /* AccountDeactivateReasonVC.swift */; };
+		04EE1FEE2FA8EF6B0097BA6A /* AccountDeactivateReasonTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EE1FED2FA8EF6B0097BA6A /* AccountDeactivateReasonTCell.swift */; };
 		04F0A0BC2DBBC8D7000BC9B8 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0A0BB2DBBC8D7000BC9B8 /* Protocols.swift */; };
 		04F0A0BE2DBBFF49000BC9B8 /* PopularSpecialityResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0A0BD2DBBFF49000BC9B8 /* PopularSpecialityResponse.swift */; };
 		04F0A0C42DBC0027000BC9B8 /* PopularSpecialityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0A0C02DBC0027000BC9B8 /* PopularSpecialityService.swift */; };
@@ -265,6 +268,7 @@
 		044383E22DBA800B00CACA96 /* MoreGenderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreGenderService.swift; sourceTree = "<group>"; };
 		044383E42DBA802D00CACA96 /* GenderDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderDataModel.swift; sourceTree = "<group>"; };
 		044383E62DBA811100CACA96 /* GetSelectedGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSelectedGender.swift; sourceTree = "<group>"; };
+		0443A76D2FACC519003DABDD /* GetDeactivateAccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDeactivateAccountService.swift; sourceTree = "<group>"; };
 		044FF4182E9537EE00D60A75 /* GetAllReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllReviewService.swift; sourceTree = "<group>"; };
 		045302862B987DE90026DC52 /* AcceptedInsuranceCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptedInsuranceCCell.swift; sourceTree = "<group>"; };
 		045302882B98861B0026DC52 /* ReviewsCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsCCell.swift; sourceTree = "<group>"; };
@@ -397,6 +401,8 @@
 		04E952412EABF89E00619C77 /* GetAllHealthRecordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllHealthRecordService.swift; sourceTree = "<group>"; };
 		04E9F87C2BA06CD400139073 /* AddedMemberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedMemberVC.swift; sourceTree = "<group>"; };
 		04E9F87E2BA06CF600139073 /* AddMemberTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberTCell.swift; sourceTree = "<group>"; };
+		04EE1FEB2FA8EF3C0097BA6A /* AccountDeactivateReasonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDeactivateReasonVC.swift; sourceTree = "<group>"; };
+		04EE1FED2FA8EF6B0097BA6A /* AccountDeactivateReasonTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDeactivateReasonTCell.swift; sourceTree = "<group>"; };
 		04F0A0BB2DBBC8D7000BC9B8 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		04F0A0BD2DBBFF49000BC9B8 /* PopularSpecialityResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSpecialityResponse.swift; sourceTree = "<group>"; };
 		04F0A0C02DBC0027000BC9B8 /* PopularSpecialityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSpecialityService.swift; sourceTree = "<group>"; };
@@ -452,6 +458,7 @@
 		040BB2492E9FD16C0050716A /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				0443A76D2FACC519003DABDD /* GetDeactivateAccountService.swift */,
 				52524D632EB080CD00CD8282 /* GetProfileService.swift */,
 				04F0AEE02EA7934C0076E4F0 /* AddMemberService.swift */,
 				0498AD092EA255CC004EC3C7 /* UploadDocument.swift */,
@@ -803,6 +810,7 @@
 				043CE3742BA0A93000E5DE90 /* AddNewMemberVC.swift */,
 				04BE73682BDFAA5300B7EC2D /* AddedInsurnaceVC.swift */,
 				04BE736C2BDFCB9F00B7EC2D /* AddNewInsuranceVC.swift */,
+				04EE1FEB2FA8EF3C0097BA6A /* AccountDeactivateReasonVC.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -817,6 +825,7 @@
 				04E9F87E2BA06CF600139073 /* AddMemberTCell.swift */,
 				04BE736A2BDFAA8700B7EC2D /* AddedInsuranceTCell.swift */,
 				0494B2D72EBB969400F27B2B /* TwoFATCell.swift */,
+				04EE1FED2FA8EF6B0097BA6A /* AccountDeactivateReasonTCell.swift */,
 			);
 			path = TblCell;
 			sourceTree = "<group>";
@@ -1223,6 +1232,7 @@
 				040BB2472E9FBA640050716A /* InsurancePlanService.swift in Sources */,
 				0467FC292EE868F2001BDB83 /* DoctorSearchTCell.swift in Sources */,
 				046495C92E8DA6C900806C73 /* GenericFunctions.swift in Sources */,
+				04EE1FEE2FA8EF6B0097BA6A /* AccountDeactivateReasonTCell.swift in Sources */,
 				04876F0D2B8CA55E004E52A6 /* ProfileVC.swift in Sources */,
 				0499B8EF2B87824500C8F32C /* AccountHeaderTCell.swift in Sources */,
 				04B1B3A92E940C890001CD71 /* GetAvailableSlotService.swift in Sources */,
@@ -1261,6 +1271,7 @@
 				04B245902EB91F7400EB36D5 /* WellnessGuideResponseModel.swift in Sources */,
 				04AFC5AA2E8C207500D953AA /* SelectSpecialityTCell.swift in Sources */,
 				04CB29CF2B9F229E00477064 /* BookApptVC.swift in Sources */,
+				0443A76E2FACC519003DABDD /* GetDeactivateAccountService.swift in Sources */,
 				04E0355C2BCFFAB200C5038C /* GuidelineTCell.swift in Sources */,
 				048C87C32EAFCD0D0026F42A /* GetMedicationDataService.swift in Sources */,
 				04BE736B2BDFAA8700B7EC2D /* AddedInsuranceTCell.swift in Sources */,
@@ -1276,6 +1287,7 @@
 				045EE4C72B8F3BA700B6DDE9 /* DoctorVC.swift in Sources */,
 				04F0A0BE2DBBFF49000BC9B8 /* PopularSpecialityResponse.swift in Sources */,
 				04E1A37B2F8D4517002BB601 /* ReviewDoctorVC 2.swift in Sources */,
+				04EE1FEC2FA8EF3C0097BA6A /* AccountDeactivateReasonVC.swift in Sources */,
 				042CD6EF2B86160100A772B6 /* ParentViewController.swift in Sources */,
 				0467FC2F2EE8706E001BDB83 /* SearchConditionService.swift in Sources */,
 				04B245932EB920A700EB36D5 /* GetWellGuideService.swift in Sources */,

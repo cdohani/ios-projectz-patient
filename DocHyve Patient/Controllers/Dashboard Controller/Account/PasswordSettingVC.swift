@@ -31,32 +31,6 @@ class PasswordSettingVC: ParentViewController {
         vwDeactivateAccount.makeCornersRound(corners: [.topLeft,.topRight], radius: 20)
     }
     //MARK: Functions
-    func deactivateAccount(){
-        let param: [String: Any] = [:]
-        
-        showLoadingView("")
-        AddDataService().addData(parameters:param,endPoint:Constants.URLs.deactivateAccount,completion: { (success) in
-            DispatchQueue.main.async {
-                self.removeLoadingView()
-                if let data = success as? GeneralResponseModel
-                {
-                    self.showAlertViewWithCompletion(message: data.message) { [self] in
-                        let defaults = UserDefaults.standard
-                        defaults.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
-                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                        appDelegate.setLandingScreen()
-                    }
-                }
-
-            }
-        }) { (faliure) in
-            DispatchQueue.main.async {
-                self.removeLoadingView()
-                self.showAlertView(message: faliure ?? Constants.GenericStrings.somethingWentWrong)
-            }
-        }
-        
-    }
     
     
     //MARK: ButtonActions
@@ -69,7 +43,9 @@ class PasswordSettingVC: ParentViewController {
     }
     
     @IBAction func btnDeactivateAction(_ sender: Any) {
-        deactivateAccount()
+        let nextVC = getAccountDeactivateReasonVC()
+        self.navigationController?.pushViewController(nextVC, animated: true)
+        
     }
 }
 

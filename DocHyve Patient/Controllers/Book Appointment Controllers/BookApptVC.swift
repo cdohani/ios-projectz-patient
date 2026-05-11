@@ -58,6 +58,7 @@ class BookApptVC: ParentViewController {
     @IBOutlet var btnAddPhoneNo: UIButton!
     @IBOutlet var lblNoRecordFamily: UILabel!
     @IBOutlet var lblNoRecordInsurance: UILabel!
+    @IBOutlet var  btnMedicalInfo: [UIButton]!
     
     
     //MARK: Variable
@@ -68,6 +69,7 @@ class BookApptVC: ParentViewController {
     var selectedReasonID = -1
     
     var isNewPateint = true
+    var isShareMedical = true
     
     var appointmentDetail = AppointmentInfoDetailResponseModel()
   
@@ -165,13 +167,13 @@ class BookApptVC: ParentViewController {
         if appointmentDetail.providerInfo.bookingType.id == "3"{
             vwAppointmentType.alpha = 1
             vwAppointmentTypeHeight.constant = 55
-            vwBookingContainerHeight.constant = 280
+            vwBookingContainerHeight.constant = 340
         }else{
             selectedBookingType = appointmentDetail.providerInfo.bookingType.id == "1" ? "video" : "in-person"
             print(selectedBookingType)
             vwAppointmentType.alpha = 0
             vwAppointmentTypeHeight.constant = 0
-            vwBookingContainerHeight.constant = 225
+            vwBookingContainerHeight.constant = 280
         }
 
     }
@@ -238,7 +240,7 @@ class BookApptVC: ParentViewController {
         }
     }
     
-    func bookAppoinment(){
+    func bookAppoinment(addOutNetwork:Bool){
       
         var param: [String: Any] = [
             "slot_id": selectedSlotID,
@@ -248,9 +250,13 @@ class BookApptVC: ParentViewController {
             "insurance_id": selectedInsuranceID,
             "booking_type": selectedBookingType,
             "is_new_patient": isNewPateint,
+            "share_medical_info": isShareMedical,
         ]
         if selectedMemberID != -1{
             param["member_id"] = selectedMemberID
+        }
+        if addOutNetwork {
+            param["can_add_out_of_network"] = true
         }
         let endPoint =  Constants.URLs.bookAppointment
         
@@ -269,7 +275,14 @@ class BookApptVC: ParentViewController {
         }) { (faliure) in
             DispatchQueue.main.async {
                 self.removeLoadingView()
-                self.showAlertView(message: faliure ?? Constants.GenericStrings.somethingWentWrong)
+                if ((faliure?.contains("out-of-network")) != nil){
+                    self.showAlertViewWithContine(message: faliure ?? "") {
+                        self.bookAppoinment(addOutNetwork: true)
+                    }
+                }else{
+                    self.showAlertView(message: faliure ?? Constants.GenericStrings.somethingWentWrong)
+                }
+                
             }
         }
         
@@ -290,6 +303,20 @@ class BookApptVC: ParentViewController {
         isNewPateint = sender.tag == 1 ? true : false
        
     }
+    
+    @IBAction func btnMedicalAction(_ sender: UIButton) {
+        for button in btnMedicalInfo{
+            if button.tag == sender.tag {
+                button.setImage(UIImage(named: "iconRadioSelect"), for: .normal)
+            } else {
+                button.setImage(UIImage(named: "iconRadioUnSelect"), for: .normal)
+            }
+        }
+        
+        isShareMedical = sender.tag == 1 ? true : false
+       
+    }
+    
     @IBAction func btnElseLookingAction(_ sender: Any) {
         UIView.transition(with: view, duration: 0.4,
                           options: .transitionCrossDissolve,
@@ -312,7 +339,7 @@ class BookApptVC: ParentViewController {
         validator.validateNow { [weak self] valid in
             guard let strongSelf = self else { return }
             if valid {
-                strongSelf.bookAppoinment()
+                strongSelf.bookAppoinment(addOutNetwork: false)
             }
         }
     }
@@ -446,7 +473,8 @@ extension BookApptVC : UITableViewDelegate,UITableViewDataSource{
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "SelectMemberTCell") as! SelectMemberTCell
             cell.setInsuranceData(item: arrInsuranceData[indexPath.row])
-            if selectedInsuranceID == arrInsuranceData[indexPath.row].id{
+            if selectedInsuranceID == arrInsuranceData[indexPath.row].insuranceID
+            {
                 cell.vwContainer.borderColor = UIColor(named: "customBlueColor")
                 cell.imgSelection.isHidden = false
             }else{
@@ -468,7 +496,7 @@ extension BookApptVC : UITableViewDelegate,UITableViewDataSource{
             lblOtherPatientName.text = arrMembers[indexPath.row].firstName + " " + arrMembers[indexPath.row].lastName
             tblFamilyMember.reloadData()
         }else{
-            selectedInsuranceID = arrInsuranceData[indexPath.row].id
+            selectedInsuranceID = arrInsuranceData[indexPath.row].insuranceID
             lblAddInsurance.text = "Your Insurance"
             let plans = arrInsuranceData[indexPath.row].arrPlan.map { $0.name }.joined(separator: " - ")
             lblInsurance.text = arrInsuranceData[indexPath.row].insuranceName
@@ -484,7 +512,7 @@ extension BookApptVC:TransferDataDelegate{
     func sendData(_ data: Any) {
         if  let item = data as? UserInsuranceModel {
             selectedInsurance = item
-            selectedInsuranceID = item.id
+            selectedInsuranceID = item.insuranceID
             vwInsuranceInfo.alpha = 1
             btnAddInsurance.alpha = 0
             btnRemoveInsurance.alpha = 1

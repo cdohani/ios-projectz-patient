@@ -11,6 +11,8 @@ class MedicalHistoryTCell: UITableViewCell {
 
     @IBOutlet weak var imgSelect: UIImageView!
     @IBOutlet weak var lblName: UILabel!
+    
+    @IBOutlet weak var btnSwitch: UISwitch!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,13 +25,14 @@ class MedicalHistoryTCell: UITableViewCell {
     }
     func setData(item:HealthCheckModel){
         lblName.text = item.name
-        if item.isSelected{
-            imgSelect.image = UIImage(systemName: "checkmark.square.fill")
-            imgSelect.tintColor = UIColor(named: "customBlueColor")
-        }else{
-            imgSelect.image = UIImage(systemName: "square")
-            imgSelect.tintColor = UIColor.lightGray
-        }
+        btnSwitch.isOn = item.isSelected
+//        if item.isSelected{
+//            imgSelect.image = UIImage(systemName: "checkmark.square.fill")
+//            imgSelect.tintColor = UIColor(named: "customBlueColor")
+//        }else{
+//            imgSelect.image = UIImage(systemName: "square")
+//            imgSelect.tintColor = UIColor.lightGray
+//        }
     }
     
 

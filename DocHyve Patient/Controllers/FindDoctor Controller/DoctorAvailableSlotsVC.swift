@@ -174,6 +174,7 @@ class DoctorAvailableSlotsVC: ParentViewController {
                             let highlightedDate = arrProvider[0].availableSlots.date.convertStringToDate(withFormat: "yyyy-MM-dd")
                             vwCalender.select(highlightedDate)
                             vwScrollView.isHidden = false
+                            vwCalender.reloadData()
                         }else{
                             lblNoRecordFound.isHidden = false
                             cvSlots.isHidden = true
@@ -231,7 +232,7 @@ class DoctorAvailableSlotsVC: ParentViewController {
         vwCalender.reloadData()
     }
     
-    func updateSlot(){
+    func updateSlot(addOutNetwork:Bool){
         var param: [String: Any] = [
             "slot_id": selectedSlotID
         ]
@@ -242,6 +243,9 @@ class DoctorAvailableSlotsVC: ParentViewController {
         }else{
             endPoint = Constants.URLs.bookfollowUp
             param["old_appointment_id"] = appointmentData.appointmentID
+            if addOutNetwork {
+                param["can_add_out_of_network"] = true
+            }
         }
         
         showLoadingView("")
@@ -260,7 +264,14 @@ class DoctorAvailableSlotsVC: ParentViewController {
         }) { (faliure) in
             DispatchQueue.main.async {
                 self.removeLoadingView()
-                self.showAlertView(message: faliure ?? Constants.GenericStrings.somethingWentWrong)
+                if ((faliure?.contains("out-of-network")) != nil){
+                    self.showAlertViewWithContine(message: faliure ?? "") {
+                        self.updateSlot(addOutNetwork: true)
+                    }
+                }else{
+                    self.showAlertView(message: faliure ?? Constants.GenericStrings.somethingWentWrong)
+                }
+                
             }
         }
         
@@ -359,7 +370,7 @@ class DoctorAvailableSlotsVC: ParentViewController {
     }
     
     @IBAction func btnChangeApptAction(_ sender: Any) {
-        updateSlot()
+        updateSlot(addOutNetwork: false)
     }
     
 }
@@ -384,6 +395,17 @@ extension DoctorAvailableSlotsVC : FSCalendarDelegate,FSCalendarDataSource, FSCa
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
         return availableDates.contains(date) ? 1 : 0
     }
+    // 🔴 Change event dot color here
+    func calendar(_ calendar: FSCalendar,
+                  appearance: FSCalendarAppearance,
+                  eventDefaultColorsFor date: Date) -> [UIColor]? {
+        
+        if availableDates.contains(date) {
+            return [UIColor(named: "customYellowColor") ?? .systemYellow]
+        }
+        
+        return nil
+    }
 }
 
 
@@ -401,7 +423,8 @@ extension DoctorAvailableSlotsVC :UICollectionViewDelegate, UICollectionViewData
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AvialableSlotCCell", for: indexPath) as! AvialableSlotCCell
         if !arrProvider.isEmpty{
             cell.lblTime.text = arrProvider[0].availableSlots.slots[indexPath.row].time
-            cell.vwBackground.backgroundColor = arrProvider[0].availableSlots.slots[indexPath.row].isBooked ? UIColor(named: "customGold") : UIColor(named: "customNavbarColor")
+            cell.lblTime.textColor = arrProvider[0].availableSlots.slots[indexPath.row].isBooked  ? UIColor(named: "customGreyColor") : UIColor.white
+            cell.vwBackground.backgroundColor = arrProvider[0].availableSlots.slots[indexPath.row].isBooked ? UIColor(named: "customNavbarColor") : UIColor(named: "customGold")
         }
         return cell
         

@@ -162,7 +162,12 @@ class AppoinmentVC: ParentViewController {
             param["end_date"] = toDate
         }
         if txtAppointmentType.text != ""{
-            param["status"] = txtAppointmentType.text?.lowercased()
+            if txtAppointmentType.text?.lowercased() == "no show"{
+                param["status"] = "no_show"
+            }else{
+                param["status"] = txtAppointmentType.text?.lowercased()
+            }
+            
         }
         if !isLoadingMore{
             showLoadingView("")
@@ -330,7 +335,7 @@ extension AppoinmentVC :UITableViewDelegate,UITableViewDataSource{
             let nextVC = AppoinmentVC.getApptDoctorDetailVC()
             nextVC.appointmentID = arrAppointment[indexPath.row].appointmentID
             nextVC.hideButtons = hideInfo
-            nextVC.appointmentStatus = arrAppointment[indexPath.row].status
+            //nextVC.appointmentStatus = arrAppointment[indexPath.row].status
             self.navigationController?.pushViewController(nextVC, animated: true)
         } else {
             let nextVC = AppoinmentVC.getVideoApptDetailVC()

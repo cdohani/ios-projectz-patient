@@ -32,7 +32,7 @@ class BookedDoctorTCell: UITableViewCell {
         imgDoc.loadImage(from: imageURL)
         lblDocName.text = item.fullName
         lblCategory.text = item.providerSpeciality.joined(separator: ", ")
-        lblPhonNo.text = item.phoneNo
+        lblPhonNo.text = item.phoneNo.removingPlusOnePrefix()
         lblTotalAppt.text = "Appoinments (\(item.appointmentCount))"
         vwRating.rating = item.rating
     }

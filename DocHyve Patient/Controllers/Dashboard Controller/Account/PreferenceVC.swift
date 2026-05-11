@@ -13,6 +13,12 @@ class PreferenceVC: ParentViewController {
     @IBOutlet weak var lblHeading: UILabel!
     @IBOutlet weak var lblDesc: UILabel!
     @IBOutlet weak var tblSetting: UITableView!
+    @IBOutlet var vwOverlay: UIView!
+    @IBOutlet var vwInfo: UIView!
+    @IBOutlet var lblInfo: UILabel!
+    @IBOutlet var lblInfoDesc: UILabel!
+    @IBOutlet var btnCancel: UIButton!
+    @IBOutlet var btnContinue: UIButton!
     
     //MARK: Variable
  
@@ -20,11 +26,15 @@ class PreferenceVC: ParentViewController {
     var histrotyType  = MedicalCondition.preference
     var arrSelectedIndex = [Int]()
     var arrData = [HealthCheckModel]()
+    var selectedSwitch: UISwitch?
+    var pendingSwitchTag: Int = -1
     //MARK: VCLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        vwOverlay.alpha = 0
+        vwInfo.alpha = 0
         getPreferenceData()
     }
     
@@ -91,11 +101,55 @@ class PreferenceVC: ParentViewController {
     }
     
     @IBAction func btnSwitchAction(_ sender: UISwitch) {
-        arrData[sender.tag].isSelected = sender.isOn
+        // Only show alert for switch 0 and 1 when turning OFF
+         if (sender.tag == 0 || sender.tag == 1) && !sender.isOn {
+             
+             // Hold switch state until confirmation
+             sender.setOn(true, animated: true)
+             
+             vwOverlay.alpha = 0.3
+             vwInfo.alpha = 1
+             
+             selectedSwitch = sender
+             pendingSwitchTag = sender.tag
+             
+         } else {
+             // Directly update for other cases
+             arrData[sender.tag].isSelected = sender.isOn
+         }
     }
     @IBAction func btnSaveAction(_ sender: Any) {
         saveData()
     }
+    @IBAction func btnCancelAction(_ sender: UIButton) {
+        
+         vwOverlay.alpha = 0
+         vwInfo.alpha = 0
+         
+         // Keep switch ON
+         selectedSwitch?.setOn(true, animated: true)
+         
+         selectedSwitch = nil
+         pendingSwitchTag = -1
+    }
+    @IBAction func btnContinueAction(_ sender: UIButton) {
+        vwOverlay.alpha = 0
+          vwInfo.alpha = 0
+          
+          guard let selectedSwitch = selectedSwitch,
+                pendingSwitchTag != -1 else { return }
+          
+          // Turn OFF after confirmation
+          selectedSwitch.setOn(false, animated: true)
+          
+          arrData[pendingSwitchTag].isSelected = false
+          
+          self.selectedSwitch = nil
+          pendingSwitchTag = -1
+          
+          tblSetting.reloadData()
+    }
+    
     
 }
 extension PreferenceVC : UITableViewDelegate,UITableViewDataSource{

@@ -25,8 +25,9 @@ class HealthCheckTCell: UITableViewCell {
     
     func setData(item: HealthCheckModel){
         lblMedicalHistoryName.text = item.name
-        let modifiedDate = item.lastModifiedAt.convertToDate(format: "MMM-dd-yyyy", inputFormate: "yyyy-mm-dd HH:mm:ss")
-        lblLastUpdated.text = "Last Updated: \(modifiedDate ?? "")"
+        let modifiedDate = item.lastModifiedAt.convertToDate(format: "MM-dd-yyyy", inputFormate: "yyyy-MM-dd HH:mm:ss")
+        let mDate = modifiedDate == nil ? "N/A" : modifiedDate
+        lblLastUpdated.text = "Last Updated: \(mDate ?? "")"
         imgStatus.image = item.isSelected ? UIImage(named: "tick") : UIImage(systemName: "exclamationmark.triangle.fill")
     }
 

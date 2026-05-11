@@ -23,7 +23,7 @@ class DoctorVC: ParentViewController {
     
     
     //MARK: Variable
-    var isSavedDoc  = true
+    var isSavedDoc  = false
     var arrFavourite = [FavouriteProviderModel]()
     var arrBookedDoc = [FavouriteProviderModel]()
     var isShowLoading = true
@@ -39,7 +39,7 @@ class DoctorVC: ParentViewController {
         if isUserLoggedIn(){
             vwContainer.isHidden = true
             vwData.isHidden = false
-            getFavouritDoc()
+            getBookedDoc()
         }else{
             vwContainer.isHidden = false
             vwData.isHidden = true
@@ -50,7 +50,7 @@ class DoctorVC: ParentViewController {
     }
     @objc func refreshData() {
         isShowLoading = false
-        getFavouritDoc()
+        getBookedDoc()
     }
     
     func getFavouritDoc(){
@@ -65,7 +65,7 @@ class DoctorVC: ParentViewController {
                 {
                     self.arrFavourite = data.arrFavouriteProvider
                     tblDoctors.reloadData()
-                    getBookedDoc()
+                    
                 }
             }
         }) { (failure) in
@@ -88,6 +88,7 @@ class DoctorVC: ParentViewController {
                 {
                     self.arrBookedDoc = data.arrFavouriteProvider
                     tblDoctors.reloadData()
+                    getFavouritDoc()
                 }
             }
         }) { (failure) in
@@ -139,7 +140,7 @@ class DoctorVC: ParentViewController {
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     @IBAction func btnSegmentAction(_ sender: UISegmentedControl) {
-        isSavedDoc = sender.selectedSegmentIndex == 0 ? true : false
+        isSavedDoc = sender.selectedSegmentIndex == 0 ? false : true
         tblDoctors.reloadData()
     }
     

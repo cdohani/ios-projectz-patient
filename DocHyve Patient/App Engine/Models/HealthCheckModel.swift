@@ -9,6 +9,7 @@
 struct HealthCheckReponseModel{
     var response = GeneralResponseModel()
     var arrData = [HealthCheckModel]()
+    var healthConsentInfo = HealthConsentInfo()
 }
 
 struct HealthCheckModel{
@@ -17,6 +18,13 @@ struct HealthCheckModel{
     var otherValue = ""
     var lastModifiedAt = ""
     var isSelected = false
+}
+
+struct HealthConsentInfo {
+    var consentGiven = false
+    var consentType = ""
+    var consentDate = ""
+    var action = ""
 }
 
 struct MedicationReponseModel{

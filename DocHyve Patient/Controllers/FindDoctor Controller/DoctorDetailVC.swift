@@ -474,7 +474,8 @@ extension DoctorDetailVC :UICollectionViewDelegate, UICollectionViewDataSource{
         if collectionView == cvSlots{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AvialableSlotCCell", for: indexPath) as! AvialableSlotCCell
             cell.lblTime.text = arrSlots[indexPath.row].time
-            cell.vwBackground.backgroundColor = arrSlots[indexPath.row].isBooked ? UIColor(named: "customGold") : UIColor(named: "customNavbarColor")
+            cell.lblTime.textColor = arrSlots[indexPath.item].isBooked  ? UIColor(named: "customGreyColor") : UIColor.white
+            cell.vwBackground.backgroundColor = arrSlots[indexPath.row].isBooked ? UIColor(named: "customNavbarColor") : UIColor(named: "customGold")
             return cell
         }else if collectionView == cvInsurance{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AcceptedInsuranceCCell", for: indexPath) as! AcceptedInsuranceCCell

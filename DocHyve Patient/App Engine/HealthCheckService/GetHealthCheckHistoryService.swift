@@ -10,12 +10,15 @@ import Foundation
 
 class GetHealthCheckHistoryService: GenericService, @unchecked Sendable {
     
-    func getData(apiEndPoint:String,completion: @escaping CompletionBlock, failure: @escaping FailureBlock) {
+    func getData(memberID:Int?,apiEndPoint:String,completion: @escaping CompletionBlock, failure: @escaping FailureBlock) {
          //creating payload
         let requestBodyDict  = NSMutableDictionary()
         let jsonString = getJsonStringFromDictionary(requestBodyDict)
         
-        let queryItems: [URLQueryItem] = []
+        var queryItems: [URLQueryItem] = []
+        if let memID = memberID {
+            queryItems.append(URLQueryItem(name: "member_id", value: "\(memID)"))
+        }
         var endPoint = String(format: apiEndPoint)
         var urlComponents = URLComponents(string: endPoint)
         urlComponents?.queryItems = queryItems
@@ -108,6 +111,22 @@ extension GetHealthCheckHistoryService {
                             }
                             data.arrData.append(list)
                         }
+                    }
+                    if let consentDic = historyDic["latest_consent"] as? [String: Any] {
+                        
+                        if let val = consentDic["consent_given"] as? Bool {
+                            data.healthConsentInfo.consentGiven = val
+                        }
+                        if let val = consentDic["consent_type"] as? String {
+                            data.healthConsentInfo.consentType = val
+                        }
+                        if let val = consentDic["consent_date"] as? String {
+                            data.healthConsentInfo.consentDate = val
+                        }
+                        if let val = consentDic["action"] as? String {
+                            data.healthConsentInfo.action = val
+                        }
+                        
                     }
                 }
                     

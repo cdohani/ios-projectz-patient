@@ -39,9 +39,9 @@ class AddNewMedicationVC: ParentViewController {
     var arrUsage = [String]()
     var arrDosage = [String]()
     var arrFrequency = [String]()
-    var selectedUsageIndex = -1
-    var selectedDosageIndex = -1
-    var selectedFrequencyIndex = -1
+    var selectedUsageIndex = ""
+    var selectedDosageIndex = ""
+    var selectedFrequencyIndex = ""
     
     var showDosage = false
     var showUsage = false
@@ -50,6 +50,8 @@ class AddNewMedicationVC: ParentViewController {
     var filteredUsage: [String] = []
     var filteredDosage: [String] = []
     var filteredFrequency: [String] = []
+    
+    var memberID : Int?
     //MARK: VCLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +72,7 @@ class AddNewMedicationVC: ParentViewController {
         validateTextField()
         getMedicationDropdown()
         txtSearchDrop.delegate = self
+        txtSearchDrop.addDoneButtonOnKeyboard()
         
     }
     
@@ -94,9 +97,9 @@ class AddNewMedicationVC: ParentViewController {
         txtFrequency.text = medicineInfo.frequency
         txtReason.text = medicineInfo.reason
         
-        selectedUsageIndex = arrUsage.firstIndex(of: medicineInfo.duration) ?? -1
-        selectedDosageIndex = arrDosage.firstIndex(of: medicineInfo.dosage) ?? -1
-        selectedFrequencyIndex = arrFrequency.firstIndex(of: medicineInfo.frequency) ?? -1
+        selectedUsageIndex = medicineInfo.duration//arrUsage.firstIndex(of: medicineInfo.duration) ?? -1
+        selectedDosageIndex = medicineInfo.dosage//arrDosage.firstIndex(of: medicineInfo.dosage) ?? -1
+        selectedFrequencyIndex = medicineInfo.frequency//arrFrequency.firstIndex(of: medicineInfo.frequency) ?? -1
     }
     
     func getMedicationDropdown(){
@@ -142,6 +145,9 @@ class AddNewMedicationVC: ParentViewController {
         if isForEdit{
             param["id"] = medicineInfo.id
         }
+        if let memId = memberID{
+            param["member_id"] = memberID
+        }
        let  endPoint = isForEdit ?  Constants.URLs.updateMedicationHistory : Constants.URLs.saveMedicationHistory
         showLoadingView("")
         AddDataService().addData(parameters:param,endPoint:endPoint,completion: { (success) in
@@ -164,12 +170,16 @@ class AddNewMedicationVC: ParentViewController {
         }
         
     }
-    
+    func safeValue(from array: [String], index: Int) -> String? {
+        guard index >= 0 && index < array.count else { return nil }
+        return array[index]
+    }
     //MARK: ButtonActions
     @IBAction func btnBackAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func btnDosageAction(_ sender: Any) {
+        view.endEditing(true)
         showFrequency = false
         showUsage = false
         showDosage = true
@@ -178,6 +188,7 @@ class AddNewMedicationVC: ParentViewController {
         vwDropdown.alpha = 1
     }
     @IBAction func btnUsageAction(_ sender: Any) {
+        view.endEditing(true)
         showFrequency = false
         showUsage = true
         showDosage = false
@@ -186,6 +197,7 @@ class AddNewMedicationVC: ParentViewController {
         vwDropdown.alpha = 1
     }
     @IBAction func btnFrequencyAction(_ sender: Any) {
+        view.endEditing(true)
         showFrequency = true
         showUsage = false
         showDosage = false
@@ -208,12 +220,12 @@ class AddNewMedicationVC: ParentViewController {
         vwDropdown.alpha = 0
     }
     @IBAction func btnDoneDropAction(_ sender: Any) {
-        if showUsage{
-            txtUsage.text = filteredUsage[selectedUsageIndex]
-        }else if showDosage{
-            txtDosage.text = filteredDosage[selectedDosageIndex]
-        }else{
-            txtFrequency.text = filteredFrequency[selectedFrequencyIndex]
+        if showUsage {
+            txtUsage.text = selectedUsageIndex//safeValue(from: filteredUsage, index: selectedUsageIndex)
+        } else if showDosage {
+            txtDosage.text = selectedDosageIndex//safeValue(from: filteredDosage, index: selectedDosageIndex)
+        } else {
+            txtFrequency.text = selectedFrequencyIndex//safeValue(from: filteredFrequency, index: selectedFrequencyIndex)
         }
         vwOverlay.alpha = 0
         vwDropdown.alpha = 0
@@ -229,7 +241,7 @@ extension AddNewMedicationVC: UITableViewDelegate, UITableViewDataSource {
         return filteredFrequency
     }
     
-    private var selectedIndex: Int {
+    private var selectedIndex: String {
         get {
             if showUsage { return selectedUsageIndex }
             if showDosage { return selectedDosageIndex }
@@ -250,7 +262,7 @@ extension AddNewMedicationVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StateTCell", for: indexPath) as! StateTCell
-        let isSelected = indexPath.row == selectedIndex
+        let isSelected = currentArray[indexPath.row] == selectedIndex
         
         cell.lblTitle.text = currentArray[indexPath.row]
         cell.imgSelected.image = isSelected ? UIImage(systemName: "checkmark") : nil
@@ -265,8 +277,27 @@ extension AddNewMedicationVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedIndex = indexPath.row
+        selectedIndex = currentArray[indexPath.row]
         tblDropdown.reloadData()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in
+            txtSearchDrop.text = ""
+            view.endEditing(true)
+            if showUsage {
+                
+                txtUsage.text = selectedUsageIndex//safeValue(from: filteredUsage, index: selectedUsageIndex)
+            } else if showDosage {
+                txtDosage.text = selectedDosageIndex//safeValue(from: filteredDosage, index: selectedDosageIndex)
+            } else {
+                txtFrequency.text = selectedFrequencyIndex//safeValue(from: filteredFrequency, index: selectedFrequencyIndex)
+            }
+            filteredUsage = arrUsage
+            filteredDosage = arrDosage
+            filteredFrequency = arrFrequency
+            
+            vwOverlay.alpha = 0
+            vwDropdown.alpha = 0
+        }
     }
 }
 

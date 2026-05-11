@@ -160,6 +160,7 @@ struct Constants {
         static let deactivateAccount = "/patient/toggle-account-status"
         static let addNewPhoneNo = "/verify-phone-number"
         static let verifyPhoneNo = "/validation-phone-number-code"
+        static let getDeactivetAccountReason = "/patients/get-deactivation-reasons"
         
         //MARK:- Appointment
         static let getFavouriteProvider = "/favorites/list"
@@ -185,6 +186,7 @@ struct Constants {
         static let updateMedicationHistory = "/patients/update-medication-history"
         static let deleteMedicationHistory = "/patients/delete-medication-history"
         static let allHealthHistory = "/patients/all-heath-care-history"
+        static let saveHealthConsent = "/patients/medical-consent"
         
         static let getPreference = "/patients/preference"
         static let savePreference = "/patients/store-preference"

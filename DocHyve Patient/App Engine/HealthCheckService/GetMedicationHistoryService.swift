@@ -10,12 +10,15 @@ import Foundation
 
 class GetMedicationHistoryService: GenericService, @unchecked Sendable {
     
-    func getData(apiEndPoint:String,completion: @escaping CompletionBlock, failure: @escaping FailureBlock) {
+    func getData(memberID:Int?,apiEndPoint:String,completion: @escaping CompletionBlock, failure: @escaping FailureBlock) {
          //creating payload
         let requestBodyDict  = NSMutableDictionary()
         let jsonString = getJsonStringFromDictionary(requestBodyDict)
         
-        let queryItems: [URLQueryItem] = []
+        var queryItems: [URLQueryItem] = []
+        if let memID = memberID {
+            queryItems.append(URLQueryItem(name: "member_id", value: "\(memID)"))
+        }
         var endPoint = String(format: apiEndPoint)
         var urlComponents = URLComponents(string: endPoint)
         urlComponents?.queryItems = queryItems

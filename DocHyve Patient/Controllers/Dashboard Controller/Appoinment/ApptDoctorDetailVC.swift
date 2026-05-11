@@ -52,7 +52,6 @@ class ApptDoctorDetailVC: ParentViewController {
     //MARK: Variable
     var appointmentID = -1
     var hideButtons = false
-    var appointmentStatus = ""
     var appointmentData = SingleAppointmentDetail()
     
     //MARK: VCLifeCycle
@@ -131,10 +130,14 @@ class ApptDoctorDetailVC: ParentViewController {
             vwContainerHeight.constant = 140
             vwButtonStack.alpha = 0
             btnDoctorOffice.alpha = 0
+            lblWhatAfterAppt.alpha = 1
+            btnBookFollowup.alpha = 1
         }else{
             vwButtonStack.alpha = 1
             btnDoctorOffice.alpha = 1
             vwContainerHeight.constant = 250
+            lblWhatAfterAppt.alpha = 0
+            btnBookFollowup.alpha = 0
         }
         //vwContainerHeight.constant = appointmentData.showInOfficeButton ? 250 : 200
         btnDoctorOffice.isHidden = !appointmentData.showInOfficeButton 

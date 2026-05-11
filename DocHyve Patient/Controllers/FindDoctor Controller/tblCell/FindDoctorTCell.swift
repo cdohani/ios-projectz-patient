@@ -80,8 +80,10 @@ extension FindDoctorTCell: UICollectionViewDelegate, UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AvialableSlotCCell", for: indexPath) as! AvialableSlotCCell
         cell.lblTime.text = arrSlots[indexPath.item].time
-        cell.vwBackground.backgroundColor =   arrSlots[indexPath.item].isBooked  ? UIColor(named: "customGold") : UIColor(named: "customNavbarColor")
+        cell.lblTime.textColor = arrSlots[indexPath.item].isBooked  ? UIColor(named: "customGreyColor") : UIColor.white
+        cell.vwBackground.backgroundColor =   arrSlots[indexPath.item].isBooked  ? UIColor(named: "customNavbarColor") : UIColor(named: "customGold")
         return cell
+       
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if !arrSlots[indexPath.item].isBooked{

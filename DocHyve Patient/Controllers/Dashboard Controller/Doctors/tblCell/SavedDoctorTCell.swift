@@ -32,7 +32,7 @@ class SavedDoctorTCell: UITableViewCell {
         imgDoc.loadImage(from: imageURL)
         lblDocName.text = item.fullName
         lblCategory.text = item.providerSpeciality.joined(separator: ", ")
-        lblPhonNo.text = item.phoneNo
+        lblPhonNo.text = item.phoneNo.removingPlusOnePrefix()
         vwRating.rating = item.rating
     }
     
@@ -41,7 +41,7 @@ class SavedDoctorTCell: UITableViewCell {
         imgDoc.loadImage(from: imageURL)
         lblDocName.text = item.fullName
         lblCategory.text = item.providerSpeciality.joined(separator: ", ")
-        lblPhonNo.text = item.phoneNo
+        lblPhonNo.text = item.phoneNo.removingPlusOnePrefix()
         vwRating.rating = item.rating
     }
 

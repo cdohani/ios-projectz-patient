@@ -9877,6 +9877,182 @@
         "systemVersion" : "25D125",
         "xcodeVersion" : "17E202"
       }
+    },
+    {
+      "accessDate" : "2026-05-11T17:25:26Z",
+      "appBundlePath" : "\/Applications\/Xcode.app",
+      "versionInfo" : {
+        "roots" : [
+
+        ],
+        "sdkVersions" : {
+          "appletvos26.4" : "23L236",
+          "appletvsimulator26.4" : "23L236",
+          "iphoneos26.4" : "23E252",
+          "iphonesimulator26.4" : "23E252",
+          "macosx26.4" : "25E251",
+          "watchos26.4" : "23T238",
+          "watchsimulator26.4" : "23T238",
+          "xros26.4" : "23O248",
+          "xrsimulator26.4" : "23O248"
+        },
+        "systemVersion" : "25D125",
+        "xcodeVersion" : "17E202"
+      }
+    },
+    {
+      "accessDate" : "2026-05-11T17:40:27Z",
+      "appBundlePath" : "\/Applications\/Xcode.app",
+      "versionInfo" : {
+        "roots" : [
+
+        ],
+        "sdkVersions" : {
+          "appletvos26.4" : "23L236",
+          "appletvsimulator26.4" : "23L236",
+          "iphoneos26.4" : "23E252",
+          "iphonesimulator26.4" : "23E252",
+          "macosx26.4" : "25E251",
+          "watchos26.4" : "23T238",
+          "watchsimulator26.4" : "23T238",
+          "xros26.4" : "23O248",
+          "xrsimulator26.4" : "23O248"
+        },
+        "systemVersion" : "25D125",
+        "xcodeVersion" : "17E202"
+      }
+    },
+    {
+      "accessDate" : "2026-05-11T17:55:28Z",
+      "appBundlePath" : "\/Applications\/Xcode.app",
+      "versionInfo" : {
+        "roots" : [
+
+        ],
+        "sdkVersions" : {
+          "appletvos26.4" : "23L236",
+          "appletvsimulator26.4" : "23L236",
+          "iphoneos26.4" : "23E252",
+          "iphonesimulator26.4" : "23E252",
+          "macosx26.4" : "25E251",
+          "watchos26.4" : "23T238",
+          "watchsimulator26.4" : "23T238",
+          "xros26.4" : "23O248",
+          "xrsimulator26.4" : "23O248"
+        },
+        "systemVersion" : "25D125",
+        "xcodeVersion" : "17E202"
+      }
+    },
+    {
+      "accessDate" : "2026-05-12T12:54:55Z",
+      "appBundlePath" : "\/Applications\/Xcode.app",
+      "versionInfo" : {
+        "roots" : [
+
+        ],
+        "sdkVersions" : {
+          "appletvos26.4" : "23L236",
+          "appletvsimulator26.4" : "23L236",
+          "iphoneos26.4" : "23E252",
+          "iphonesimulator26.4" : "23E252",
+          "macosx26.4" : "25E251",
+          "watchos26.4" : "23T238",
+          "watchsimulator26.4" : "23T238",
+          "xros26.4" : "23O248",
+          "xrsimulator26.4" : "23O248"
+        },
+        "systemVersion" : "25D125",
+        "xcodeVersion" : "17E202"
+      }
+    },
+    {
+      "accessDate" : "2026-05-12T13:09:57Z",
+      "appBundlePath" : "\/Applications\/Xcode.app",
+      "versionInfo" : {
+        "roots" : [
+
+        ],
+        "sdkVersions" : {
+          "appletvos26.4" : "23L236",
+          "appletvsimulator26.4" : "23L236",
+          "iphoneos26.4" : "23E252",
+          "iphonesimulator26.4" : "23E252",
+          "macosx26.4" : "25E251",
+          "watchos26.4" : "23T238",
+          "watchsimulator26.4" : "23T238",
+          "xros26.4" : "23O248",
+          "xrsimulator26.4" : "23O248"
+        },
+        "systemVersion" : "25D125",
+        "xcodeVersion" : "17E202"
+      }
+    },
+    {
+      "accessDate" : "2026-05-12T13:24:59Z",
+      "appBundlePath" : "\/Applications\/Xcode.app",
+      "versionInfo" : {
+        "roots" : [
+
+        ],
+        "sdkVersions" : {
+          "appletvos26.4" : "23L236",
+          "appletvsimulator26.4" : "23L236",
+          "iphoneos26.4" : "23E252",
+          "iphonesimulator26.4" : "23E252",
+          "macosx26.4" : "25E251",
+          "watchos26.4" : "23T238",
+          "watchsimulator26.4" : "23T238",
+          "xros26.4" : "23O248",
+          "xrsimulator26.4" : "23O248"
+        },
+        "systemVersion" : "25D125",
+        "xcodeVersion" : "17E202"
+      }
+    },
+    {
+      "accessDate" : "2026-05-12T13:40:00Z",
+      "appBundlePath" : "\/Applications\/Xcode.app",
+      "versionInfo" : {
+        "roots" : [
+
+        ],
+        "sdkVersions" : {
+          "appletvos26.4" : "23L236",
+          "appletvsimulator26.4" : "23L236",
+          "iphoneos26.4" : "23E252",
+          "iphonesimulator26.4" : "23E252",
+          "macosx26.4" : "25E251",
+          "watchos26.4" : "23T238",
+          "watchsimulator26.4" : "23T238",
+          "xros26.4" : "23O248",
+          "xrsimulator26.4" : "23O248"
+        },
+        "systemVersion" : "25D125",
+        "xcodeVersion" : "17E202"
+      }
+    },
+    {
+      "accessDate" : "2026-05-12T13:55:02Z",
+      "appBundlePath" : "\/Applications\/Xcode.app",
+      "versionInfo" : {
+        "roots" : [
+
+        ],
+        "sdkVersions" : {
+          "appletvos26.4" : "23L236",
+          "appletvsimulator26.4" : "23L236",
+          "iphoneos26.4" : "23E252",
+          "iphonesimulator26.4" : "23E252",
+          "macosx26.4" : "25E251",
+          "watchos26.4" : "23T238",
+          "watchsimulator26.4" : "23T238",
+          "xros26.4" : "23O248",
+          "xrsimulator26.4" : "23O248"
+        },
+        "systemVersion" : "25D125",
+        "xcodeVersion" : "17E202"
+      }
     }
   ]
 }

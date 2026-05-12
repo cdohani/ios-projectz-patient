@@ -5650,7 +5650,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3Yf-Xc-VnH">
-                                                                <rect key="frame" x="105" y="15.33333333333333" width="15" height="5.0000000000000018"/>
+                                                                <rect key="frame" x="105" y="15.333333333333321" width="15" height="5.0000000000000213"/>
                                                                 <color key="tintColor" name="customDarkgreyColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="15" id="FkP-fg-hMw"/>
@@ -8331,8 +8331,8 @@
                                                             <constraint firstAttribute="height" constant="15" id="LOL-yG-3GM"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Asthma" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Grp-6B-z0a">
-                                                        <rect key="frame" x="24.999999999999996" y="4" width="37.666666666666657" height="12"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Asthma" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Grp-6B-z0a">
+                                                        <rect key="frame" x="25" y="4" width="73" height="12"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
                                                         <color key="textColor" name="customDarkgreyColor"/>
                                                         <nil key="highlightedColor"/>
@@ -8346,6 +8346,7 @@
                                                     <constraint firstItem="Grp-6B-z0a" firstAttribute="centerY" secondItem="H8n-Sd-v55" secondAttribute="centerY" id="aRq-NH-5Ig"/>
                                                     <constraint firstAttribute="height" constant="20" id="fN4-S1-t10"/>
                                                     <constraint firstItem="Grp-6B-z0a" firstAttribute="leading" secondItem="H8n-Sd-v55" secondAttribute="trailing" constant="5" id="h16-KX-r2s"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Grp-6B-z0a" secondAttribute="trailing" constant="2" id="yJL-Ru-4vb"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Y0-fs-qh5">
@@ -8359,8 +8360,8 @@
                                                             <constraint firstAttribute="width" constant="15" id="wWH-Yt-YTw"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Visit" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMt-68-rMT">
-                                                        <rect key="frame" x="25.000000000000004" y="4" width="53.333333333333343" height="12"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Visit" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMt-68-rMT">
+                                                        <rect key="frame" x="25" y="4" width="70" height="12"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
                                                         <color key="textColor" name="customDarkgreyColor"/>
                                                         <nil key="highlightedColor"/>
@@ -8368,6 +8369,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="RMt-68-rMT" secondAttribute="trailing" constant="5" id="C8t-0m-pHs"/>
                                                     <constraint firstItem="cxQ-B3-zUO" firstAttribute="centerY" secondItem="6Y0-fs-qh5" secondAttribute="centerY" id="Hye-x1-g65"/>
                                                     <constraint firstItem="RMt-68-rMT" firstAttribute="leading" secondItem="cxQ-B3-zUO" secondAttribute="trailing" constant="5" id="N4A-fO-VBP"/>
                                                     <constraint firstItem="cxQ-B3-zUO" firstAttribute="leading" secondItem="6Y0-fs-qh5" secondAttribute="leading" constant="5" id="SSU-Fz-fOd"/>

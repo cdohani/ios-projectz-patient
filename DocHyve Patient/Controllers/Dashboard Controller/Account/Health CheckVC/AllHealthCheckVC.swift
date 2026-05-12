@@ -69,7 +69,13 @@ extension AllHealthCheckVC :UITableViewDelegate,UITableViewDataSource{
         if selectedIndex == indexPath.row{
             cell.vwTags.removeAllTags()
             arrData[indexPath.row].arrData.forEach { (tag) in
-                cell.vwTags.addTag(tag.name)
+                if tag.name.lowercased() == "other" || tag.name.lowercased() == "others"{
+                    print(tag)
+                    cell.vwTags.addTag(tag.otherValue)
+                }else{
+                    cell.vwTags.addTag(tag.name)
+                }
+                
             }
         }else{
             cell.vwTags.removeAllTags()

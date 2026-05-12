@@ -74,6 +74,7 @@ class ApptDoctorDetailVC: ParentViewController {
     func customization(){
         vwOverlay.alpha = 0
         vwModifyAppointment.alpha = 0
+       
     }
   
     func updateTableViewHeight() {

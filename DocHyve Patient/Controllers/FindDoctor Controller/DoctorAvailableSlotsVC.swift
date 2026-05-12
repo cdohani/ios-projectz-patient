@@ -101,6 +101,8 @@ class DoctorAvailableSlotsVC: ParentViewController {
         self.vwLocation.alpha = 0
         self.vwChangeAppt.alpha = 0
         vwBookAppointment.alpha = 0
+        
+        btnChangeAppt.setTitle(isForFollowUp ? "Book Follow up" : "Change Appointment", for: .normal)
     }
     func getLocations(){
         showLoadingView("")
@@ -212,7 +214,7 @@ class DoctorAvailableSlotsVC: ParentViewController {
         lblProviderRole.text = appointmentData.providerInfo.specialization
         
         lblOldDate.attributedText = appointmentData.appointmentInfo.formattedDateTime.strikeThrough()
-        lblOldDate.isHidden = !isForEditAppointment
+//        lblOldDate.isHidden = !isForEditAppointment
         lblillness.text = appointmentData.illnessInfo.name
         lblApptType.text = appointmentData.appointmentInfo.bookingType
        

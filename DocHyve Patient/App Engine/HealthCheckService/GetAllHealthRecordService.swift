@@ -111,6 +111,9 @@ extension GetAllHealthRecordService {
                                     if let val = item["name"] as? String {
                                         list.name = val
                                     }
+                                    if let val = item["other_name"] as? String {
+                                        list.otherValue = val
+                                    }
                                     
                                     dataList.arrData.append(list)
                                 }

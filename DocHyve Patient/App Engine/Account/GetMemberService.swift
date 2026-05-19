@@ -107,6 +107,12 @@ extension GetMemberService {
                             if let val = item["relation"] as? String {
                                 list.relationship = val
                             }
+                            if let val = item["gender"] as? String {
+                                list.gender = val
+                            }
+                            if let val = item["formatted_dob"] as? String {
+                                list.dob = val
+                            }
                             if let val = item["image"] as? String {
                                 list.userImage = val
                             }

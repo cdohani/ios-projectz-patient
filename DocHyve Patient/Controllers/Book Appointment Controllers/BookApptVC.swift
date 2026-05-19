@@ -287,6 +287,38 @@ class BookApptVC: ParentViewController {
         }
         
     }
+    
+    func closeFamilyMemberSheet(){
+        UIView.transition(with: view, duration: 0.4,
+                          options: .transitionCrossDissolve,
+                          animations: {
+            self.vwOverlay.alpha = 0
+            self.vwFamilyMembers.alpha = 0
+        })
+        if selectedMemberID != -1{
+            vwOtherPatient.alpha = 1
+            btnElseLooking.alpha = 0
+        }
+    }
+    
+    func closeInsuranrSheet(){
+        vwAddInsurance.alpha = 0
+        vwOverlay.alpha = 0
+        if selectedInsuranceID != -1{
+            vwInsuranceInfo.alpha = 1
+            btnAddInsurance.alpha = 0
+            btnRemoveInsurance.alpha = 1
+        }
+    }
+    
+    func closeReasonSheet(){
+        UIView.transition(with: view, duration: 0.4,
+                          options: .transitionCrossDissolve,
+                          animations: {
+            self.vwOverlay.alpha = 0
+            self.vwReason.alpha = 0
+        })
+    }
     //MARK: ButtonActions
     @IBAction func btnBackAction(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -354,25 +386,11 @@ class BookApptVC: ParentViewController {
     }
     
     @IBAction func btnCloseReasonAction(_ sender: Any) {
-        UIView.transition(with: view, duration: 0.4,
-                          options: .transitionCrossDissolve,
-                          animations: {
-            self.vwOverlay.alpha = 0
-            self.vwReason.alpha = 0
-        })
+       closeReasonSheet()
     }
     
     @IBAction func btnCloseFamilyMember(_ sender: Any) {
-        UIView.transition(with: view, duration: 0.4,
-                          options: .transitionCrossDissolve,
-                          animations: {
-            self.vwOverlay.alpha = 0
-            self.vwFamilyMembers.alpha = 0
-        })
-        if selectedMemberID != -1{
-            vwOtherPatient.alpha = 1
-            btnElseLooking.alpha = 0
-        }
+      closeFamilyMemberSheet()
     }
     @IBAction func btnAddFamilyMemberAction(_ sender: Any) {
         UIView.transition(with: view, duration: 0.4,
@@ -398,13 +416,7 @@ class BookApptVC: ParentViewController {
         btnRemoveInsurance.alpha = 0
     }
     @IBAction func btnCloseInsuranceView(_ sender: Any) {
-        vwAddInsurance.alpha = 0
-        vwOverlay.alpha = 0
-        if selectedInsuranceID != -1{
-            vwInsuranceInfo.alpha = 1
-            btnAddInsurance.alpha = 0
-            btnRemoveInsurance.alpha = 1
-        }
+       closeInsuranrSheet()
     }
     @IBAction func btnAddNewInsuranceAction(_ sender: Any) {
         vwAddInsurance.alpha = 0
@@ -490,10 +502,12 @@ extension BookApptVC : UITableViewDelegate,UITableViewDataSource{
         if tableView == tblReason{
             selectedReasonID = arrVisitReason[indexPath.row].id
             txtReason.text = arrVisitReason[indexPath.row].name
+            closeReasonSheet()
             tblReason.reloadData()
         }else if tableView == tblFamilyMember{
             selectedMemberID = arrMembers[indexPath.row].id
             lblOtherPatientName.text = arrMembers[indexPath.row].firstName + " " + arrMembers[indexPath.row].lastName
+            closeFamilyMemberSheet()
             tblFamilyMember.reloadData()
         }else{
             selectedInsuranceID = arrInsuranceData[indexPath.row].insuranceID
@@ -501,7 +515,8 @@ extension BookApptVC : UITableViewDelegate,UITableViewDataSource{
             let plans = arrInsuranceData[indexPath.row].arrPlan.map { $0.name }.joined(separator: " - ")
             lblInsurance.text = arrInsuranceData[indexPath.row].insuranceName
             lblInsurancePlan.text = plans
-            tblInsurance.reloadData()
+            closeInsuranrSheet()
+            //tblInsurance.reloadData()
         }
        
     }

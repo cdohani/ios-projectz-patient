@@ -19,6 +19,11 @@ class AddNewMemberVC: ParentViewController {
     @IBOutlet weak var btnAddMember: UIButton!
     @IBOutlet var imgUser: UIImageView!
     
+    @IBOutlet weak var lblDOB: UILabel!
+    @IBOutlet weak var txtDOB: AuthTextField!
+    @IBOutlet weak var lblGender: UILabel!
+    @IBOutlet var btnGender: [UIButton]!
+    
     
     
     //MARK: Variable
@@ -30,7 +35,7 @@ class AddNewMemberVC: ParentViewController {
     var arrStatus = ["Spouse","Son","Daughter"]
     let pickerView = UIPickerView()
     let toolbar = UIToolbar()
-    
+    var gender = "male"
     //MARK: VCLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +59,17 @@ class AddNewMemberVC: ParentViewController {
         txtFirstName.text = memberData.firstName
         txtLastName.text = memberData.lastName
         txtRelation.text = memberData.relationship
+        txtDOB.text = memberData.dob
+        gender = memberData.gender == "" ? "male" : memberData.gender
+        
+        for button in btnGender {
+            let isSelected =
+                (gender.lowercased() == "male" && button.tag == 1) ||
+                (gender.lowercased() == "female" && button.tag == 2)
+
+            let imageName = isSelected ? "iconRadioSelect" : "iconRadioUnSelect"
+            button.setImage(UIImage(named: imageName), for: .normal)
+        }
     }
     func validateTextField() {
         validator = Validator(withView: self.view)
@@ -101,6 +117,8 @@ class AddNewMemberVC: ParentViewController {
             "first_name": txtFirstName.text!,
             "last_name": txtLastName.text!,
             "relation": txtRelation.text!,
+            "gender": gender,
+            "dob": txtDOB.text!,
         ]
         if isForEdit{
             param["id"] = memberData.id
@@ -153,7 +171,24 @@ class AddNewMemberVC: ParentViewController {
         txtRelation.becomeFirstResponder()
     }
     
+    @IBAction func btnGenderAction(_ sender: UIButton) {
+        for button in btnGender {
+            let imageName = (button.tag == sender.tag) ? "iconRadioSelect" : "iconRadioUnSelect"
+            button.setImage(UIImage(named: imageName), for: .normal)
+        }
+        gender = (sender.tag == 1) ? "male" : "female"
+    }
+    @IBAction func btnSelectDOBAction(_ sender: Any) {
+        let calendar = Calendar.current
+        let today = Date()
 
+        // User must be at least 18 years old
+        let maxDOB = calendar.date(byAdding: .year, value: -18, to: today)!
+        
+        DatePickerUtility.showDatePicker(onViewController: self, mode: .date, maxDate: maxDOB) { [self] value in
+            txtDOB.text = value?.convertIntoStringUsingFormat(format: "MM-dd-yyyy") ?? ""
+        }
+    }
     @IBAction func btnUploadUserImageAction(_ sender: Any) {
         showImagePicker { [self] selectedImage, error in
             if let image = selectedImage {

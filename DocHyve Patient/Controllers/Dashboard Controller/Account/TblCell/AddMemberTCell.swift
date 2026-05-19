@@ -13,10 +13,10 @@ class AddMemberTCell: UITableViewCell {
     @IBOutlet weak var lblMemberName: UILabel!
     @IBOutlet weak var lblRelation: UILabel!
     @IBOutlet weak var lblMemberRelation: UILabel!
-    @IBOutlet weak var lblPrmInsHeading: UILabel!
-    @IBOutlet weak var lblPrimarayInsurance: UILabel!
-    @IBOutlet var lblSecondaryInsurance: UILabel!
-    @IBOutlet var lblSecondaryInsuranceValue: UILabel!
+    @IBOutlet weak var lblGenderHeading: UILabel!
+    @IBOutlet weak var lblGender: UILabel!
+    @IBOutlet var lblDOBHeading: UILabel!
+    @IBOutlet var lblDOBValue: UILabel!
     @IBOutlet var btnDelete: UIButton!
     @IBOutlet var btnEdit: UIButton!
     
@@ -36,8 +36,8 @@ class AddMemberTCell: UITableViewCell {
         imgUser.loadImage(from: imageURL)
         lblMemberName.text = "\(item.firstName) \(item.lastName)"
         lblMemberRelation.text = item.relationship
-        lblPrimarayInsurance.text = item.primaryInsuranceInfo.name == "" ? "N/A" : item.primaryInsuranceInfo.name
-        lblSecondaryInsuranceValue.text = item.secondaryInsuranceInfo.name == "" ? "N/A" : item.secondaryInsuranceInfo.name
+        lblGender.text = item.gender == "" ? "N/A" : item.gender.capitalized
+        lblDOBValue.text = item.dob == "" ? "N/A" : item.dob
     }
 }
 

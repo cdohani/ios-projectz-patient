@@ -17,6 +17,8 @@ struct MemberDetailModel{
     var firstName = ""
     var lastName = ""
     var relationship = ""
+    var gender = ""
+    var dob = ""
     var userImage = ""
     var primaryInsuranceID = -1
     var primaryMemberID = ""

@@ -179,13 +179,8 @@ class AddNewMemberVC: ParentViewController {
         gender = (sender.tag == 1) ? "male" : "female"
     }
     @IBAction func btnSelectDOBAction(_ sender: Any) {
-        let calendar = Calendar.current
         let today = Date()
-
-        // User must be at least 18 years old
-        let maxDOB = calendar.date(byAdding: .year, value: -18, to: today)!
-        
-        DatePickerUtility.showDatePicker(onViewController: self, mode: .date, maxDate: maxDOB) { [self] value in
+        DatePickerUtility.showDatePicker(onViewController: self, mode: .date, maxDate: today) { [self] value in
             txtDOB.text = value?.convertIntoStringUsingFormat(format: "MM-dd-yyyy") ?? ""
         }
     }

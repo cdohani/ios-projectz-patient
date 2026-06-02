@@ -126,6 +126,9 @@ extension InsuranceVC : UITableViewDelegate,UITableViewDataSource{
             cell.lblName.text = insurance.name
            
             cell.imgSelection.image = insurance.id == selectedInsuranceID ? UIImage(systemName: "checkmark") : nil
+            if insurance.isSelected{
+                cell.vwBackground.backgroundColor = UIColor.systemGray4
+            }
         }
         return cell
     }
@@ -139,14 +142,16 @@ extension InsuranceVC : UITableViewDelegate,UITableViewDataSource{
             let key = sectionTitles[indexPath.section]
             if let models = groupedInsurances[key] {
                 let insurance = models[indexPath.row]
-                
-                let nextVC = getInsurancePlanVC()
-                nextVC.selectedInsurance = insurance
-                nextVC.isPrimary = isPrimary
-                nextVC.insuranceType = insuranceType
-                nextVC.memberID = memberID
-                nextVC.cardImage = self.cardImage
-                self.navigationController?.pushViewController(nextVC, animated: true)
+                if !insurance.isSelected{
+                    let nextVC = getInsurancePlanVC()
+                    nextVC.selectedInsurance = insurance
+                    nextVC.isPrimary = isPrimary
+                    nextVC.insuranceType = insuranceType
+                    nextVC.memberID = memberID
+                    nextVC.cardImage = self.cardImage
+                    self.navigationController?.pushViewController(nextVC, animated: true)
+                }
+               
             }
         }else{
             let key = sectionTitles[indexPath.section]

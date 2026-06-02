@@ -22,6 +22,9 @@ struct InsuranceModel{
     var schipPlan = -1
     var workerCompensationPlan = -1
     var stateID = -1
+    var isSelected = false
+    var isPrimary = false
+    var isSecondary = false
 }
 
 

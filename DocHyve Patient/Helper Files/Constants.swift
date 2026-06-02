@@ -116,7 +116,7 @@ struct Constants {
         static let getDashboardData = "/dashboard/data"
         static let popularSpecialities = "/specialities/list"
         static let recommendedDoctors = "/top-reviewed-providers"
-        static let getInsurance = "/insurances"
+        static let getInsurance = "/get-insurances"
         static let getInsurancePlan = "/insurances/%d/plans-with-details"
         
         static let getStates = "/states/list"

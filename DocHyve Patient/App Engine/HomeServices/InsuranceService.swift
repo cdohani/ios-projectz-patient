@@ -14,14 +14,19 @@ class InsuraceService: GenericService, @unchecked Sendable {
          //creating payload
         let requestBodyDict  = NSMutableDictionary()
         let jsonString = getJsonStringFromDictionary(requestBodyDict)
+       
+        var queryItems: [URLQueryItem] = []
+
+        if let userID = UserDefaults.standard.object(forKey: "userID") as? Int {
+            queryItems = [
+                URLQueryItem(name: "patient_id", value: String(userID))
+            ]
+        }
         
-        let queryItems: [URLQueryItem] = [
-            URLQueryItem(name: "all_records", value: "true"),
-        ]
         var urlComponents = URLComponents(string: Constants.URLs.getInsurance)
         urlComponents?.queryItems = queryItems
         let endPoint = urlComponents?.url?.absoluteString ?? ""
-        let request = createURLRequest(urlString: endPoint, requestType: .get, postData: jsonString,auth:false)
+        let request = createURLRequest(urlString: endPoint, requestType: .get, postData: jsonString,auth:true)
          
          let session = URLSession.shared
          let task = session.dataTask(with: request) { (data, urlResponse, error) in
@@ -88,7 +93,7 @@ extension InsuraceService {
                     data.response.message = status
                 }
                 if let dataDic = dictionary["data"] as? [String: Any] {
-                    if let visitDic = dataDic["insurance_stats"] as? [[String: Any]] {
+                    if let visitDic = dataDic["insurances"] as? [[String: Any]] {
                         var list = InsuranceModel()
                         for item in visitDic{
                             list = InsuranceModel()
@@ -121,6 +126,15 @@ extension InsuraceService {
                             }
                             if let val = item["state_id"] as? Int {
                                 list.stateID = val
+                            }
+                            if let val = item["is_selected"] as? Bool {
+                                list.isSelected = val
+                            }
+                            if let val = item["is_primary"] as? Bool {
+                                list.isPrimary = val
+                            }
+                            if let val = item["is_secondary"] as? Bool {
+                                list.isSecondary = val
                             }
                             data.arrInsurance.append(list)
                         }

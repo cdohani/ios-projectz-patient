@@ -8,7 +8,7 @@
 import UIKit
 
 class InsuranceTCell: UITableViewCell {
-
+    @IBOutlet var vwBackground: UIView!
     @IBOutlet var lblName: UILabel!
     @IBOutlet var imgSelection: UIImageView!
     override func awakeFromNib() {

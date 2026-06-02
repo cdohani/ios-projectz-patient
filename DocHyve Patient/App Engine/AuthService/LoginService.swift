@@ -117,6 +117,7 @@ extension LoginService {
                         
                         if let val = userDic["id"] as? Int {
                             data.userData.id = val
+                            UserDefaults.standard.set(val, forKey: "userID")
                         }
                         if let val = userDic["firstname"] as? String {
                             data.userData.firstName = val

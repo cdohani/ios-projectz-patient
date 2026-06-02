@@ -14,6 +14,10 @@ class InsurancePlanVC: ParentViewController {
     @IBOutlet weak var tblInsurance: UITableView!
     @IBOutlet var btnSave: UIButton!
     @IBOutlet var imgNoData: UIImageView!
+    @IBOutlet var vwOverlay: UIView!
+    @IBOutlet var vwInfo: UIView!
+    @IBOutlet var lblHeading: UILabel!
+    @IBOutlet var txtInfoDesc: UILabel!
     
     
     
@@ -36,6 +40,8 @@ class InsurancePlanVC: ParentViewController {
         getInsurancePlan()
         txtSearch.addTarget(self, action: #selector(searchTextChanged(_:)), for: .editingChanged)
         txtSearch.addDoneButtonOnKeyboard()
+        vwOverlay.alpha = 0
+        vwInfo.alpha = 0
     }
     
     //MARK: Functions
@@ -76,16 +82,20 @@ class InsurancePlanVC: ParentViewController {
         }
     }
     
-    func saveInsurance(){
+    func saveInsurance(isReplacePrimary:Bool,isAgainCalling:Bool){
        
         
         
-        let param: [String: Any] = [
+        var param: [String: Any] = [
             "is_primary": isPrimary ? 1 : 0,
             "insurance_id": selectedInsurance.id,
             "insurance_plan_ids": arrSelectedPlanID,
             "card_member_id": memberID
         ]
+        if isAgainCalling{
+            param["force_replace_primary"] = isReplacePrimary ? 1 : 0
+        }
+        
         let endPoint =  Constants.URLs.saveUserInsurance
         
         showLoadingView("")
@@ -108,9 +118,18 @@ class InsurancePlanVC: ParentViewController {
                 }
             }
         } failure: { error in
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [self] in
                 self.removeLoadingView()
-                self.showAlertView(message: error ?? Constants.GenericStrings.somethingWentWrong)
+                if error?.contains("Primary insurance already exists") == true {
+                    vwOverlay.alpha = 0.3
+                    vwInfo.alpha = 1
+                } else {
+                    self.showAlertView(
+                        message: error ?? Constants.GenericStrings.somethingWentWrong
+                    )
+                }
+                
+                
             }
         }
         
@@ -125,9 +144,19 @@ class InsurancePlanVC: ParentViewController {
         if arrSelectedPlanID.isEmpty{
             showAlertView(message: "Please select your plan")
         }else{
-            saveInsurance()
+            saveInsurance(isReplacePrimary: false,isAgainCalling: false)
         }
         
+    }
+    @IBAction func btnNoAction(_ sender: Any) {
+        vwOverlay.alpha = 0
+        vwInfo.alpha = 0
+        saveInsurance(isReplacePrimary: false,isAgainCalling: true)
+    }
+    @IBAction func btnContinueAction(_ sender: Any) {
+        vwOverlay.alpha = 0
+        vwInfo.alpha = 0
+        saveInsurance(isReplacePrimary: true,isAgainCalling: true)
     }
     
 }

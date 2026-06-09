@@ -6071,6 +6071,75 @@
             </objects>
             <point key="canvasLocation" x="3906" y="2081"/>
         </scene>
+        <!--Web ViewVC-->
+        <scene sceneID="GPh-6G-jUN">
+            <objects>
+                <viewController storyboardIdentifier="WebViewVC" id="XQY-H0-EI7" customClass="WebViewVC" customModule="DocHyve_Patient" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I3U-Tv-cPB">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hta-Ue-siF">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjl-2C-eaY">
+                                        <rect key="frame" x="15" y="52.666666666666657" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="NMu-r1-Wyi"/>
+                                            <constraint firstAttribute="width" constant="45" id="vzN-Df-j6s"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="iconBack" title=" "/>
+                                        <connections>
+                                            <action selector="btnBackAction:" destination="XQY-H0-EI7" eventType="touchUpInside" id="T9B-cK-Ts6"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAu-n2-Vqr">
+                                        <rect key="frame" x="168.66666666666666" y="65.333333333333329" width="56" height="19.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <color key="textColor" name="customBlueColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="customNavbarColor"/>
+                                <constraints>
+                                    <constraint firstItem="yjl-2C-eaY" firstAttribute="leading" secondItem="Hta-Ue-siF" secondAttribute="leading" constant="15" id="4ww-aP-KN4"/>
+                                    <constraint firstAttribute="height" constant="100" id="7GU-Tw-Qua"/>
+                                    <constraint firstItem="pAu-n2-Vqr" firstAttribute="centerY" secondItem="yjl-2C-eaY" secondAttribute="centerY" id="fF3-Jc-s22"/>
+                                    <constraint firstItem="pAu-n2-Vqr" firstAttribute="centerX" secondItem="Hta-Ue-siF" secondAttribute="centerX" id="lLY-ly-2TN"/>
+                                    <constraint firstItem="yjl-2C-eaY" firstAttribute="centerY" secondItem="Hta-Ue-siF" secondAttribute="centerY" constant="25" id="nRN-Uj-z1M"/>
+                                </constraints>
+                            </view>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Buy-LU-5ia">
+                                <rect key="frame" x="0.0" y="100" width="393" height="752"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="t5y-Bl-ADX"/>
+                        <color key="backgroundColor" name="customBGColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Buy-LU-5ia" secondAttribute="bottom" id="5ew-N2-TQO"/>
+                            <constraint firstItem="Hta-Ue-siF" firstAttribute="top" secondItem="I3U-Tv-cPB" secondAttribute="top" id="CgS-5g-Fnb"/>
+                            <constraint firstItem="t5y-Bl-ADX" firstAttribute="trailing" secondItem="Buy-LU-5ia" secondAttribute="trailing" id="D4d-0y-ZfL"/>
+                            <constraint firstItem="Hta-Ue-siF" firstAttribute="leading" secondItem="t5y-Bl-ADX" secondAttribute="leading" id="Nqe-bH-TTI"/>
+                            <constraint firstItem="Buy-LU-5ia" firstAttribute="top" secondItem="Hta-Ue-siF" secondAttribute="bottom" id="Uun-Ye-VzQ"/>
+                            <constraint firstItem="Buy-LU-5ia" firstAttribute="leading" secondItem="t5y-Bl-ADX" secondAttribute="leading" id="jJJ-Tg-9T1"/>
+                            <constraint firstItem="t5y-Bl-ADX" firstAttribute="trailing" secondItem="Hta-Ue-siF" secondAttribute="trailing" id="z1A-wz-mN8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lblHeading" destination="pAu-n2-Vqr" id="03t-6w-bFG"/>
+                        <outlet property="webView" destination="Buy-LU-5ia" id="cWD-dO-6wz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WIk-tr-shb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4578" y="2081"/>
+        </scene>
     </scenes>
     <resources>
         <image name="1" width="24" height="24"/>

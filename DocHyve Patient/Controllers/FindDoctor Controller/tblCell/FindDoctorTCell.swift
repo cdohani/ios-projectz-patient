@@ -12,6 +12,7 @@ class FindDoctorTCell: UITableViewCell {
     @IBOutlet weak var imgDoctor: UIImageView!
     @IBOutlet weak var lblDoctorName: UILabel!
     @IBOutlet weak var lblDesg: UILabel!
+    @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var lblReview: UILabel!
     @IBOutlet weak var lblAddress: UILabel!
     @IBOutlet weak var lblNetwork: UILabel!
@@ -22,6 +23,8 @@ class FindDoctorTCell: UITableViewCell {
     
     var arrSlots = [Slots]()
     var onSlotSelected: ((_ slotId: Int) -> Void)?
+    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -40,6 +43,7 @@ class FindDoctorTCell: UITableViewCell {
         imgDoctor.loadImage(from: imageURL)
         lblDoctorName.text =  "\(item.firstName) \(item.lastName)"
         lblDesg.text = item.specialities
+        lblDate.text = item.availableSlots.date.convertToDate(format: "MMM-dd", inputFormate: "yyyy-MM-dd")
         lblAddress.text = formattedAddress(from: item.slotAddress)
         lblReview.text = "\(item.avgRating) (\(item.totalReviews) Reviews)"
         arrSlots = item.availableSlots.slots
@@ -69,6 +73,8 @@ class FindDoctorTCell: UITableViewCell {
         // Join components with a comma and space
         return components.joined(separator: ", ")
     }
+    
+
 
 }
 extension FindDoctorTCell: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
@@ -96,3 +102,5 @@ extension FindDoctorTCell: UICollectionViewDelegate, UICollectionViewDataSource,
         return CGSize(width: 100, height: 40)
     }
 }
+
+

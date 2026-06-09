@@ -60,15 +60,15 @@ class MyAccountVC: ParentViewController {
         [
             SettingItem(icon: "5", title: "Terms of Use") { [weak self] in
                 guard let self = self else { return }
-                self.showPrivacy()
+                self.showWebPage(url: Constants.URLs.termsLink, title: "Terms of Use")
             },
-            SettingItem(icon: "6", title: "Privacy Choice") { [weak self] in
-                guard let self = self else { return }
-                self.showPrivacy()
-            },
+//            SettingItem(icon: "6", title: "Privacy Choice") { [weak self] in
+//                guard let self = self else { return }
+//                self.showWebPage(url: Constants.URLs.privacyLink, title: "Privacy Policy")
+//            },
             SettingItem(icon: "7", title: "Privacy Policy") { [weak self] in
                 guard let self = self else { return }
-                self.showPrivacy()
+                self.showWebPage(url: Constants.URLs.privacyLink, title: "Privacy Policy")
             }
         ]
     }
@@ -127,11 +127,13 @@ class MyAccountVC: ParentViewController {
         appDelegate.setLandingScreen()
     }
     
-    func showPrivacy(){
-        if let url = URL(string: "http://frontend.dochyve.com/en/privacy-policy") {
-            UIApplication.shared.open(url)
-        }
+    func showWebPage(url:String , title:String){
+        let nextVC = getWebViewVC()
+        nextVC.heading = title
+        nextVC.url = url
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
+    
         
     //MARK: ButtonActions
     @IBAction func btnFindDoctorAction(_ sender: Any) {

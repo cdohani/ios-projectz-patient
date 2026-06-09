@@ -42,6 +42,8 @@ class FindDoctorVC: ParentViewController {
     @IBOutlet var btnCancelLogin: UIButton!
     @IBOutlet var btnLogin: UIButton!
     @IBOutlet var txtSearchDoctor: AuthTextField!
+    @IBOutlet var txtFilterProvider: AuthTextField!
+    
     
     
     
@@ -77,16 +79,22 @@ class FindDoctorVC: ParentViewController {
     
     var searchTimer: Timer?
     
+    let pickerView = UIPickerView()
+    let toolbar = UIToolbar()
+    var arrFilter = ["Today","Week","Month"]
+    var availabilty = "today"
     //MARK: VCLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         vwContent.isHidden = true
         customization()
+        setupPickerView()
         //searchDoctor()
     }
     
     //MARK: Functions
     func customization(){
+        txtFilterProvider.text = "Today"
         vwOverlay.alpha = 0
         vwAppt.alpha = 0
         vwLogin.alpha = 0
@@ -117,7 +125,8 @@ class FindDoctorVC: ParentViewController {
         var param: [String: Any] = [
             "per_page" : 30,
             "page": paginationInfo.currentPage + 1,
-            "sort_by": selectedSortType
+            "sort_by": selectedSortType,
+            "availability":availabilty
         ]
         
         if addressLatitude != 0.0 && addressLongitude != 0.0 {
@@ -211,6 +220,34 @@ class FindDoctorVC: ParentViewController {
         
         CATransaction.commit()
     }
+    
+    func setupPickerView() {
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        txtFilterProvider.delegate = self
+        txtFilterProvider.inputView = pickerView
+        txtFilterProvider.inputAccessoryView = toolbar
+        // Toolbar
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneTapped))
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelTapped))
+        toolbar.setItems([cancelButton, space, doneButton], animated: false)
+    }
+    @objc func doneTapped() {
+         let row = pickerView.selectedRow(inComponent: 0)
+        txtFilterProvider.text = arrFilter[row]
+        txtFilterProvider.resignFirstResponder()
+        availabilty = arrFilter[row].lowercased()
+        self.paginationInfo.currentPage = 0
+        self.arrProvider.removeAll()
+        self.searchDoctor()
+     }
+     
+     @objc func cancelTapped() {
+         txtFilterProvider.resignFirstResponder()
+     }
+    
     //MARK: ButtonActions
     @IBAction func btnBackAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -305,7 +342,9 @@ class FindDoctorVC: ParentViewController {
                 self?.searchDoctor()
             }
     }
-  
+    @IBAction func btnFilterProviderAction(_ sender: Any) {
+    }
+    
     
     
     
@@ -387,4 +426,29 @@ extension FindDoctorVC : CLLocationManagerDelegate{
        func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
            print("Failed to get user location: \(error.localizedDescription)")
        }
+}
+
+extension FindDoctorVC: UIPickerViewDelegate, UIPickerViewDataSource {
+    // MARK: - UIPickerViewDataSource
+     func numberOfComponents(in pickerView: UIPickerView) -> Int {
+         return 1
+     }
+
+     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+         return arrFilter.count
+     }
+
+     // MARK: - UIPickerViewDelegate
+     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+         return  arrFilter[row]
+     }
+}
+extension FindDoctorVC : UITextFieldDelegate{
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == txtFilterProvider{
+            return false
+        }
+        return true
+    }
 }

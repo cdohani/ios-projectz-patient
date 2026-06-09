@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0400F7432EF95C650004AE36 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0400F7422EF95C650004AE36 /* GoogleService-Info.plist */; };
+		0402A7682FD8504F00319EC1 /* Siren in Frameworks */ = {isa = PBXBuildFile; productRef = 0402A7672FD8504F00319EC1 /* Siren */; };
 		0403D02E2BCEC4090066D337 /* ApptDoctorDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0403D02D2BCEC4090066D337 /* ApptDoctorDetailVC.swift */; };
 		0404E07D2B8CBAA400380F38 /* SecurityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0404E07C2B8CBAA400380F38 /* SecurityVC.swift */; };
 		0404E07F2B8CC0E000380F38 /* PhoneNoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0404E07E2B8CC0E000380F38 /* PhoneNoVC.swift */; };
@@ -199,6 +200,7 @@
 		04F65CA22DC3E82D00FF2051 /* SearchDoctorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F65CA12DC3E82D00FF2051 /* SearchDoctorService.swift */; };
 		04F873562EABB38000967609 /* GetHealthCheckHistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F873552EABB38000967609 /* GetHealthCheckHistoryService.swift */; };
 		04F873582EABBAFC00967609 /* GetMedicationHistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F873572EABBAFC00967609 /* GetMedicationHistoryService.swift */; };
+		04F91CEC2FD727C500DFF1C9 /* WebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F91CEB2FD727C500DFF1C9 /* WebViewVC.swift */; };
 		04FAA87F2CAD9520001CDF30 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FAA87E2CAD9520001CDF30 /* UIFont+Extension.swift */; };
 		04FAA8862CAD9578001CDF30 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04FAA8802CAD9578001CDF30 /* Montserrat-SemiBold.ttf */; };
 		04FAA8872CAD9578001CDF30 /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04FAA8812CAD9578001CDF30 /* Montserrat-Black.ttf */; };
@@ -413,6 +415,7 @@
 		04F65CA12DC3E82D00FF2051 /* SearchDoctorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDoctorService.swift; sourceTree = "<group>"; };
 		04F873552EABB38000967609 /* GetHealthCheckHistoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHealthCheckHistoryService.swift; sourceTree = "<group>"; };
 		04F873572EABBAFC00967609 /* GetMedicationHistoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMedicationHistoryService.swift; sourceTree = "<group>"; };
+		04F91CEB2FD727C500DFF1C9 /* WebViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewVC.swift; sourceTree = "<group>"; };
 		04FAA87E2CAD9520001CDF30 /* UIFont+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		04FAA8802CAD9578001CDF30 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		04FAA8812CAD9578001CDF30 /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
@@ -449,6 +452,7 @@
 				0498AD0D2EA25843004EC3C7 /* Alamofire in Frameworks */,
 				046A20AF2E8AB411004676EB /* Kingfisher in Frameworks */,
 				2CCF576411240F046F887176 /* Pods_DocHyve_Patient.framework in Frameworks */,
+				0402A7682FD8504F00319EC1 /* Siren in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -811,6 +815,7 @@
 				04BE73682BDFAA5300B7EC2D /* AddedInsurnaceVC.swift */,
 				04BE736C2BDFCB9F00B7EC2D /* AddNewInsuranceVC.swift */,
 				04EE1FEB2FA8EF3C0097BA6A /* AccountDeactivateReasonVC.swift */,
+				04F91CEB2FD727C500DFF1C9 /* WebViewVC.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -1070,6 +1075,7 @@
 				0498AD0B2EA25843004EC3C7 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				04ACDE7B2EB23C3C00B31851 /* XCRemoteSwiftPackageReference "Fastis" */,
 				04CEFC2F2EF087B6002E2832 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				0402A7662FD8504F00319EC1 /* XCRemoteSwiftPackageReference "Siren" */,
 			);
 			productRefGroup = 047EFE842B7E5D3300FF942C /* Products */;
 			projectDirPath = "";
@@ -1362,6 +1368,7 @@
 				045EE4C02B8F390800B6DDE9 /* DashboardVC.swift in Sources */,
 				049632952EBA2F5A00E3C92C /* ReminderOptionTCell.swift in Sources */,
 				042CD70B2B86184C00A772B6 /* InternetReachability.swift in Sources */,
+				04F91CEC2FD727C500DFF1C9 /* WebViewVC.swift in Sources */,
 				045EE4C52B8F3B9000B6DDE9 /* NotificationVC.swift in Sources */,
 				04BACA812DC26C9B00E718A3 /* StateTCell.swift in Sources */,
 				04E1A3812F8D460F002BB601 /* AddProfileService 2.swift in Sources */,
@@ -1619,6 +1626,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0402A7662FD8504F00319EC1 /* XCRemoteSwiftPackageReference "Siren" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ArtSabintsev/Siren.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.1.3;
+			};
+		};
 		046A20AD2E8AB411004676EB /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -1654,6 +1669,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0402A7672FD8504F00319EC1 /* Siren */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0402A7662FD8504F00319EC1 /* XCRemoteSwiftPackageReference "Siren" */;
+			productName = Siren;
+		};
 		046A20AE2E8AB411004676EB /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 046A20AD2E8AB411004676EB /* XCRemoteSwiftPackageReference "Kingfisher" */;

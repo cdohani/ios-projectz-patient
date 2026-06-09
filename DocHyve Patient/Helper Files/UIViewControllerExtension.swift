@@ -294,6 +294,11 @@ extension UIViewController {
         return vc
     }
     
+    func getWebViewVC() -> WebViewVC {
+        let vc = UIStoryboard.account.instantiateViewController(withIdentifier: "WebViewVC") as! WebViewVC
+        return vc
+    }
+    
     
     public var isVisible: Bool {
         if isViewLoaded {

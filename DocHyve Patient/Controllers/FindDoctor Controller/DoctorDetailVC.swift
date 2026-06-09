@@ -9,6 +9,7 @@ import UIKit
 import MapKit
 import Cosmos
 import GoogleMaps
+import TagListView
 class DoctorDetailVC: ParentViewController {
 
     //MARK: Outlets
@@ -41,7 +42,6 @@ class DoctorDetailVC: ParentViewController {
     @IBOutlet weak var tblEducationHeight: NSLayoutConstraint!
     @IBOutlet weak var lblInNetworkInsurance: UILabel!
     @IBOutlet weak var lblInNetworkDesc: UILabel!
-    @IBOutlet weak var cvInsurance: UICollectionView!
     @IBOutlet weak var lblRating: UILabel!
     @IBOutlet weak var lblOverallRating: UILabel!
     @IBOutlet weak var vwRating: CosmosView!
@@ -70,6 +70,7 @@ class DoctorDetailVC: ParentViewController {
     @IBOutlet var btnLogin: UIButton!
     @IBOutlet var vwMap: GMSMapView!
     @IBOutlet var btnShareDoctor: UIButton!
+    @IBOutlet var vwInsuranceTag: TagListView!
     
     
     //MARK: Variable
@@ -151,7 +152,6 @@ class DoctorDetailVC: ParentViewController {
                     btnMoreAvailable.isHidden = arrSlots.isEmpty
                     cvSlots.reloadData()
                     cvReview.reloadData()
-                    cvInsurance.reloadData()
                     vwScrollView.isHidden = false
 //                    if let index = providerData.arrAddresses.firstIndex(where: { $0.isDefault == 1 }) {
 //                      selectedLocationID = providerData.arrAddresses[index].id
@@ -213,6 +213,10 @@ class DoctorDetailVC: ParentViewController {
             let lat = Double(providerData.arrAddresses[currentAddressIndex].lat) ?? 0.0
             let long = Double(providerData.arrAddresses[currentAddressIndex].long) ?? 0.0
             addMapPin(lat: lat, long: long)
+        }
+        
+        for item in providerData.arrInsurance{
+            vwInsuranceTag.addTag(item.name)
         }
         
     }
@@ -462,8 +466,6 @@ extension DoctorDetailVC :UICollectionViewDelegate, UICollectionViewDataSource{
             }else{
                 return arrSlots.count
             }
-        }else if collectionView == cvInsurance{
-            return providerData.arrInsurance.count
         }else{
             return providerData.review.recentReviews.count
         }
@@ -476,9 +478,6 @@ extension DoctorDetailVC :UICollectionViewDelegate, UICollectionViewDataSource{
             cell.lblTime.text = arrSlots[indexPath.row].time
             cell.lblTime.textColor = arrSlots[indexPath.item].isBooked  ? UIColor(named: "customGreyColor") : UIColor.white
             cell.vwBackground.backgroundColor = arrSlots[indexPath.row].isBooked ? UIColor(named: "customNavbarColor") : UIColor(named: "customGold")
-            return cell
-        }else if collectionView == cvInsurance{
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AcceptedInsuranceCCell", for: indexPath) as! AcceptedInsuranceCCell
             return cell
         }else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReviewsCCell", for: indexPath) as! ReviewsCCell
@@ -516,8 +515,6 @@ extension DoctorDetailVC : UICollectionViewDelegateFlowLayout{
         if collectionView == cvSlots{
             let collectionViewWidth = collectionView.bounds.width
             return CGSize(width: collectionViewWidth/4.3, height:40)
-        }else if collectionView == cvInsurance{
-            return CGSize(width: 60, height:60)
         }else{
             return CGSize(width: 270, height:150)
         }

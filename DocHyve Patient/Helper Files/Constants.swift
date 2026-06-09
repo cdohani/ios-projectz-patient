@@ -95,6 +95,9 @@ struct Constants {
     
     //MARK:- URLs
     struct URLs {
+        static let privacyLink = "http://frontend.dochyve.com/en/privacy-policy"
+        static let termsLink = "http://frontend.dochyve.com/en/terms-and-conditions"
+        
         static let imagePath = "https://api.dochyve.com/storage/"
         
         //MARK:- Registration

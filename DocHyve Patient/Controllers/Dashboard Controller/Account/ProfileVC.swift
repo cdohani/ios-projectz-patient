@@ -169,7 +169,7 @@ class ProfileVC: ParentViewController {
     @IBAction func btnUpdateProfile(_ sender: Any) {
         showImagePicker { [self] selectedImage, error in
             if let image = selectedImage {
-                self.imgUser.image = image
+                self.imgUser.image = image[0]
                 isImageSelected.toggle()
                 //uploadUserImage()
             } else {
@@ -221,7 +221,7 @@ class ProfileVC: ParentViewController {
             if let image = selectedImage {
               
                 btnRemoveImage.isHidden = false
-                self.imgNic.image = image
+                self.imgNic.image = image[0]
                 lblUploadNic.isHidden = true
             } else {
                 // Handle the case where no image was selected or an error occurred

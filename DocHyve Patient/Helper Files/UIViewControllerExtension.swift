@@ -299,6 +299,31 @@ extension UIViewController {
         return vc
     }
     
+    func getMyTicketVC() -> MyTicketVC{
+        let vc = UIStoryboard.ticket.instantiateViewController(withIdentifier: "MyTicketVC") as! MyTicketVC
+        return vc
+    }
+    func getCreateTicketCategoryVC() -> CreateTicketCategoryVC{
+        let vc = UIStoryboard.ticket.instantiateViewController(withIdentifier: "CreateTicketCategoryVC") as! CreateTicketCategoryVC
+        return vc
+    }
+    func getCreateTicketQuestionVC() -> CreateTicketQuestionVC{
+        let vc = UIStoryboard.ticket.instantiateViewController(withIdentifier: "CreateTicketQuestionVC") as! CreateTicketQuestionVC
+        return vc
+    }
+    func getCreateTicketInfoVC() -> CreateTicketInfoVC{
+        let vc = UIStoryboard.ticket.instantiateViewController(withIdentifier: "CreateTicketVC") as! CreateTicketInfoVC
+        return vc
+    }
+    func getCreateTicketContactInfoVC() -> CreateTicketContactInfoVC{
+        let vc = UIStoryboard.ticket.instantiateViewController(withIdentifier: "CreateTicketContactInfoVC") as! CreateTicketContactInfoVC
+        return vc
+    }
+    func getTicketDetailVC() -> TicketDetailVC{
+        let vc = UIStoryboard.ticket.instantiateViewController(withIdentifier: "TicketDetailVC") as! TicketDetailVC
+        return vc
+    }
+    
     
     public var isVisible: Bool {
         if isViewLoaded {

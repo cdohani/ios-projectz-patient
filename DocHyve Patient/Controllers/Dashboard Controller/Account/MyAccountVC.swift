@@ -32,6 +32,11 @@ class MyAccountVC: ParentViewController {
             SettingItem(icon: "4", title: "Contact Us") { [weak self] in
                 guard let self = self else { return }
                 self.navigationController?.pushViewController(getContactUsVC(), animated: true)
+            },
+            SettingItem(icon: "Support", title: "Support") {
+                [weak self] in
+                guard let self = self else { return }
+                self.navigationController?.pushViewController(getMyTicketVC(), animated: true)
             }
         ]
     }

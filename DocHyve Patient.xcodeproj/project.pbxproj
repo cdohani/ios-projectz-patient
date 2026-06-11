@@ -81,6 +81,7 @@
 		046F64B12BA1BBF700BC8FC8 /* MedicalHistoryTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F64B02BA1BBF600BC8FC8 /* MedicalHistoryTCell.swift */; };
 		04707C612EC49793009F53CE /* GetAppointmentDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04707C602EC49793009F53CE /* GetAppointmentDetailService.swift */; };
 		04707C632EC497BB009F53CE /* AppointmentDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04707C622EC497BB009F53CE /* AppointmentDetailModel.swift */; };
+		0474FDAC2FDB0E2800151438 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474FDAB2FDB0E2800151438 /* TextFieldExtension.swift */; };
 		04754C6B2B9623670064BDC7 /* DoctorRatingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04754C6A2B9623670064BDC7 /* DoctorRatingVC.swift */; };
 		04754C6D2B96238A0064BDC7 /* RatingTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04754C6C2B9623890064BDC7 /* RatingTCell.swift */; };
 		04754C6F2B9629480064BDC7 /* ReviewsTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04754C6E2B9629480064BDC7 /* ReviewsTCell.swift */; };
@@ -121,6 +122,32 @@
 		04A605452B91ED1500EB99A0 /* FindDoctorTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A605442B91ED1500EB99A0 /* FindDoctorTCell.swift */; };
 		04A605482B91ED3700EB99A0 /* AvialableSlotCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A605472B91ED3700EB99A0 /* AvialableSlotCCell.swift */; };
 		04A95BAC2B8E0DF700AF314C /* MedVisitTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A95BAB2B8E0DF700AF314C /* MedVisitTCell.swift */; };
+		04A9C8202FD9A6BC002BFBB6 /* Ticket.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A9C81F2FD9A6BC002BFBB6 /* Ticket.storyboard */; };
+		04A9C8342FD9B7A8002BFBB6 /* TicketInquiryTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9C82B2FD9B7A8002BFBB6 /* TicketInquiryTCell.swift */; };
+		04A9C8352FD9B7A8002BFBB6 /* CreateTicketInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9C82F2FD9B7A8002BFBB6 /* CreateTicketInfoVC.swift */; };
+		04A9C8362FD9B7A8002BFBB6 /* CreateTicketContactInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9C82E2FD9B7A8002BFBB6 /* CreateTicketContactInfoVC.swift */; };
+		04A9C8372FD9B7A8002BFBB6 /* CreateTicketCategoryHeaderTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9C8232FD9B7A8002BFBB6 /* CreateTicketCategoryHeaderTCell.swift */; };
+		04A9C8382FD9B7A8002BFBB6 /* CreateTicketQuestionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9C8302FD9B7A8002BFBB6 /* CreateTicketQuestionVC.swift */; };
+		04A9C8392FD9B7A8002BFBB6 /* ReceiverTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9C8282FD9B7A8002BFBB6 /* ReceiverTCell.swift */; };
+		04A9C83A2FD9B7A8002BFBB6 /* TicketDetailTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9C82A2FD9B7A8002BFBB6 /* TicketDetailTCell.swift */; };
+		04A9C83B2FD9B7A8002BFBB6 /* CategoryCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9C8212FD9B7A8002BFBB6 /* CategoryCCell.swift */; };
+		04A9C83C2FD9B7A8002BFBB6 /* MyTicketListTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9C8252FD9B7A8002BFBB6 /* MyTicketListTCell.swift */; };
+		04A9C83D2FD9B7A8002BFBB6 /* SenderTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9C8292FD9B7A8002BFBB6 /* SenderTCell.swift */; };
+		04A9C83E2FD9B7A8002BFBB6 /* CreateTicketCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9C82D2FD9B7A8002BFBB6 /* CreateTicketCategoryVC.swift */; };
+		04A9C83F2FD9B7A8002BFBB6 /* QuestionHeaderTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9C8272FD9B7A8002BFBB6 /* QuestionHeaderTCell.swift */; };
+		04A9C8402FD9B7A8002BFBB6 /* TicketDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9C8322FD9B7A8002BFBB6 /* TicketDetailVC.swift */; };
+		04A9C8412FD9B7A8002BFBB6 /* QuestionDescTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9C8262FD9B7A8002BFBB6 /* QuestionDescTCell.swift */; };
+		04A9C8422FD9B7A8002BFBB6 /* CreateTicketCategorySubTypeTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9C8242FD9B7A8002BFBB6 /* CreateTicketCategorySubTypeTCell.swift */; };
+		04A9C8432FD9B7A8002BFBB6 /* MyTicketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9C8312FD9B7A8002BFBB6 /* MyTicketVC.swift */; };
+		04A9C8452FD9B880002BFBB6 /* TicketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9C8442FD9B880002BFBB6 /* TicketModel.swift */; };
+		04A9C84D2FD9B89E002BFBB6 /* GetTicketDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9C84A2FD9B89E002BFBB6 /* GetTicketDetailService.swift */; };
+		04A9C84E2FD9B89E002BFBB6 /* GetTicketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9C8482FD9B89E002BFBB6 /* GetTicketService.swift */; };
+		04A9C84F2FD9B89E002BFBB6 /* GetTicketMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9C84B2FD9B89E002BFBB6 /* GetTicketMessage.swift */; };
+		04A9C8502FD9B89E002BFBB6 /* FAQService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9C8472FD9B89E002BFBB6 /* FAQService.swift */; };
+		04A9C8512FD9B89E002BFBB6 /* SupportCategoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9C8462FD9B89E002BFBB6 /* SupportCategoriesService.swift */; };
+		04A9C8522FD9B89E002BFBB6 /* CreateTicketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9C8492FD9B89E002BFBB6 /* CreateTicketService.swift */; };
+		04A9C8542FD9B9B5002BFBB6 /* SupportCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9C8532FD9B9B5002BFBB6 /* SupportCategoryModel.swift */; };
+		04A9C8562FD9BC58002BFBB6 /* UserDefaultExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9C8552FD9BC58002BFBB6 /* UserDefaultExtension.swift */; };
 		04ACDE7D2EB23C3C00B31851 /* Fastis in Frameworks */ = {isa = PBXBuildFile; productRef = 04ACDE7C2EB23C3C00B31851 /* Fastis */; };
 		04AFC5A62E8C1D8200D953AA /* GetProviderLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AFC5A52E8C1D6A00D953AA /* GetProviderLocationService.swift */; };
 		04AFC5A82E8C1E3400D953AA /* LocationDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AFC5A72E8C1E3400D953AA /* LocationDataModel.swift */; };
@@ -297,6 +324,7 @@
 		046F64B02BA1BBF600BC8FC8 /* MedicalHistoryTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalHistoryTCell.swift; sourceTree = "<group>"; };
 		04707C602EC49793009F53CE /* GetAppointmentDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAppointmentDetailService.swift; sourceTree = "<group>"; };
 		04707C622EC497BB009F53CE /* AppointmentDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDetailModel.swift; sourceTree = "<group>"; };
+		0474FDAB2FDB0E2800151438 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		04754C6A2B9623670064BDC7 /* DoctorRatingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorRatingVC.swift; sourceTree = "<group>"; };
 		04754C6C2B9623890064BDC7 /* RatingTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingTCell.swift; sourceTree = "<group>"; };
 		04754C6E2B9629480064BDC7 /* ReviewsTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsTCell.swift; sourceTree = "<group>"; };
@@ -338,6 +366,32 @@
 		04A605442B91ED1500EB99A0 /* FindDoctorTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindDoctorTCell.swift; sourceTree = "<group>"; };
 		04A605472B91ED3700EB99A0 /* AvialableSlotCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvialableSlotCCell.swift; sourceTree = "<group>"; };
 		04A95BAB2B8E0DF700AF314C /* MedVisitTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedVisitTCell.swift; sourceTree = "<group>"; };
+		04A9C81F2FD9A6BC002BFBB6 /* Ticket.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ticket.storyboard; sourceTree = "<group>"; };
+		04A9C8212FD9B7A8002BFBB6 /* CategoryCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCCell.swift; sourceTree = "<group>"; };
+		04A9C8232FD9B7A8002BFBB6 /* CreateTicketCategoryHeaderTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTicketCategoryHeaderTCell.swift; sourceTree = "<group>"; };
+		04A9C8242FD9B7A8002BFBB6 /* CreateTicketCategorySubTypeTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTicketCategorySubTypeTCell.swift; sourceTree = "<group>"; };
+		04A9C8252FD9B7A8002BFBB6 /* MyTicketListTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTicketListTCell.swift; sourceTree = "<group>"; };
+		04A9C8262FD9B7A8002BFBB6 /* QuestionDescTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDescTCell.swift; sourceTree = "<group>"; };
+		04A9C8272FD9B7A8002BFBB6 /* QuestionHeaderTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionHeaderTCell.swift; sourceTree = "<group>"; };
+		04A9C8282FD9B7A8002BFBB6 /* ReceiverTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiverTCell.swift; sourceTree = "<group>"; };
+		04A9C8292FD9B7A8002BFBB6 /* SenderTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderTCell.swift; sourceTree = "<group>"; };
+		04A9C82A2FD9B7A8002BFBB6 /* TicketDetailTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailTCell.swift; sourceTree = "<group>"; };
+		04A9C82B2FD9B7A8002BFBB6 /* TicketInquiryTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketInquiryTCell.swift; sourceTree = "<group>"; };
+		04A9C82D2FD9B7A8002BFBB6 /* CreateTicketCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTicketCategoryVC.swift; sourceTree = "<group>"; };
+		04A9C82E2FD9B7A8002BFBB6 /* CreateTicketContactInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTicketContactInfoVC.swift; sourceTree = "<group>"; };
+		04A9C82F2FD9B7A8002BFBB6 /* CreateTicketInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTicketInfoVC.swift; sourceTree = "<group>"; };
+		04A9C8302FD9B7A8002BFBB6 /* CreateTicketQuestionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTicketQuestionVC.swift; sourceTree = "<group>"; };
+		04A9C8312FD9B7A8002BFBB6 /* MyTicketVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTicketVC.swift; sourceTree = "<group>"; };
+		04A9C8322FD9B7A8002BFBB6 /* TicketDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailVC.swift; sourceTree = "<group>"; };
+		04A9C8442FD9B880002BFBB6 /* TicketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketModel.swift; sourceTree = "<group>"; };
+		04A9C8462FD9B89E002BFBB6 /* SupportCategoriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportCategoriesService.swift; sourceTree = "<group>"; };
+		04A9C8472FD9B89E002BFBB6 /* FAQService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQService.swift; sourceTree = "<group>"; };
+		04A9C8482FD9B89E002BFBB6 /* GetTicketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTicketService.swift; sourceTree = "<group>"; };
+		04A9C8492FD9B89E002BFBB6 /* CreateTicketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTicketService.swift; sourceTree = "<group>"; };
+		04A9C84A2FD9B89E002BFBB6 /* GetTicketDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTicketDetailService.swift; sourceTree = "<group>"; };
+		04A9C84B2FD9B89E002BFBB6 /* GetTicketMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTicketMessage.swift; sourceTree = "<group>"; };
+		04A9C8532FD9B9B5002BFBB6 /* SupportCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportCategoryModel.swift; sourceTree = "<group>"; };
+		04A9C8552FD9BC58002BFBB6 /* UserDefaultExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultExtension.swift; sourceTree = "<group>"; };
 		04AFC5A52E8C1D6A00D953AA /* GetProviderLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProviderLocationService.swift; sourceTree = "<group>"; };
 		04AFC5A72E8C1E3400D953AA /* LocationDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataModel.swift; sourceTree = "<group>"; };
 		04AFC5A92E8C207500D953AA /* SelectSpecialityTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSpecialityTCell.swift; sourceTree = "<group>"; };
@@ -490,6 +544,7 @@
 				042CD6F12B86160900A772B6 /* Auth Controllers */,
 				04CB29CD2B9F227100477064 /* Book Appointment Controllers */,
 				04A605402B91ECC900EB99A0 /* FindDoctor Controller */,
+				04A9C8332FD9B7A8002BFBB6 /* MyTicketControllers */,
 				0499B8E92B8781CD00C8F32C /* Dashboard Controller */,
 				042CD6EC2B8615E900A772B6 /* ParentViewController */,
 			);
@@ -504,6 +559,7 @@
 				0496AE752B877CF600065F5A /* Account.storyboard */,
 				04D040B82B8DF4C000BEEE35 /* Dashboard.storyboard */,
 				04CB29D02B9F232000477064 /* Book Appoinment.storyboard */,
+				04A9C81F2FD9A6BC002BFBB6 /* Ticket.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -541,6 +597,7 @@
 				042CD6FB2B86184C00A772B6 /* AuthTextField.swift */,
 				042CD6F72B86184B00A772B6 /* Constants.swift */,
 				042CD6F82B86184B00A772B6 /* DatePickerExtension.swift */,
+				0474FDAB2FDB0E2800151438 /* TextFieldExtension.swift */,
 				042CD6FD2B86184C00A772B6 /* Extensions.swift */,
 				042CD6FA2B86184B00A772B6 /* GradientButton.swift */,
 				042CD6F32B86184B00A772B6 /* ImagePickerExtension.swift */,
@@ -554,6 +611,7 @@
 				04F0AEE22EA7BC4E0076E4F0 /* Enums.swift */,
 				04F0A0BB2DBBC8D7000BC9B8 /* Protocols.swift */,
 				04FAA87E2CAD9520001CDF30 /* UIFont+Extension.swift */,
+				04A9C8552FD9BC58002BFBB6 /* UserDefaultExtension.swift */,
 			);
 			path = "Helper Files";
 			sourceTree = "<group>";
@@ -647,6 +705,7 @@
 				040BB2492E9FD16C0050716A /* Account */,
 				0498AD102EA26D63004EC3C7 /* DashboardServices */,
 				52FB6A772EA8A04D00806670 /* HealthCheckService */,
+				04A9C84C2FD9B89E002BFBB6 /* SupportServices */,
 				52D3FD7F2EB334DD00EEDC74 /* CancelAppointmentService */,
 			);
 			path = "App Engine";
@@ -695,6 +754,8 @@
 				0494B2D32EBB5FC600F27B2B /* NotificationModel.swift */,
 				04707C622EC497BB009F53CE /* AppointmentDetailModel.swift */,
 				0467FC2C2EE86EE3001BDB83 /* SearchConditionModel.swift */,
+				04A9C8442FD9B880002BFBB6 /* TicketModel.swift */,
+				04A9C8532FD9B9B5002BFBB6 /* SupportCategoryModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -884,6 +945,58 @@
 				04E1A37C2F8D459A002BB601 /* CustomExaminationTCell 2.swift */,
 			);
 			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		04A9C8222FD9B7A8002BFBB6 /* CVCells */ = {
+			isa = PBXGroup;
+			children = (
+				04A9C8212FD9B7A8002BFBB6 /* CategoryCCell.swift */,
+			);
+			path = CVCells;
+			sourceTree = "<group>";
+		};
+		04A9C82C2FD9B7A8002BFBB6 /* TblCells */ = {
+			isa = PBXGroup;
+			children = (
+				04A9C8232FD9B7A8002BFBB6 /* CreateTicketCategoryHeaderTCell.swift */,
+				04A9C8242FD9B7A8002BFBB6 /* CreateTicketCategorySubTypeTCell.swift */,
+				04A9C8252FD9B7A8002BFBB6 /* MyTicketListTCell.swift */,
+				04A9C8262FD9B7A8002BFBB6 /* QuestionDescTCell.swift */,
+				04A9C8272FD9B7A8002BFBB6 /* QuestionHeaderTCell.swift */,
+				04A9C8282FD9B7A8002BFBB6 /* ReceiverTCell.swift */,
+				04A9C8292FD9B7A8002BFBB6 /* SenderTCell.swift */,
+				04A9C82A2FD9B7A8002BFBB6 /* TicketDetailTCell.swift */,
+				04A9C82B2FD9B7A8002BFBB6 /* TicketInquiryTCell.swift */,
+			);
+			path = TblCells;
+			sourceTree = "<group>";
+		};
+		04A9C8332FD9B7A8002BFBB6 /* MyTicketControllers */ = {
+			isa = PBXGroup;
+			children = (
+				04A9C8222FD9B7A8002BFBB6 /* CVCells */,
+				04A9C82C2FD9B7A8002BFBB6 /* TblCells */,
+				04A9C82D2FD9B7A8002BFBB6 /* CreateTicketCategoryVC.swift */,
+				04A9C82E2FD9B7A8002BFBB6 /* CreateTicketContactInfoVC.swift */,
+				04A9C82F2FD9B7A8002BFBB6 /* CreateTicketInfoVC.swift */,
+				04A9C8302FD9B7A8002BFBB6 /* CreateTicketQuestionVC.swift */,
+				04A9C8312FD9B7A8002BFBB6 /* MyTicketVC.swift */,
+				04A9C8322FD9B7A8002BFBB6 /* TicketDetailVC.swift */,
+			);
+			path = MyTicketControllers;
+			sourceTree = "<group>";
+		};
+		04A9C84C2FD9B89E002BFBB6 /* SupportServices */ = {
+			isa = PBXGroup;
+			children = (
+				04A9C8462FD9B89E002BFBB6 /* SupportCategoriesService.swift */,
+				04A9C8472FD9B89E002BFBB6 /* FAQService.swift */,
+				04A9C8482FD9B89E002BFBB6 /* GetTicketService.swift */,
+				04A9C8492FD9B89E002BFBB6 /* CreateTicketService.swift */,
+				04A9C84A2FD9B89E002BFBB6 /* GetTicketDetailService.swift */,
+				04A9C84B2FD9B89E002BFBB6 /* GetTicketMessage.swift */,
+			);
+			path = SupportServices;
 			sourceTree = "<group>";
 		};
 		04B245912EB9208000EB36D5 /* WellnessGuideService */ = {
@@ -1103,6 +1216,7 @@
 				04FAA8862CAD9578001CDF30 /* Montserrat-SemiBold.ttf in Resources */,
 				0496AE762B877CF600065F5A /* Account.storyboard in Resources */,
 				04FAA88B2CAD9578001CDF30 /* Montserrat-Bold.ttf in Resources */,
+				04A9C8202FD9A6BC002BFBB6 /* Ticket.storyboard in Resources */,
 				047EFE902B7E5D3500FF942C /* Assets.xcassets in Resources */,
 				04FAA8882CAD9578001CDF30 /* Montserrat-Medium.ttf in Resources */,
 				047EFE8E2B7E5D3300FF942C /* Main.storyboard in Resources */,
@@ -1218,6 +1332,7 @@
 				52D3FD8F2EB476F400EEDC74 /* CancelAppointmentReasonService.swift in Sources */,
 				04E952402EABD82900619C77 /* AllHealthCheckVC.swift in Sources */,
 				04C4773B2B88D3B600B785D1 /* PasswordSettingVC.swift in Sources */,
+				04A9C8452FD9B880002BFBB6 /* TicketModel.swift in Sources */,
 				0430CDD72B90B7B100DCC0C5 /* NotificationTCell.swift in Sources */,
 				04F0AEE32EA7BC4E0076E4F0 /* Enums.swift in Sources */,
 				04BACA7B2DC258F300E718A3 /* InsuranceService.swift in Sources */,
@@ -1227,6 +1342,7 @@
 				04B857912BA1EB180026E918 /* SurgicalHistoryVC.swift in Sources */,
 				04642FD12EB39C87001C96DC /* ResetPasswordVC.swift in Sources */,
 				042CD7072B86184C00A772B6 /* GradientButton.swift in Sources */,
+				0474FDAC2FDB0E2800151438 /* TextFieldExtension.swift in Sources */,
 				044339042E8D513D00604449 /* ProviderDetailModel.swift in Sources */,
 				043C3ADF2EB4E52E00FED286 /* PopularSpecialitiesVC.swift in Sources */,
 				042CD6E92B8614E200A772B6 /* LoginVC.swift in Sources */,
@@ -1290,6 +1406,7 @@
 				04AFC5A62E8C1D8200D953AA /* GetProviderLocationService.swift in Sources */,
 				04E952422EABF89E00619C77 /* GetAllHealthRecordService.swift in Sources */,
 				5271E8CB2EB875EF00F1A99E /* SingleAppointmentDetailService.swift in Sources */,
+				04A9C8542FD9B9B5002BFBB6 /* SupportCategoryModel.swift in Sources */,
 				045EE4C72B8F3BA700B6DDE9 /* DoctorVC.swift in Sources */,
 				04F0A0BE2DBBFF49000BC9B8 /* PopularSpecialityResponse.swift in Sources */,
 				04E1A37B2F8D4517002BB601 /* ReviewDoctorVC 2.swift in Sources */,
@@ -1325,6 +1442,22 @@
 				046D7B7D2DB95D90007BACD3 /* GeneralResponseModel.swift in Sources */,
 				04D1DA9B2E9693C30099E088 /* GetVisitReasonService.swift in Sources */,
 				04BACA7F2DC26AA300E718A3 /* StateResponseModel.swift in Sources */,
+				04A9C8342FD9B7A8002BFBB6 /* TicketInquiryTCell.swift in Sources */,
+				04A9C8352FD9B7A8002BFBB6 /* CreateTicketInfoVC.swift in Sources */,
+				04A9C8362FD9B7A8002BFBB6 /* CreateTicketContactInfoVC.swift in Sources */,
+				04A9C8372FD9B7A8002BFBB6 /* CreateTicketCategoryHeaderTCell.swift in Sources */,
+				04A9C8382FD9B7A8002BFBB6 /* CreateTicketQuestionVC.swift in Sources */,
+				04A9C8392FD9B7A8002BFBB6 /* ReceiverTCell.swift in Sources */,
+				04A9C83A2FD9B7A8002BFBB6 /* TicketDetailTCell.swift in Sources */,
+				04A9C83B2FD9B7A8002BFBB6 /* CategoryCCell.swift in Sources */,
+				04A9C83C2FD9B7A8002BFBB6 /* MyTicketListTCell.swift in Sources */,
+				04A9C83D2FD9B7A8002BFBB6 /* SenderTCell.swift in Sources */,
+				04A9C83E2FD9B7A8002BFBB6 /* CreateTicketCategoryVC.swift in Sources */,
+				04A9C83F2FD9B7A8002BFBB6 /* QuestionHeaderTCell.swift in Sources */,
+				04A9C8402FD9B7A8002BFBB6 /* TicketDetailVC.swift in Sources */,
+				04A9C8412FD9B7A8002BFBB6 /* QuestionDescTCell.swift in Sources */,
+				04A9C8422FD9B7A8002BFBB6 /* CreateTicketCategorySubTypeTCell.swift in Sources */,
+				04A9C8432FD9B7A8002BFBB6 /* MyTicketVC.swift in Sources */,
 				04642FCD2EB37BB8001C96DC /* ForgetPasswordVC.swift in Sources */,
 				040AAB6F2EC5E7F50032E249 /* GetHeardAboutService.swift in Sources */,
 				04DDC4362BA853FC00AF4E0B /* AddNewMedicationVC.swift in Sources */,
@@ -1362,6 +1495,12 @@
 				042CD7042B86184C00A772B6 /* Constants.swift in Sources */,
 				04E9F87F2BA06CF600139073 /* AddMemberTCell.swift in Sources */,
 				04754C6B2B9623670064BDC7 /* DoctorRatingVC.swift in Sources */,
+				04A9C84D2FD9B89E002BFBB6 /* GetTicketDetailService.swift in Sources */,
+				04A9C84E2FD9B89E002BFBB6 /* GetTicketService.swift in Sources */,
+				04A9C84F2FD9B89E002BFBB6 /* GetTicketMessage.swift in Sources */,
+				04A9C8502FD9B89E002BFBB6 /* FAQService.swift in Sources */,
+				04A9C8512FD9B89E002BFBB6 /* SupportCategoriesService.swift in Sources */,
+				04A9C8522FD9B89E002BFBB6 /* CreateTicketService.swift in Sources */,
 				04C95E4C2EEC6F46009B73BA /* SocialLoginService.swift in Sources */,
 				04CA3ECA2EA1256B00813AC9 /* GetMemberService.swift in Sources */,
 				046D7B772DB95C54007BACD3 /* GenericService.swift in Sources */,
@@ -1375,6 +1514,7 @@
 				045302872B987DE90026DC52 /* AcceptedInsuranceCCell.swift in Sources */,
 				04E0E27D2B973B610081BAC3 /* HighlightsTCell.swift in Sources */,
 				04D4DBEB2BAC7CCC007E93DA /* PastAppoinmentStatusVC.swift in Sources */,
+				04A9C8562FD9BC58002BFBB6 /* UserDefaultExtension.swift in Sources */,
 				04E1A3792F8D44D7002BB601 /* ReactivateEmailVC 2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

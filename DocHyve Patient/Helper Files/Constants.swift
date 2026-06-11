@@ -213,5 +213,14 @@ struct Constants {
         static let markAllReadNotification = "/notifications/read-all"
         static let markReadSingleNotification = "/notifications/%d/mark-read"
         static let deleteNotification = "/notifications/%d/delete"
+        
+        //MARK: Tickets calls
+        static let getSupportCategory = "/support/categories"
+        static let getCategoryFaqs = "/support/faqs/%d"
+        static let getTickets = "/my-support-tickets"
+        static let createTicket = "/add-support-ticket"
+        static let ticketDetail = "/support-ticket/%d"
+        static let ticketMessageDetail = "/get-support-ticket-replies/%d"
+        static let addReplyToTicket = "/add-support-ticket-reply/%d"
     }
 }

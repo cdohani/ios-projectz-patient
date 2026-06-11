@@ -16,6 +16,7 @@ extension UIStoryboard {
         case dashboard = "Dashboard"
         case account = "Account"
         case booking = "Book Appoinment"
+        case ticket = "Ticket"
     }
 
     class var home: UIStoryboard {
@@ -29,6 +30,9 @@ extension UIStoryboard {
     } 
     class var booking: UIStoryboard {
         return UIStoryboard(name: StoryboardName.booking.rawValue, bundle: nil)
+    }
+    class var ticket: UIStoryboard {
+        return UIStoryboard(name: StoryboardName.ticket.rawValue, bundle: nil)
     }
     
 

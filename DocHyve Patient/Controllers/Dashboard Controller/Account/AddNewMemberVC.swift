@@ -187,7 +187,7 @@ class AddNewMemberVC: ParentViewController {
     @IBAction func btnUploadUserImageAction(_ sender: Any) {
         showImagePicker { [self] selectedImage, error in
             if let image = selectedImage {
-                self.imgUser.image = image
+                self.imgUser.image = image[0]
                 isImageSelected = true
                 //uploadUserImage()
             } else {

@@ -120,6 +120,7 @@ class FindDoctorVC: ParentViewController {
         vwAppt.makeCornersRound(corners: [.topLeft,.topRight], radius: 20)
         vwSortView.makeCornersRound(corners: [.topLeft,.topRight], radius: 20)
     }
+    
     func searchDoctor(){
      
         var param: [String: Any] = [

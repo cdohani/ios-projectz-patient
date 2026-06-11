@@ -87,7 +87,7 @@ class AddNewInsuranceVC: UIViewController {
             if let image = selectedImage {
               
                 btnRemoveImage.isHidden = false
-                self.imgInsuranceCard.image = image
+                self.imgInsuranceCard.image = image[0]
                 lblUploadCardPic.isHidden = true
                 //uploadUserImage()
             } else {

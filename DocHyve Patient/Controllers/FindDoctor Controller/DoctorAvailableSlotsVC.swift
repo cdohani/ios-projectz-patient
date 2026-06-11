@@ -140,7 +140,8 @@ class DoctorAvailableSlotsVC: ParentViewController {
         
         var param: [String: Any] = [
             "provider_id" : providerID,
-        ]
+            "availability" : "month"
+        ] 
         if sendDateParam{
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd"

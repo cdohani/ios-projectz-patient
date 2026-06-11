@@ -76,7 +76,7 @@ enum AppointmentStatus: String,CaseIterable {
         case AppointmentStatus.noShow.rawValue:
             return  UIColor(named: "customRed") ?? UIColor.red
         default:
-            return UIColor.black // Default color if the status is unknown
+             return UIColor(named: "customBlueColor") ?? UIColor.red// Default color if the status is unknown
         }
     }
 }
@@ -85,7 +85,7 @@ enum TicketStatus: String,CaseIterable {
     case open = "Open"
     case resolved = "Resolved"
     case closed = "Closed"
-    case inProcess = "In-Process"
+    case inProcess = "In Progress"
     
     static func getLightColor(for status: String) -> UIColor {
         switch status {
@@ -98,7 +98,7 @@ enum TicketStatus: String,CaseIterable {
         case TicketStatus.inProcess.rawValue:
             return  UIColor(named: "customOrangeLight") ?? UIColor.green
         default:
-            return UIColor.black // Default color if the status is unknown
+            return UIColor(named: "customGreenLight") ?? UIColor.green // Default color if the status is unknown
         }
     }
     
@@ -107,9 +107,9 @@ enum TicketStatus: String,CaseIterable {
         case TicketStatus.open.rawValue:
             return UIColor(named: "customGreenColor") ?? UIColor.red
         case TicketStatus.resolved.rawValue:
-            return UIColor(named: "customBlue") ?? UIColor.blue
+            return UIColor(named: "customBlueColor") ?? UIColor.blue
         case TicketStatus.closed.rawValue:
-            return UIColor(named: "customRedColor") ?? UIColor.red
+            return UIColor(named: "customRed") ?? UIColor.red
         case TicketStatus.inProcess.rawValue:
             return UIColor(named: "customOrange") ?? UIColor.red
         default:

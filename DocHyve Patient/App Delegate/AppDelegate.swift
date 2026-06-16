@@ -44,8 +44,8 @@ extension AppDelegate {
         _ launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) {
 
-        GMSServices.provideAPIKey("AIzaSyCgh3Dwwdu9IPHbLf-F9hvw0UDc2tqQA94")
-        GMSPlacesClient.provideAPIKey("AIzaSyCgh3Dwwdu9IPHbLf-F9hvw0UDc2tqQA94")
+        GMSServices.provideAPIKey("AIzaSyDNmo_XDHSOJ0pb-j-A_0WBewtBhq1z2IQ")
+        GMSPlacesClient.provideAPIKey("AIzaSyDNmo_XDHSOJ0pb-j-A_0WBewtBhq1z2IQ")
 
         IQKeyboardManager.shared.isEnabled = true
         IQKeyboardManager.shared.enableAutoToolbar = true

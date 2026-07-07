@@ -20,6 +20,7 @@ class FindDoctorTCell: UITableViewCell {
     @IBOutlet var btnViewAllSlots: UIButton!
     @IBOutlet var lblBookingType: UILabel!
     @IBOutlet var iconBookingType: UIImageView!
+    @IBOutlet weak var lblWeekAppt: UILabel!
     
     var arrSlots = [Slots]()
     var onSlotSelected: ((_ slotId: Int) -> Void)?
@@ -55,7 +56,12 @@ class FindDoctorTCell: UITableViewCell {
         }else{
             iconBookingType.image = UIImage(named: "iconBoth")
         }
-       
+        if item.lastWeekAppt > 5{
+            lblWeekAppt.text = "\(item.lastWeekAppt) Appointments in last week"
+        }else{
+            lblWeekAppt.text = "Available for new patients"
+        }
+        
         lblBookingType.text = item.bookingType.name.capitalized
         cvAvailableSlot.reloadData()
     }

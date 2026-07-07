@@ -48,7 +48,7 @@ extension AppDelegate {
         GMSPlacesClient.provideAPIKey("AIzaSyDNmo_XDHSOJ0pb-j-A_0WBewtBhq1z2IQ")
 
         IQKeyboardManager.shared.isEnabled = true
-        IQKeyboardManager.shared.enableAutoToolbar = false
+        IQKeyboardManager.shared.enableAutoToolbar = true
         //IQKeyboardToolbarManager.shared.toolbarConfiguration.manageBehavior = .byPosition
         UIFont.overrideInitialize()
 

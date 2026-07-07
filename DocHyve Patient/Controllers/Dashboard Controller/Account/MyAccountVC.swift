@@ -21,6 +21,12 @@ class MyAccountVC: ParentViewController {
                 guard let self = self else { return }
                 self.navigationController?.pushViewController(getAddedInsurnaceVC(), animated: true)
             },
+            SettingItem(icon: "11", title: "Custom Insurance") { [weak self] in
+                guard let self = self else { return }
+                let vc = CustomCarrierListVC()
+                self.push(vc)
+            },
+           
             SettingItem(icon: "1", title: "Settings") { [weak self] in
                 guard let self = self else { return }
                 self.navigationController?.pushViewController(getSettingVC(), animated: true)

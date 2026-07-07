@@ -71,6 +71,7 @@ class DoctorDetailVC: ParentViewController {
     @IBOutlet var vwMap: GMSMapView!
     @IBOutlet var btnShareDoctor: UIButton!
     @IBOutlet var vwInsuranceTag: TagListView!
+    @IBOutlet var btnPracticeProfile: UIButton!
     
     
     //MARK: Variable
@@ -404,6 +405,10 @@ class DoctorDetailVC: ParentViewController {
     }
     @IBAction func btnloginAction(_ sender: Any) {
         let nextVC = DoctorVC.getLoginVC()
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    @IBAction func btnShowPracticeProfileAction(_ sender: Any) {
+        let nextVC = getPracticeProfileVC()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     

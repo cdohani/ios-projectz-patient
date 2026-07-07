@@ -31,6 +31,7 @@ struct SearchDoctorModel{
     var assignedRoles = ""
     var addresses = ""
     var totalReviews = -1
+    var lastWeekAppt = -1
     var avgRating = 0.0
     var inNetwork = false
     var bookingType = DropDownModel()

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -43,6 +43,11 @@
 		04357A5D2B8E193100145464 /* RecommendedDoctorCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04357A5C2B8E193100145464 /* RecommendedDoctorCCell.swift */; };
 		04357A5F2B8E2FCE00145464 /* CustomExaminationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04357A5E2B8E2FCE00145464 /* CustomExaminationVC.swift */; };
 		04360D012BA9A3500090ACF3 /* BookedApptTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04360D002BA9A3500090ACF3 /* BookedApptTCell.swift */; };
+		043BE9FC2FEC0E6D005A58DE /* CellTBCustomCarrier.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043BE9FA2FEC0E6D005A58DE /* CellTBCustomCarrier.xib */; };
+		043BE9FD2FEC0E6D005A58DE /* CustomCarrierListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043BE9F82FEC0E6D005A58DE /* CustomCarrierListVC.xib */; };
+		043BE9FE2FEC0E6D005A58DE /* CustomCarrierListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BE9F62FEC0E6D005A58DE /* CustomCarrierListViewModel.swift */; };
+		043BE9FF2FEC0E6D005A58DE /* CustomCarrierListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BE9F72FEC0E6D005A58DE /* CustomCarrierListVC.swift */; };
+		043BEA002FEC0E6D005A58DE /* CellTBCustomCarrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BE9F92FEC0E6D005A58DE /* CellTBCustomCarrier.swift */; };
 		043C3ADF2EB4E52E00FED286 /* PopularSpecialitiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C3ADE2EB4E52E00FED286 /* PopularSpecialitiesVC.swift */; };
 		043C3AE12EB4F60F00FED286 /* CancelAppointmentQuestionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C3AE02EB4F60F00FED286 /* CancelAppointmentQuestionVC.swift */; };
 		043CE3752BA0A93000E5DE90 /* AddNewMemberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043CE3742BA0A93000E5DE90 /* AddNewMemberVC.swift */; };
@@ -209,6 +214,10 @@
 		04E1A37F2F8D45C8002BB601 /* GetIllnessService 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1A37E2F8D45C8002BB601 /* GetIllnessService 2.swift */; };
 		04E1A3812F8D460F002BB601 /* AddProfileService 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1A3802F8D460F002BB601 /* AddProfileService 2.swift */; };
 		04E1A3A32F8D4E44002BB601 /* VideoCallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1A3A22F8D4E44002BB601 /* VideoCallVC.swift */; };
+		04E7CA152FEACD4900413E35 /* AddCustomCarrierViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7CA142FEACD4900413E35 /* AddCustomCarrierViewModel.swift */; };
+		04E7CA172FEACDDA00413E35 /* AddCustomCarrierVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7CA162FEACDDA00413E35 /* AddCustomCarrierVC.swift */; };
+		04E7CA192FEACE7100413E35 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7CA182FEACE7100413E35 /* APIService.swift */; };
+		04E7CA252FEAD34200413E35 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7CA242FEAD34200413E35 /* UIImageExtension.swift */; };
 		04E867142F8E9ECD00174305 /* VideoCallWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E867132F8E9ECD00174305 /* VideoCallWebVC.swift */; };
 		04E9523C2EABC71B00619C77 /* OtherHistoryTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E9523B2EABC71B00619C77 /* OtherHistoryTCell.swift */; };
 		04E9523E2EABD80E00619C77 /* AllHealthCheckTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E9523D2EABD80E00619C77 /* AllHealthCheckTCell.swift */; };
@@ -235,6 +244,8 @@
 		04FAA8892CAD9578001CDF30 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04FAA8832CAD9578001CDF30 /* Montserrat-Light.ttf */; };
 		04FAA88A2CAD9578001CDF30 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04FAA8842CAD9578001CDF30 /* Montserrat-Regular.ttf */; };
 		04FAA88B2CAD9578001CDF30 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04FAA8852CAD9578001CDF30 /* Montserrat-Bold.ttf */; };
+		04FB0F4A2FFD3814008F505A /* PracticeProviderTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB0F492FFD3814008F505A /* PracticeProviderTCell.swift */; };
+		04FB0F4C2FFD3887008F505A /* PracticeProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB0F4B2FFD3887008F505A /* PracticeProfileVC.swift */; };
 		2CCF576411240F046F887176 /* Pods_DocHyve_Patient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7655C925DC730AED9D8ACB89 /* Pods_DocHyve_Patient.framework */; };
 		521B3D682EB1D4C800B8A87C /* GetUserAppointmentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521B3D672EB1D4C800B8A87C /* GetUserAppointmentService.swift */; };
 		521B3D6A2EB1D51C00B8A87C /* UserAppointmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521B3D692EB1D51C00B8A87C /* UserAppointmentModel.swift */; };
@@ -288,6 +299,11 @@
 		04357A5C2B8E193100145464 /* RecommendedDoctorCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedDoctorCCell.swift; sourceTree = "<group>"; };
 		04357A5E2B8E2FCE00145464 /* CustomExaminationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomExaminationVC.swift; sourceTree = "<group>"; };
 		04360D002BA9A3500090ACF3 /* BookedApptTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookedApptTCell.swift; sourceTree = "<group>"; };
+		043BE9F62FEC0E6D005A58DE /* CustomCarrierListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCarrierListViewModel.swift; sourceTree = "<group>"; };
+		043BE9F72FEC0E6D005A58DE /* CustomCarrierListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCarrierListVC.swift; sourceTree = "<group>"; };
+		043BE9F82FEC0E6D005A58DE /* CustomCarrierListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCarrierListVC.xib; sourceTree = "<group>"; };
+		043BE9F92FEC0E6D005A58DE /* CellTBCustomCarrier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTBCustomCarrier.swift; sourceTree = "<group>"; };
+		043BE9FA2FEC0E6D005A58DE /* CellTBCustomCarrier.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellTBCustomCarrier.xib; sourceTree = "<group>"; };
 		043C3ADE2EB4E52E00FED286 /* PopularSpecialitiesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSpecialitiesVC.swift; sourceTree = "<group>"; };
 		043C3AE02EB4F60F00FED286 /* CancelAppointmentQuestionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelAppointmentQuestionVC.swift; sourceTree = "<group>"; };
 		043CE3742BA0A93000E5DE90 /* AddNewMemberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewMemberVC.swift; sourceTree = "<group>"; };
@@ -450,6 +466,10 @@
 		04E1A37E2F8D45C8002BB601 /* GetIllnessService 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetIllnessService 2.swift"; sourceTree = "<group>"; };
 		04E1A3802F8D460F002BB601 /* AddProfileService 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddProfileService 2.swift"; sourceTree = "<group>"; };
 		04E1A3A22F8D4E44002BB601 /* VideoCallVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCallVC.swift; sourceTree = "<group>"; };
+		04E7CA142FEACD4900413E35 /* AddCustomCarrierViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomCarrierViewModel.swift; sourceTree = "<group>"; };
+		04E7CA162FEACDDA00413E35 /* AddCustomCarrierVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomCarrierVC.swift; sourceTree = "<group>"; };
+		04E7CA182FEACE7100413E35 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		04E7CA242FEAD34200413E35 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		04E867132F8E9ECD00174305 /* VideoCallWebVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCallWebVC.swift; sourceTree = "<group>"; };
 		04E9523B2EABC71B00619C77 /* OtherHistoryTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherHistoryTCell.swift; sourceTree = "<group>"; };
 		04E9523D2EABD80E00619C77 /* AllHealthCheckTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllHealthCheckTCell.swift; sourceTree = "<group>"; };
@@ -477,6 +497,8 @@
 		04FAA8832CAD9578001CDF30 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
 		04FAA8842CAD9578001CDF30 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		04FAA8852CAD9578001CDF30 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		04FB0F492FFD3814008F505A /* PracticeProviderTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeProviderTCell.swift; sourceTree = "<group>"; };
+		04FB0F4B2FFD3887008F505A /* PracticeProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeProfileVC.swift; sourceTree = "<group>"; };
 		3E7FF3BCC4AB5FBDA370D275 /* Pods-DocHyve Patient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocHyve Patient.debug.xcconfig"; path = "Target Support Files/Pods-DocHyve Patient/Pods-DocHyve Patient.debug.xcconfig"; sourceTree = "<group>"; };
 		521B3D672EB1D4C800B8A87C /* GetUserAppointmentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserAppointmentService.swift; sourceTree = "<group>"; };
 		521B3D692EB1D51C00B8A87C /* UserAppointmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAppointmentModel.swift; sourceTree = "<group>"; };
@@ -494,6 +516,11 @@
 		7655C925DC730AED9D8ACB89 /* Pods_DocHyve_Patient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocHyve_Patient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5116BF0DD2DE099B12B278D /* Pods-DocHyve Patient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocHyve Patient.release.xcconfig"; path = "Target Support Files/Pods-DocHyve Patient/Pods-DocHyve Patient.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		04E7CA112FEACCEA00413E35 /* GenericResponse */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = GenericResponse; sourceTree = "<group>"; };
+		04E7CA1C2FEAD28E00413E35 /* BottomSheet */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = BottomSheet; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		047EFE802B7E5D3300FF942C /* Frameworks */ = {
@@ -541,6 +568,7 @@
 		042CD6E62B86143C00A772B6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				04E7CA1C2FEAD28E00413E35 /* BottomSheet */,
 				042CD6F12B86160900A772B6 /* Auth Controllers */,
 				04CB29CD2B9F227100477064 /* Book Appointment Controllers */,
 				04A605402B91ECC900EB99A0 /* FindDoctor Controller */,
@@ -593,6 +621,7 @@
 		042CD6F22B86182A00A772B6 /* Helper Files */ = {
 			isa = PBXGroup;
 			children = (
+				04E7CA242FEAD34200413E35 /* UIImageExtension.swift */,
 				046495C82E8DA6C900806C73 /* GenericFunctions.swift */,
 				042CD6FB2B86184C00A772B6 /* AuthTextField.swift */,
 				042CD6F72B86184B00A772B6 /* Constants.swift */,
@@ -647,6 +676,18 @@
 			path = tblCell;
 			sourceTree = "<group>";
 		};
+		043BE9FB2FEC0E6D005A58DE /* CustomCarrierList */ = {
+			isa = PBXGroup;
+			children = (
+				043BE9F62FEC0E6D005A58DE /* CustomCarrierListViewModel.swift */,
+				043BE9F72FEC0E6D005A58DE /* CustomCarrierListVC.swift */,
+				043BE9F82FEC0E6D005A58DE /* CustomCarrierListVC.xib */,
+				043BE9F92FEC0E6D005A58DE /* CellTBCustomCarrier.swift */,
+				043BE9FA2FEC0E6D005A58DE /* CellTBCustomCarrier.xib */,
+			);
+			path = CustomCarrierList;
+			sourceTree = "<group>";
+		};
 		044383E02DBA764A00CACA96 /* AuthService */ = {
 			isa = PBXGroup;
 			children = (
@@ -696,6 +737,7 @@
 		046D7B742DB95C3A007BACD3 /* App Engine */ = {
 			isa = PBXGroup;
 			children = (
+				04E7CA182FEACE7100413E35 /* APIService.swift */,
 				046D7B7B2DB95D65007BACD3 /* Models */,
 				046D7B762DB95C54007BACD3 /* Generic Service */,
 				046D7B792DB95D0A007BACD3 /* GenericAddDataService */,
@@ -730,6 +772,7 @@
 		046D7B7B2DB95D65007BACD3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				04E7CA112FEACCEA00413E35 /* GenericResponse */,
 				04D1DAA02E96AC560099E088 /* LoginResponseModel.swift */,
 				04AFC5A72E8C1E3400D953AA /* LocationDataModel.swift */,
 				044383E42DBA802D00CACA96 /* GenderDataModel.swift */,
@@ -852,6 +895,7 @@
 				045EE4C12B8F3B5D00B6DDE9 /* Appoinment */,
 				04D040BA2B8DF7C600BEEE35 /* Home */,
 				0499B8EA2B8781E400C8F32C /* Account */,
+				04FB0F482FFD37E5008F505A /* Practice Profile */,
 			);
 			path = "Dashboard Controller";
 			sourceTree = "<group>";
@@ -1021,6 +1065,8 @@
 		04CB29CD2B9F227100477064 /* Book Appointment Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				043BE9FB2FEC0E6D005A58DE /* CustomCarrierList */,
+				04E7CA0C2FEAC15700413E35 /* AddCustomCarrier */,
 				04BF96A02B9F52DE00CCB124 /* tblCell */,
 				04CB29CE2B9F229E00477064 /* BookApptVC.swift */,
 				04BF969E2B9F528100CCB124 /* InsuranceVC.swift */,
@@ -1065,6 +1111,15 @@
 			path = tblCell;
 			sourceTree = "<group>";
 		};
+		04E7CA0C2FEAC15700413E35 /* AddCustomCarrier */ = {
+			isa = PBXGroup;
+			children = (
+				04E7CA162FEACDDA00413E35 /* AddCustomCarrierVC.swift */,
+				04E7CA142FEACD4900413E35 /* AddCustomCarrierViewModel.swift */,
+			);
+			path = AddCustomCarrier;
+			sourceTree = "<group>";
+		};
 		04F0A0C22DBC0027000BC9B8 /* HomeServices */ = {
 			isa = PBXGroup;
 			children = (
@@ -1087,6 +1142,15 @@
 				04E1A37E2F8D45C8002BB601 /* GetIllnessService 2.swift */,
 			);
 			path = HomeServices;
+			sourceTree = "<group>";
+		};
+		04FB0F482FFD37E5008F505A /* Practice Profile */ = {
+			isa = PBXGroup;
+			children = (
+				04FB0F492FFD3814008F505A /* PracticeProviderTCell.swift */,
+				04FB0F4B2FFD3887008F505A /* PracticeProfileVC.swift */,
+			);
+			path = "Practice Profile";
 			sourceTree = "<group>";
 		};
 		52D3FD7A2EB32AAA00EEDC74 /* CancelAppointmentVC */ = {
@@ -1154,6 +1218,10 @@
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				04E7CA112FEACCEA00413E35 /* GenericResponse */,
+				04E7CA1C2FEAD28E00413E35 /* BottomSheet */,
+			);
 			name = "DocHyve Patient";
 			productName = "DocHyve Patient";
 			productReference = 047EFE832B7E5D3300FF942C /* DocHyve Patient.app */;
@@ -1210,6 +1278,8 @@
 				04FAA88A2CAD9578001CDF30 /* Montserrat-Regular.ttf in Resources */,
 				0484B8102EEAE5F400144E6A /* GoogleService-Info1.plist in Resources */,
 				04CB29D12B9F232000477064 /* Book Appoinment.storyboard in Resources */,
+				043BE9FC2FEC0E6D005A58DE /* CellTBCustomCarrier.xib in Resources */,
+				043BE9FD2FEC0E6D005A58DE /* CustomCarrierListVC.xib in Resources */,
 				04FAA8872CAD9578001CDF30 /* Montserrat-Black.ttf in Resources */,
 				04D040B92B8DF4C000BEEE35 /* Dashboard.storyboard in Resources */,
 				047EFE932B7E5D3500FF942C /* LaunchScreen.storyboard in Resources */,
@@ -1319,14 +1389,17 @@
 				04BACA7D2DC26A7400E718A3 /* StatesService.swift in Sources */,
 				048F7A732B87ACDD00EE4002 /* SettingVC.swift in Sources */,
 				042CD7032B86184C00A772B6 /* RPicker.swift in Sources */,
+				04E7CA192FEACE7100413E35 /* APIService.swift in Sources */,
 				0498AD142EA26DC9004EC3C7 /* FavouriteProviderModel.swift in Sources */,
 				04754C6D2B96238A0064BDC7 /* RatingTCell.swift in Sources */,
 				04357A5F2B8E2FCE00145464 /* CustomExaminationVC.swift in Sources */,
 				04F0AEE12EA7934C0076E4F0 /* AddMemberService.swift in Sources */,
 				04BF969F2B9F528100CCB124 /* InsuranceVC.swift in Sources */,
 				0404E0812B8CC37800380F38 /* ContactUsVC.swift in Sources */,
+				04E7CA152FEACD4900413E35 /* AddCustomCarrierViewModel.swift in Sources */,
 				049260DD2DBFF80E0088920C /* RecomendedDoctorService.swift in Sources */,
 				0494B2DA2EBB97BE00F27B2B /* GetTwoFactorAuthService.swift in Sources */,
+				04E7CA252FEAD34200413E35 /* UIImageExtension.swift in Sources */,
 				04F65CA22DC3E82D00FF2051 /* SearchDoctorService.swift in Sources */,
 				52D3FD932EB869B400EEDC74 /* SingleAppointmentDetailModel.swift in Sources */,
 				52D3FD8F2EB476F400EEDC74 /* CancelAppointmentReasonService.swift in Sources */,
@@ -1352,6 +1425,7 @@
 				04D4DBE72BAC5039007E93DA /* SavedDoctorTCell.swift in Sources */,
 				046F64AF2BA1BBC800BC8FC8 /* MedicalHistoryVC.swift in Sources */,
 				040BB2472E9FBA640050716A /* InsurancePlanService.swift in Sources */,
+				04FB0F4C2FFD3887008F505A /* PracticeProfileVC.swift in Sources */,
 				0467FC292EE868F2001BDB83 /* DoctorSearchTCell.swift in Sources */,
 				046495C92E8DA6C900806C73 /* GenericFunctions.swift in Sources */,
 				04EE1FEE2FA8EF6B0097BA6A /* AccountDeactivateReasonTCell.swift in Sources */,
@@ -1388,6 +1462,7 @@
 				04E1A37D2F8D459A002BB601 /* CustomExaminationTCell 2.swift in Sources */,
 				043C3AE12EB4F60F00FED286 /* CancelAppointmentQuestionVC.swift in Sources */,
 				04BACA792DC2555600E718A3 /* InsuranceResponseModel.swift in Sources */,
+				04E7CA172FEACDDA00413E35 /* AddCustomCarrierVC.swift in Sources */,
 				04D1DAA12E96AC560099E088 /* LoginResponseModel.swift in Sources */,
 				0498AD122EA26D90004EC3C7 /* GetFavouriteProviders.swift in Sources */,
 				04B245902EB91F7400EB36D5 /* WellnessGuideResponseModel.swift in Sources */,
@@ -1496,11 +1571,15 @@
 				04E9F87F2BA06CF600139073 /* AddMemberTCell.swift in Sources */,
 				04754C6B2B9623670064BDC7 /* DoctorRatingVC.swift in Sources */,
 				04A9C84D2FD9B89E002BFBB6 /* GetTicketDetailService.swift in Sources */,
+				043BE9FE2FEC0E6D005A58DE /* CustomCarrierListViewModel.swift in Sources */,
+				043BE9FF2FEC0E6D005A58DE /* CustomCarrierListVC.swift in Sources */,
+				043BEA002FEC0E6D005A58DE /* CellTBCustomCarrier.swift in Sources */,
 				04A9C84E2FD9B89E002BFBB6 /* GetTicketService.swift in Sources */,
 				04A9C84F2FD9B89E002BFBB6 /* GetTicketMessage.swift in Sources */,
 				04A9C8502FD9B89E002BFBB6 /* FAQService.swift in Sources */,
 				04A9C8512FD9B89E002BFBB6 /* SupportCategoriesService.swift in Sources */,
 				04A9C8522FD9B89E002BFBB6 /* CreateTicketService.swift in Sources */,
+				04FB0F4A2FFD3814008F505A /* PracticeProviderTCell.swift in Sources */,
 				04C95E4C2EEC6F46009B73BA /* SocialLoginService.swift in Sources */,
 				04CA3ECA2EA1256B00813AC9 /* GetMemberService.swift in Sources */,
 				046D7B772DB95C54007BACD3 /* GenericService.swift in Sources */,

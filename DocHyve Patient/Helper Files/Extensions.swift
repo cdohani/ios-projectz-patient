@@ -307,6 +307,11 @@ public extension NSDictionary {
 }
 extension String {
     
+    func toJSON() -> [String:Any]? {
+        guard let data = self.data(using: .utf8, allowLossyConversion: false) else { return nil }
+        return try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String:Any]
+    }
+    
     func removingPlusOnePrefix() -> String {
          let trimmed = self.trimmingCharacters(in: .whitespaces)
          
@@ -347,11 +352,54 @@ extension String {
         attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0,attributeString.length))
             return attributeString
         }
+    
+    func indate(_ format: Date.DateFormat) -> Date? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format.rawValue
+        formatter.timeZone = .current
+        return formatter.date(from: self)
+        
+    }
 }
 //MARK:- Date
 public extension Date {
     
+    enum DateFormat: String {
+        case MMM_dd_YYYY_hh_mm_a = "MMM-dd-YYYY, hh:mm a"
+        case MM_dd_YYYY_hh_mm_a = "MM-dd-YYYY hh:mm a"
+        case utc = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'"
+        case MM_dd_yyyy = "MM-dd-yyyy"// 01-01-2026
+        case HH_mm = "HH:mm"
+        case yyyyMMdd = "yyyy-MM-dd"
+        case MM_DD_YYYY = "MM-dd-YYYY"
+        case MMMM_dd_yyyy = "MMMM dd yyyy"
+        case MM_DD_YY_Slach_HH_mm_a = "MM-dd-yyyy / hh:mm a"
+        
+        
+    }
     
+    func adding(days: Int = 0, months: Int = 0, years: Int = 0) -> Date? {
+        var date = self
+        let calendar = Calendar.current
+        
+        if let newDate = calendar.date(byAdding: .day, value: days, to: date) {
+            date = newDate
+        }
+        if let newDate = calendar.date(byAdding: .month, value: months, to: date) {
+            date = newDate
+        }
+        if let newDate = calendar.date(byAdding: .year, value: years, to: date) {
+            date = newDate
+        }
+        return date
+    }
+    
+    func dateString(_ format: DateFormat = .MMM_dd_YYYY_hh_mm_a) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format.rawValue
+        dateFormatter.timeZone = TimeZone.current
+        return dateFormatter.string(from: self)
+    }
     //convert into string using format
     func convertIntoStringUsingFormat(format: String) -> String? {
         
@@ -515,6 +563,68 @@ extension UITableView {
        func stopRefreshing() {
            refreshControl?.endRefreshing()
        }
+    
+    func register(_ identifiers: String...) {
+        for identifier in identifiers {
+            register(UINib(nibName: identifier, bundle: nil), forCellReuseIdentifier: identifier)
+        }
+    }
+    
+    func setEmptyView(message: String? = nil, image: UIImage? = nil) {
+        // Create a container view
+        let emptyView = UIView(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
+        
+        // Label
+        
+        let messageLabel = UILabel()
+        messageLabel.translatesAutoresizingMaskIntoConstraints = false
+        messageLabel.text = message
+        messageLabel.textColor = .gray
+        messageLabel.numberOfLines = 0
+        messageLabel.textAlignment = .center
+        messageLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        
+        emptyView.addSubview(messageLabel)
+        
+        // ImageView if image is provided
+        var imageView: UIImageView?
+        if let img = image {
+            imageView = UIImageView(image: img)
+            imageView!.translatesAutoresizingMaskIntoConstraints = false
+            imageView!.contentMode = .scaleAspectFit
+            emptyView.addSubview(imageView!)
+        }
+        
+        // Auto Layout
+        if let imageView = imageView {
+            NSLayoutConstraint.activate([
+                imageView.centerXAnchor.constraint(equalTo: emptyView.centerXAnchor),
+                imageView.centerYAnchor.constraint(equalTo: emptyView.centerYAnchor, constant: -40),
+                imageView.widthAnchor.constraint(lessThanOrEqualToConstant: 150),
+                imageView.heightAnchor.constraint(lessThanOrEqualToConstant: 150),
+                
+                messageLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
+                messageLabel.leadingAnchor.constraint(equalTo: emptyView.leadingAnchor, constant: 20),
+                messageLabel.trailingAnchor.constraint(equalTo: emptyView.trailingAnchor, constant: -20)
+            ])
+        } else {
+            NSLayoutConstraint.activate([
+                messageLabel.centerYAnchor.constraint(equalTo: emptyView.centerYAnchor),
+                messageLabel.leadingAnchor.constraint(equalTo: emptyView.leadingAnchor, constant: 20),
+                messageLabel.trailingAnchor.constraint(equalTo: emptyView.trailingAnchor, constant: -20)
+            ])
+        }
+        
+        self.backgroundView = emptyView
+        self.separatorStyle = .none
+    }
+
+       /// Restore the table view to normal state (remove empty view)
+       func restoreEmptyView() {
+           self.backgroundView = nil
+           //self.separatorStyle = .singleLine
+       }
+
     
 }
 //MARK:- UIApplication
@@ -1252,6 +1362,11 @@ extension UIButton {
            layer.removeAnimation(forKey: "blink")
            alpha = 1.0
        }
+    
+    func set(isEnable: Bool) {
+        isUserInteractionEnabled = isEnable
+        backgroundColor = isEnable ? .customBlue : .customGrey
+    }
 }
 fileprivate struct AssociatedKeys {
     static var index = 0

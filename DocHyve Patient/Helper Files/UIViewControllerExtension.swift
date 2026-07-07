@@ -11,6 +11,20 @@ import UIKit
 
 extension UIViewController {
     
+    var name: String {
+        return String(describing: type(of: self))
+    }
+    
+    func fromBottom() {
+        modalTransitionStyle = .coverVertical
+        modalPresentationStyle = .overCurrentContext
+    }
+    
+    func likeAlert() {
+        modalTransitionStyle = .crossDissolve
+        modalPresentationStyle = .overCurrentContext
+    }
+    
     func showToast(message: String, controller: UIViewController) {
         let toastContainer = UIView(frame: CGRect())
         toastContainer.backgroundColor = UIColor.black.withAlphaComponent(0.6)
@@ -148,6 +162,10 @@ extension UIViewController {
         let vc = UIStoryboard.dashboard.instantiateViewController(withIdentifier: "DoctorRatingVC") as! DoctorRatingVC
         return vc
     }
+    func getPracticeProfileVC() -> PracticeProfileVC {
+        let vc = UIStoryboard.dashboard.instantiateViewController(withIdentifier: "PracticeProfileVC") as! PracticeProfileVC
+        return vc
+    }
     func getFilterDoctorVC() -> FilterDoctorVC {
         let vc = UIStoryboard.dashboard.instantiateViewController(withIdentifier: "FilterDoctorVC") as! FilterDoctorVC
         return vc
@@ -205,6 +223,10 @@ extension UIViewController {
     }
     func getInsurancePlanVC() -> InsurancePlanVC {
         let vc = UIStoryboard.booking.instantiateViewController(withIdentifier: "InsurancePlanVC") as! InsurancePlanVC
+        return vc
+    }
+    func getAddCustomCarrierVC() -> AddCustomCarrierVC {
+        let vc = UIStoryboard.booking.instantiateViewController(withIdentifier: "AddCustomCarrierVC") as! AddCustomCarrierVC
         return vc
     }
   

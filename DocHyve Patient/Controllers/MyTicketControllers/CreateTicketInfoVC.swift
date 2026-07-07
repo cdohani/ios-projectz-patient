@@ -114,6 +114,36 @@ class CreateTicketInfoVC: ParentViewController,TagListViewDelegate {
             }
         }
     }
+    
+    func addTicket(){
+        let param: [String: Any] = [
+            "category_id": selectedCategoryID,
+            "sub_category_id": selectedSubCategoryID,
+            "inquiry_subject": txtSubject.text!,
+            "description": tvDetail.text!,
+            "have_account": 1,
+        ]
+        
+        let endPoint = Constants.URLs.createTicket
+        showLoadingView("")
+        CreateTicket().addData(endPoint: endPoint, imgKey: "attachments[]", images: imagesToUpload, parameters: param) { message in
+            self.removeLoadingView()
+            self.showAlertViewWithCompletion(message: message) {
+                if let navigationController = self.navigationController {
+                    for viewController in navigationController.viewControllers {
+                        if viewController is MyTicketVC { // Replace with your view controller class
+                            DataManager.shared.isDataUpdated = true
+                            navigationController.popToViewController(viewController, animated: true)
+                            break
+                        }
+                    }
+                }
+            }
+        } failure: { error in
+            self.showAlertView(message: error)
+           
+        }
+    }
     func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
         let index = imagesToUpload.firstIndex(where: { $0.imgName == title })
         imagesToUpload.remove(at: index!)
@@ -159,13 +189,14 @@ class CreateTicketInfoVC: ParentViewController,TagListViewDelegate {
                 }else if strongSelf.imagesToUpload.isEmpty{
                     strongSelf.showAlertView(message: "Please upload attachment.")
                 }else{
-                    let nextVC = strongSelf.getCreateTicketContactInfoVC()
-                    nextVC.categoryID = strongSelf.selectedCategoryID
-                    nextVC.subcategoryID = strongSelf.selectedSubCategoryID
-                    nextVC.subject = strongSelf.txtSubject.text!
-                    nextVC.ticketDescription = strongSelf.tvDetail.text!
-                    nextVC.images = strongSelf.imagesToUpload
-                    strongSelf.navigationController?.pushViewController(nextVC, animated: true)
+//                    let nextVC = strongSelf.getCreateTicketContactInfoVC()
+//                    nextVC.categoryID = strongSelf.selectedCategoryID
+//                    nextVC.subcategoryID = strongSelf.selectedSubCategoryID
+//                    nextVC.subject = strongSelf.txtSubject.text!
+//                    nextVC.ticketDescription = strongSelf.tvDetail.text!
+//                    nextVC.images = strongSelf.imagesToUpload
+//                    strongSelf.navigationController?.pushViewController(nextVC, animated: true)
+                    strongSelf.addTicket()
                 }
                 
             }

@@ -1115,16 +1115,10 @@
                                 <rect key="frame" x="0.0" y="100" width="393" height="684"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iO0-ih-bEs">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="723.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="684"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="step1" translatesAutoresizingMaskIntoConstraints="NO" id="4lF-IX-TWw">
-                                                <rect key="frame" x="20" y="10" width="353" height="60"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="Opp-tW-pBl"/>
-                                                </constraints>
-                                            </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uak-tr-qr6">
-                                                <rect key="frame" x="10" y="90" width="373" height="65"/>
+                                                <rect key="frame" x="10" y="20" width="373" height="65"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1R8-DW-AbH">
                                                         <rect key="frame" x="10" y="0.0" width="353" height="14.333333333333334"/>
@@ -1180,7 +1174,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0hN-BV-riW">
-                                                <rect key="frame" x="10" y="175" width="373" height="65"/>
+                                                <rect key="frame" x="10" y="105" width="373" height="65"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sub-Category" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOx-iJ-Zao">
                                                         <rect key="frame" x="10" y="0.0" width="353" height="14.333333333333334"/>
@@ -1189,7 +1183,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Subcategory" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tiD-so-N0O" customClass="AuthTextField" customModule="DocHyve_Patient" customModuleProvider="target">
-                                                        <rect key="frame" x="10" y="19.333333333333314" width="353" height="45"/>
+                                                        <rect key="frame" x="10" y="19.333333333333343" width="353" height="45"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="45" id="0t3-4w-lpe"/>
                                                         </constraints>
@@ -1210,7 +1204,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uno-eK-5IP">
-                                                        <rect key="frame" x="10" y="19.333333333333314" width="353" height="45"/>
+                                                        <rect key="frame" x="10" y="19.333333333333343" width="353" height="45"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title=" "/>
                                                         <connections>
@@ -1236,13 +1230,13 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In a few words, tell us what your enquiry is about" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXK-N9-200">
-                                                <rect key="frame" x="20" y="260" width="353" height="14.333333333333314"/>
+                                                <rect key="frame" x="20" y="190" width="353" height="14.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                 <color key="textColor" name="greyLightTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Subject" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kew-1e-OLk" customClass="AuthTextField" customModule="DocHyve_Patient" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="279.33333333333331" width="353" height="45"/>
+                                                <rect key="frame" x="20" y="209.33333333333331" width="353" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="Kn0-WB-iOX"/>
                                                 </constraints>
@@ -1256,13 +1250,13 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Enter Detailed Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jO4-SZ-SjA">
-                                                <rect key="frame" x="20" y="344.33333333333331" width="353" height="14.333333333333314"/>
+                                                <rect key="frame" x="20" y="274.33333333333331" width="353" height="14.333333333333314"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                 <color key="textColor" name="greyLightTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="E2Z-rx-aVh">
-                                                <rect key="frame" x="20" y="363.66666666666669" width="353" height="120"/>
+                                                <rect key="frame" x="20" y="293.66666666666669" width="353" height="120"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="120" id="vb8-gB-QJG"/>
@@ -1283,13 +1277,13 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upload" translatesAutoresizingMaskIntoConstraints="NO" id="Alq-3u-ftj">
-                                                <rect key="frame" x="20" y="503.66666666666663" width="353" height="120"/>
+                                                <rect key="frame" x="20" y="433.66666666666663" width="353" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="120" id="ROY-gg-jch"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akd-80-R2Y">
-                                                <rect key="frame" x="20" y="503.66666666666663" width="353" height="120"/>
+                                                <rect key="frame" x="20" y="433.66666666666663" width="353" height="120"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title=" "/>
                                                 <connections>
@@ -1297,7 +1291,7 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WoY-dZ-NXe" customClass="TagListView" customModule="TagListView">
-                                                <rect key="frame" x="20" y="633.66666666666663" width="353" height="0.0"/>
+                                                <rect key="frame" x="20" y="563.66666666666663" width="353" height="30.333333333333371"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="enableRemoveButton" value="YES"/>
@@ -1322,14 +1316,14 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Luf-de-Yhp">
-                                                <rect key="frame" x="20" y="653.66666666666663" width="353" height="50"/>
+                                                <rect key="frame" x="20" y="614" width="353" height="50"/>
                                                 <color key="backgroundColor" name="customBlueColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="8ak-1m-Zln"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Next">
+                                                <state key="normal" title="Submit">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -1346,17 +1340,15 @@
                                         <constraints>
                                             <constraint firstItem="0hN-BV-riW" firstAttribute="leading" secondItem="uak-tr-qr6" secondAttribute="leading" id="0s6-8r-HsO"/>
                                             <constraint firstItem="Alq-3u-ftj" firstAttribute="trailing" secondItem="E2Z-rx-aVh" secondAttribute="trailing" id="171-BP-oel"/>
-                                            <constraint firstItem="4lF-IX-TWw" firstAttribute="leading" secondItem="iO0-ih-bEs" secondAttribute="leading" constant="20" id="1fL-zK-Ek3"/>
-                                            <constraint firstAttribute="trailing" secondItem="4lF-IX-TWw" secondAttribute="trailing" constant="20" id="3k1-G8-6nZ"/>
                                             <constraint firstItem="akd-80-R2Y" firstAttribute="trailing" secondItem="Alq-3u-ftj" secondAttribute="trailing" id="5Md-mk-fVK"/>
                                             <constraint firstItem="WoY-dZ-NXe" firstAttribute="top" secondItem="Alq-3u-ftj" secondAttribute="bottom" constant="10" id="7nB-yK-Bbm"/>
                                             <constraint firstItem="jO4-SZ-SjA" firstAttribute="trailing" secondItem="kew-1e-OLk" secondAttribute="trailing" id="DU9-vf-3yM"/>
                                             <constraint firstItem="0hN-BV-riW" firstAttribute="top" secondItem="uak-tr-qr6" secondAttribute="bottom" constant="20" id="HOF-fd-Xv5"/>
                                             <constraint firstItem="E2Z-rx-aVh" firstAttribute="top" secondItem="jO4-SZ-SjA" secondAttribute="bottom" constant="5" id="K5n-Un-lfb"/>
+                                            <constraint firstItem="uak-tr-qr6" firstAttribute="top" secondItem="iO0-ih-bEs" secondAttribute="top" constant="20" id="Oag-ee-cCM"/>
                                             <constraint firstItem="akd-80-R2Y" firstAttribute="top" secondItem="Alq-3u-ftj" secondAttribute="top" id="OjW-Fv-vw4"/>
                                             <constraint firstAttribute="trailing" secondItem="uak-tr-qr6" secondAttribute="trailing" constant="10" id="P5s-c5-7rh"/>
                                             <constraint firstItem="akd-80-R2Y" firstAttribute="leading" secondItem="Alq-3u-ftj" secondAttribute="leading" id="QRT-AD-CuC"/>
-                                            <constraint firstItem="uak-tr-qr6" firstAttribute="top" secondItem="4lF-IX-TWw" secondAttribute="bottom" constant="20" id="SwS-sA-5Gr"/>
                                             <constraint firstItem="E2Z-rx-aVh" firstAttribute="leading" secondItem="jO4-SZ-SjA" secondAttribute="leading" id="TTj-sa-abx"/>
                                             <constraint firstItem="jO4-SZ-SjA" firstAttribute="top" secondItem="kew-1e-OLk" secondAttribute="bottom" constant="20" id="Tgc-V6-Ttc"/>
                                             <constraint firstAttribute="bottom" secondItem="Luf-de-Yhp" secondAttribute="bottom" constant="20" id="U7v-md-ZuI"/>
@@ -1374,7 +1366,6 @@
                                             <constraint firstItem="WoY-dZ-NXe" firstAttribute="leading" secondItem="Alq-3u-ftj" secondAttribute="leading" id="k5J-d0-zQn"/>
                                             <constraint firstItem="WoY-dZ-NXe" firstAttribute="trailing" secondItem="Alq-3u-ftj" secondAttribute="trailing" id="kJs-0d-XSm"/>
                                             <constraint firstAttribute="trailing" secondItem="uXK-N9-200" secondAttribute="trailing" constant="20" id="kR5-uI-sYg"/>
-                                            <constraint firstItem="4lF-IX-TWw" firstAttribute="top" secondItem="iO0-ih-bEs" secondAttribute="top" constant="10" id="leA-fM-e0f"/>
                                             <constraint firstItem="uXK-N9-200" firstAttribute="top" secondItem="0hN-BV-riW" secondAttribute="bottom" constant="20" id="mxg-u0-e3K"/>
                                             <constraint firstItem="kew-1e-OLk" firstAttribute="top" secondItem="uXK-N9-200" secondAttribute="bottom" constant="5" id="oM6-ji-3Zi"/>
                                             <constraint firstItem="uXK-N9-200" firstAttribute="leading" secondItem="iO0-ih-bEs" secondAttribute="leading" constant="20" id="vQt-Wh-Esn"/>
@@ -2398,7 +2389,6 @@
         <image name="receiver" width="19.333333969116211" height="26.333333969116211"/>
         <image name="sendbtn" width="40" height="40"/>
         <image name="sender" width="18.666666030883789" height="24.333333969116211"/>
-        <image name="step1" width="346" height="89"/>
         <image name="upload" width="326" height="94"/>
         <image name="user-profile 1" width="40.333332061767578" height="40"/>
         <namedColor name="customBGColor">

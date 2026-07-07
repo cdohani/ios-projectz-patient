@@ -12,6 +12,7 @@ class InsuranceVC: ParentViewController {
     @IBOutlet weak var lblInsurance: UILabel!
     @IBOutlet weak var txtSearch: AuthTextField!
     @IBOutlet weak var tblInsurance: UITableView!
+    @IBOutlet var btnAddCustomCarrier: UIButton!
     
     
     
@@ -101,6 +102,10 @@ class InsuranceVC: ParentViewController {
     //MARK: ButtonActions
     @IBAction func btnBackAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    @IBAction func btnAddCustomCarrierAction(_ sender: Any) {
+        let nextVC = getAddCustomCarrierVC()
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
 }

@@ -19,7 +19,7 @@ class ParentViewController: UIViewController {
     fileprivate var toastMessage: UILabel!
     fileprivate var viewCenter: CGPoint!
     var initialDragCenter: CGPoint!
-    
+    private var backButtonCallback: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +65,24 @@ class ParentViewController: UIViewController {
 
           self.navigationItem.titleView = label
     }
+    func setNaviTitle(_ title: String, imgName: String? = nil, backAction: (() -> Void)? = nil){
+        backButtonCallback = backAction // store the closure
+        
+        let label = UILabel(frame: CGRect(x: 10, y: 0, width: UIScreen.main.bounds.width*0.8, height: 40))
+        label.font = UIFont.mySystemFont(ofSize: 18, weight: .bold)
+        label.backgroundColor = .clear
+        label.textColor = .customBlue
+        label.textAlignment = .center
+        label.numberOfLines = 2
+        label.text = title
+        if #available(iOS 26.0, *) {
+            label.adjustsFontSizeToFitWidth = true
+            label.minimumScaleFactor = 0.5
+        }
+        label.sizeToFit()
+        navigationItem.titleView = label
+        createBackButton(icon: imgName)
+    }
     //    This method is going to be used for showing the loading view only
     func showLoadingView(_ title:String) {
         
@@ -108,7 +126,16 @@ class ParentViewController: UIViewController {
         
         loadingView?.progress = Float(progressValue)
     }
-    
+    func push(_ vc: UIViewController, animated: Bool = true) {
+        DispatchQueue.main.async { [weak self] in
+            self?.navigationController?.pushViewController(vc, animated: animated)
+        }
+    }
+    func popController() {
+        DispatchQueue.main.async { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
+    }
     
     
     //This method is going to be used to dismiss the loading view
@@ -240,7 +267,7 @@ class ParentViewController: UIViewController {
     }
     
     //MARK:- Navigtion Button
-    func createBackButton() {
+    func createBackButton(icon: String? = nil) {
         
         self.navigationController?.setNavigationBarHidden(false, animated:true)
         let myBackButton:UIButton = UIButton(type: .custom)
@@ -281,6 +308,66 @@ class ParentViewController: UIViewController {
     
     func isUserLoggedIn() -> Bool {
         return UserDefaults.standard.string(forKey: "authToken") != nil
+    }
+    
+    func alert(title: String? = nil, message: String? = nil, image: UIImage? = nil , buttonTitle: String = "OK", completion: (() -> Void)? = nil) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        // Add Image
+        if let image = image {
+            let maxSize = CGSize(width: 245, height: 100)
+            let imageSize = image.size
+            
+            var ratio: CGFloat!
+            if imageSize.width > imageSize.height {
+                ratio = maxSize.width / imageSize.width
+            } else {
+                ratio = maxSize.height / imageSize.height
+            }
+            
+            let scaledSize = CGSize(width: imageSize.width * ratio,
+                                    height: imageSize.height * ratio)
+            
+            let resizedImage = UIGraphicsImageRenderer(size: scaledSize).image { _ in
+                image.draw(in: CGRect(origin: .zero, size: scaledSize))
+            }
+            
+            let imageView = UIImageView(image: resizedImage)
+            imageView.contentMode = .scaleAspectFit
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            
+            alert.view.addSubview(imageView)
+            
+            NSLayoutConstraint.activate([
+                imageView.centerXAnchor.constraint(equalTo: alert.view.centerXAnchor),
+                imageView.topAnchor.constraint(equalTo: alert.view.topAnchor, constant: 45),
+                imageView.widthAnchor.constraint(equalToConstant: scaledSize.width),
+                imageView.heightAnchor.constraint(equalToConstant: scaledSize.height)
+            ])
+            
+            // Add space for image
+            let height = NSLayoutConstraint(item: alert.view!,
+                                            attribute: .height,
+                                            relatedBy: .greaterThanOrEqual,
+                                            toItem: nil,
+                                            attribute: .notAnAttribute,
+                                            multiplier: 1,
+                                            constant: 180)
+            alert.view.addConstraint(height)
+        }
+        
+        alert.addAction(UIAlertAction(title: buttonTitle, style: .default) { _ in
+            completion?()
+        })
+        
+        self.present(alert, animated: true)
+    }
+    
+    func animateView() {
+        UIView.animate(withDuration: 0.3, animations: { [weak self] in
+            self?.view.layoutIfNeeded()
+        })
     }
 }
 

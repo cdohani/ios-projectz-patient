@@ -144,6 +144,9 @@ extension SearchDoctorService {
                             if let val = item["total_reviews"] as? Int {
                                 list.totalReviews = val
                             }
+                            if let val = item["appointments_last_7_days"] as? Int {
+                                list.lastWeekAppt = val
+                            }
                             if let val = item["average_rating"] as? Double {
                                 list.avgRating = val
                             }

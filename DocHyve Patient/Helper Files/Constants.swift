@@ -222,5 +222,8 @@ struct Constants {
         static let ticketDetail = "/support-ticket/%d"
         static let ticketMessageDetail = "/get-support-ticket-replies/%d"
         static let addReplyToTicket = "/add-support-ticket-reply/%d"
+        
+        static let customInsuranceRequest = "/custom-insurance/request"
+        static let customInsuranceList = "/custom-insurance/my-requests"
     }
 }

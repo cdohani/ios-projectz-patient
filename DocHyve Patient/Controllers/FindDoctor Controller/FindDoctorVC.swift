@@ -82,7 +82,7 @@ class FindDoctorVC: ParentViewController {
     let pickerView = UIPickerView()
     let toolbar = UIToolbar()
     var arrFilter = ["Today","Week","Month"]
-    var availabilty = "today"
+    var availabilty = "month"
     //MARK: VCLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,7 +94,7 @@ class FindDoctorVC: ParentViewController {
     
     //MARK: Functions
     func customization(){
-        txtFilterProvider.text = "Today"
+        txtFilterProvider.text = "Month"
         vwOverlay.alpha = 0
         vwAppt.alpha = 0
         vwLogin.alpha = 0

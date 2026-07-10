@@ -135,6 +135,19 @@ class DoctorDetailVC: ParentViewController {
         }
     }
     
+    func updateProvider(providerID: Int) {
+        self.providerID = providerID
+        currentAddressIndex = 0
+        selectedLocationID = -1
+        selectedStateID = -1
+        selectedSlotID = -1
+        fullAddress = ""
+        arrSlots.removeAll()
+        vwInsuranceTag.removeAllTags()
+        vwScrollView.isHidden = true
+        getProviderInfo()
+    }
+    
     func getProviderInfo(){
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
@@ -409,6 +422,10 @@ class DoctorDetailVC: ParentViewController {
     }
     @IBAction func btnShowPracticeProfileAction(_ sender: Any) {
         let nextVC = getPracticeProfileVC()
+        nextVC.providerID = providerID
+        nextVC.onProviderSelected = { [weak self] selectedProviderID in
+            self?.updateProvider(providerID: selectedProviderID)
+        }
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     

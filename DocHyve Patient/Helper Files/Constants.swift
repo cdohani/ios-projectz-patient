@@ -225,5 +225,8 @@ struct Constants {
         
         static let customInsuranceRequest = "/custom-insurance/request"
         static let customInsuranceList = "/custom-insurance/my-requests"
+        
+        //MARK:- Practice Profile
+        static let getPracticeProfile = "/practice-profile/%d/patient-view"
     }
 }

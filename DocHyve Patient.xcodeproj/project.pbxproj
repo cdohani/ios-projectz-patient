@@ -60,6 +60,8 @@
 		044383E72DBA811100CACA96 /* GetSelectedGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044383E62DBA811100CACA96 /* GetSelectedGender.swift */; };
 		0443A76E2FACC519003DABDD /* GetDeactivateAccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443A76D2FACC519003DABDD /* GetDeactivateAccountService.swift */; };
 		044FF4192E9537EF00D60A75 /* GetAllReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044FF4182E9537EE00D60A75 /* GetAllReviewService.swift */; };
+		0450D3CC2FFEA6C0006D9D3D /* PracticeProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450D3CB2FFEA6BF006D9D3D /* PracticeProfileModel.swift */; };
+		0450D3CE2FFEA6E5006D9D3D /* GetPracticeProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450D3CD2FFEA6E5006D9D3D /* GetPracticeProfileService.swift */; };
 		045302872B987DE90026DC52 /* AcceptedInsuranceCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045302862B987DE90026DC52 /* AcceptedInsuranceCCell.swift */; };
 		045302892B98861B0026DC52 /* ReviewsCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045302882B98861B0026DC52 /* ReviewsCCell.swift */; };
 		045EE4C02B8F390800B6DDE9 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EE4BF2B8F390800B6DDE9 /* DashboardVC.swift */; };
@@ -315,6 +317,8 @@
 		044383E62DBA811100CACA96 /* GetSelectedGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSelectedGender.swift; sourceTree = "<group>"; };
 		0443A76D2FACC519003DABDD /* GetDeactivateAccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDeactivateAccountService.swift; sourceTree = "<group>"; };
 		044FF4182E9537EE00D60A75 /* GetAllReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllReviewService.swift; sourceTree = "<group>"; };
+		0450D3CB2FFEA6BF006D9D3D /* PracticeProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeProfileModel.swift; sourceTree = "<group>"; };
+		0450D3CD2FFEA6E5006D9D3D /* GetPracticeProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPracticeProfileService.swift; sourceTree = "<group>"; };
 		045302862B987DE90026DC52 /* AcceptedInsuranceCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptedInsuranceCCell.swift; sourceTree = "<group>"; };
 		045302882B98861B0026DC52 /* ReviewsCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsCCell.swift; sourceTree = "<group>"; };
 		045EE4BF2B8F390800B6DDE9 /* DashboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
@@ -799,6 +803,7 @@
 				0467FC2C2EE86EE3001BDB83 /* SearchConditionModel.swift */,
 				04A9C8442FD9B880002BFBB6 /* TicketModel.swift */,
 				04A9C8532FD9B9B5002BFBB6 /* SupportCategoryModel.swift */,
+				0450D3CB2FFEA6BF006D9D3D /* PracticeProfileModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1140,6 +1145,7 @@
 				0467FC2E2EE8706E001BDB83 /* SearchConditionService.swift */,
 				04707C602EC49793009F53CE /* GetAppointmentDetailService.swift */,
 				04E1A37E2F8D45C8002BB601 /* GetIllnessService 2.swift */,
+				0450D3CD2FFEA6E5006D9D3D /* GetPracticeProfileService.swift */,
 			);
 			path = HomeServices;
 			sourceTree = "<group>";
@@ -1519,6 +1525,7 @@
 				04BACA7F2DC26AA300E718A3 /* StateResponseModel.swift in Sources */,
 				04A9C8342FD9B7A8002BFBB6 /* TicketInquiryTCell.swift in Sources */,
 				04A9C8352FD9B7A8002BFBB6 /* CreateTicketInfoVC.swift in Sources */,
+				0450D3CE2FFEA6E5006D9D3D /* GetPracticeProfileService.swift in Sources */,
 				04A9C8362FD9B7A8002BFBB6 /* CreateTicketContactInfoVC.swift in Sources */,
 				04A9C8372FD9B7A8002BFBB6 /* CreateTicketCategoryHeaderTCell.swift in Sources */,
 				04A9C8382FD9B7A8002BFBB6 /* CreateTicketQuestionVC.swift in Sources */,
@@ -1588,6 +1595,7 @@
 				042CD70B2B86184C00A772B6 /* InternetReachability.swift in Sources */,
 				04F91CEC2FD727C500DFF1C9 /* WebViewVC.swift in Sources */,
 				045EE4C52B8F3B9000B6DDE9 /* NotificationVC.swift in Sources */,
+				0450D3CC2FFEA6C0006D9D3D /* PracticeProfileModel.swift in Sources */,
 				04BACA812DC26C9B00E718A3 /* StateTCell.swift in Sources */,
 				04E1A3812F8D460F002BB601 /* AddProfileService 2.swift in Sources */,
 				045302872B987DE90026DC52 /* AcceptedInsuranceCCell.swift in Sources */,

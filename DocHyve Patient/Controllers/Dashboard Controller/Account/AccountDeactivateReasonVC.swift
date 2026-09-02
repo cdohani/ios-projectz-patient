@@ -65,7 +65,9 @@ class AccountDeactivateReasonVC: ParentViewController {
                 {
                     self.showAlertViewWithCompletion(message: data.message) { [self] in
                         let defaults = UserDefaults.standard
+                        let onboardingDone = defaults.isOnboardingDone
                         defaults.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+                        defaults.isOnboardingDone = onboardingDone
                         let appDelegate = UIApplication.shared.delegate as! AppDelegate
                         appDelegate.setLandingScreen()
                     }

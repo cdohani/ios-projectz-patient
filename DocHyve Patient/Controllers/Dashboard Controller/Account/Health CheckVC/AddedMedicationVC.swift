@@ -41,7 +41,6 @@ class AddedMedicationVC: ParentViewController {
     //MARK: Functions
     override func viewWillAppear(_ animated: Bool) {
         if DataManager.shared.isDataUpdated {
-            DataManager.shared.isDataUpdated = false
             getMedicineData()
         }
     }
@@ -83,6 +82,7 @@ class AddedMedicationVC: ParentViewController {
                         if let index = arrData.firstIndex(where: { $0.id == id }) {
                             arrData.remove(at: index)
                             tblMedication.reloadData()
+                            DataManager.shared.isDataUpdated = true
                         }
                     }
                 }
@@ -98,6 +98,7 @@ class AddedMedicationVC: ParentViewController {
     
     //MARK: ButtonActions
     @IBAction func btnBackAction(_ sender: Any) {
+       
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func btnAddMedicationAction(_ sender: Any) {

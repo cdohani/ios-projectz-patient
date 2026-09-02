@@ -315,6 +315,11 @@ class HomeVC: ParentViewController {
                     dashboardData = data.data
                     setScreenData()
                     getWellnessGuide()
+                    if dashboardData.isAppointmentBlocked {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) { [weak self] in
+                            self?.showAlertView(message: Constants.GenericStrings.accountBlockedDueToNoShows)
+                        }
+                    }
                 }
             }
         }) { (failure) in
@@ -430,6 +435,17 @@ class HomeVC: ParentViewController {
     @IBAction func btnViewAllPopularSpecialityAction(_ sender: Any) {
         let nextVC = getPopularSpecialitiesVC()
         nextVC.arrSpeciality = arrSpeciality
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    @IBAction func btnViewAllDoctorSpecialityAction(_ sender: Any) {
+        let nextVC = getFindDoctorVC()
+        nextVC.searchQuery = txtSearchDoctor.text!
+        if txtAddress.text != "" {
+            nextVC.addressLatitude  =  latitude
+            nextVC.addressLongitude = longitude
+        }
+        nextVC.selectedStateID = self.selectedStateIndex
+        nextVC.selectedInsuranceID = self.selectedInsuranceID
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     @IBAction func btnAddExaminationDateAction(_ sender: UIButton) {

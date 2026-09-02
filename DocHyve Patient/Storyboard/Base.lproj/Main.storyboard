@@ -315,7 +315,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iri-2E-9h5">
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iri-2E-9h5">
                                                 <rect key="frame" x="20" y="593.33333333333337" width="353" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with Facebook" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pmi-kN-Ra0">
@@ -1549,10 +1549,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashBg" translatesAutoresizingMaskIntoConstraints="NO" id="h6u-uh-jTg">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashBg" translatesAutoresizingMaskIntoConstraints="NO" id="h6u-uh-jTg">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="QkJ-ax-Gaq">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="QkJ-ax-Gaq">
                                 <rect key="frame" x="71.666666666666686" y="301" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="fK8-vB-gom"/>
@@ -1561,13 +1561,13 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yCq-OH-e6d"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="QkJ-ax-Gaq" firstAttribute="centerY" secondItem="h6u-uh-jTg" secondAttribute="centerY" id="32t-bE-o70"/>
                             <constraint firstItem="h6u-uh-jTg" firstAttribute="top" secondItem="Z5M-FP-fHv" secondAttribute="top" id="ATi-29-QyO"/>
                             <constraint firstAttribute="bottom" secondItem="h6u-uh-jTg" secondAttribute="bottom" id="Hc1-vS-HKW"/>
-                            <constraint firstItem="h6u-uh-jTg" firstAttribute="leading" secondItem="yCq-OH-e6d" secondAttribute="leading" id="T4o-yv-aO0"/>
-                            <constraint firstItem="yCq-OH-e6d" firstAttribute="trailing" secondItem="h6u-uh-jTg" secondAttribute="trailing" id="UwC-0O-AIp"/>
+                            <constraint firstItem="h6u-uh-jTg" firstAttribute="leading" secondItem="Z5M-FP-fHv" secondAttribute="leading" id="T4o-yv-aO0"/>
+                            <constraint firstItem="h6u-uh-jTg" firstAttribute="trailing" secondItem="Z5M-FP-fHv" secondAttribute="trailing" id="UwC-0O-AIp"/>
                             <constraint firstItem="QkJ-ax-Gaq" firstAttribute="centerX" secondItem="h6u-uh-jTg" secondAttribute="centerX" id="vaP-Fy-CDk"/>
                         </constraints>
                     </view>
@@ -2678,7 +2678,7 @@
             <color red="0.89411764705882357" green="0.90980392156862744" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="greyDarkTextColor">
-            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

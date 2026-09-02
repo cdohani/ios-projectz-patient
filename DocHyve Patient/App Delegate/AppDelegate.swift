@@ -44,8 +44,9 @@ extension AppDelegate {
         _ launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) {
 
-        GMSServices.provideAPIKey("AIzaSyDNmo_XDHSOJ0pb-j-A_0WBewtBhq1z2IQ")
-        GMSPlacesClient.provideAPIKey("AIzaSyDNmo_XDHSOJ0pb-j-A_0WBewtBhq1z2IQ")
+        //AIzaSyCVuNTJdYimtj1Oij8TxPEqdQVtf9hO-qs
+        GMSServices.provideAPIKey("AIzaSyCVuNTJdYimtj1Oij8TxPEqdQVtf9hO-qs")
+        GMSPlacesClient.provideAPIKey("AIzaSyCVuNTJdYimtj1Oij8TxPEqdQVtf9hO-qs")
 
         IQKeyboardManager.shared.isEnabled = true
         IQKeyboardManager.shared.enableAutoToolbar = true
@@ -307,6 +308,12 @@ extension AppDelegate {
     }
     func setLandingScreen() { setRootViewController() }
     func setRootViewController() {
+        // Show intro onboarding only once (skip/complete persists in UserDefaults)
+        if !UserDefaults.standard.isOnboardingDone {
+            window?.rootViewController = UIViewController.getOnBoardingVC()
+            return
+        }
+        
         let rootVC: UIViewController = UserDefaults.standard.string(forKey: "authToken") != nil
             ? UIViewController.getDashboardVC()
             : UIViewController.getDashboardVC()

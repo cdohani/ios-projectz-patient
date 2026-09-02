@@ -89,6 +89,13 @@ class BookApptVC: ParentViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if blockBookingIfNeeded() {
+            DispatchQueue.main.async { [weak self] in
+                self?.navigationController?.popViewController(animated: true)
+            }
+            return
+        }
+        
         // Do any additional setup after loading the view.
         customization()
         getAppointmentDetail()
@@ -282,7 +289,6 @@ class BookApptVC: ParentViewController {
                 }else{
                     self.showAlertView(message: faliure ?? Constants.GenericStrings.somethingWentWrong)
                 }
-                
             }
         }
         
@@ -368,6 +374,7 @@ class BookApptVC: ParentViewController {
     
  
     @IBAction func btnBookApptAction(_ sender: Any) {
+        if blockBookingIfNeeded() { return }
         validator.validateNow { [weak self] valid in
             guard let strongSelf = self else { return }
             if valid {

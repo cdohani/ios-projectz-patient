@@ -21,10 +21,14 @@ class MyAccountVC: ParentViewController {
                 guard let self = self else { return }
                 self.navigationController?.pushViewController(getAddedInsurnaceVC(), animated: true)
             },
-            SettingItem(icon: "11", title: "Custom Insurance") { [weak self] in
+            SettingItem(icon: "14", title: "Custom Insurance") { [weak self] in
                 guard let self = self else { return }
                 let vc = CustomCarrierListVC()
                 self.push(vc)
+            },
+            SettingItem(icon: "15", title: "Lab Report") { [weak self] in
+                guard let self = self else { return }
+                self.push(LabReportVC())
             },
            
             SettingItem(icon: "1", title: "Settings") { [weak self] in
@@ -133,7 +137,9 @@ class MyAccountVC: ParentViewController {
     // MARK: - Logout
     func logOut() {
         let defaults = UserDefaults.standard
+        let onboardingDone = defaults.isOnboardingDone
         defaults.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+        defaults.isOnboardingDone = onboardingDone
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.setLandingScreen()
     }

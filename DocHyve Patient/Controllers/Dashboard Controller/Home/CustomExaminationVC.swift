@@ -207,7 +207,7 @@ class CustomExaminationVC: ParentViewController {
     
     
     @IBAction func btnSelectPastAppointmentAction(_ sender: Any) {
-        DatePickerUtility.showDatePicker(onViewController: self, mode: .date) { [self] value in
+        DatePickerUtility.showDatePicker(onViewController: self, mode: .date, maxDate: Date()) { [self] value in
             txtPastAppt.text = value?.convertIntoStringUsingFormat(format: "yyyy-MM-dd") ?? ""
         }
     }

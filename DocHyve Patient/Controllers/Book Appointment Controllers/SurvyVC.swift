@@ -46,7 +46,6 @@ class SurvyVC: ParentViewController {
     }
     func saveData(){
        
-    
         let param: [String: Any] = [
             "heard_from_ids": selectedID
         ]
@@ -77,7 +76,6 @@ class SurvyVC: ParentViewController {
                 self.showAlertView(message: faliure ?? Constants.GenericStrings.somethingWentWrong)
             }
         }
-        
     }
     
     //MARK: ButtonActions

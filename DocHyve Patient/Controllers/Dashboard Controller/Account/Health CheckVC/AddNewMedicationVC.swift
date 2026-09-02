@@ -145,7 +145,7 @@ class AddNewMedicationVC: ParentViewController {
         if isForEdit{
             param["id"] = medicineInfo.id
         }
-        if let memId = memberID{
+        if memberID != nil{
             param["member_id"] = memberID
         }
        let  endPoint = isForEdit ?  Constants.URLs.updateMedicationHistory : Constants.URLs.saveMedicationHistory

@@ -38,6 +38,8 @@ struct Constants {
         
         static let internetNotFound = "Please check your Internet connectivity."
         
+        static let accountBlockedDueToNoShows = "Your account is blocked. You can't book an appointment. Kindly contact support."
+        
         static let somethingWentWrong = "An error occurred while processing your request. Please try again in a little while"
         static let unAuthoriedRequest = "Unauthoried Request please login Again."
         
@@ -190,6 +192,7 @@ struct Constants {
         static let deleteMedicationHistory = "/patients/delete-medication-history"
         static let allHealthHistory = "/patients/all-heath-care-history"
         static let saveHealthConsent = "/patients/medical-consent"
+        static let getHealthRiskScoreGauge = "/patients/health-risk-score/gauge-data"
         
         static let getPreference = "/patients/preference"
         static let savePreference = "/patients/store-preference"

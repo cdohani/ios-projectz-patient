@@ -38,7 +38,6 @@ class AllHealthCheckVC: ParentViewController {
                 {
                     self.arrData = data.arrHealthRecord
                     tblDetail.reloadData()
-                    
                 }
             }
         }) { (failure) in
@@ -66,19 +65,20 @@ extension AllHealthCheckVC :UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AllHealthCheckTCell") as! AllHealthCheckTCell
         cell.lblHeading.text = arrData[indexPath.row].name
-        if selectedIndex == indexPath.row{
-            cell.vwTags.removeAllTags()
-            arrData[indexPath.row].arrData.forEach { (tag) in
-                if tag.name.lowercased() == "other" || tag.name.lowercased() == "others"{
-                    print(tag)
-                    cell.vwTags.addTag(tag.otherValue)
-                }else{
-                    cell.vwTags.addTag(tag.name)
+        cell.vwTags.removeAllTags()
+        if selectedIndex == indexPath.row {
+            let items = arrData[indexPath.row].arrData
+            if items.isEmpty {
+                cell.vwTags.addTag("N/A")
+            } else {
+                items.forEach { (tag) in
+                    if tag.name.lowercased() == "other" || tag.name.lowercased() == "others" {
+                        cell.vwTags.addTag(tag.otherValue)
+                    } else {
+                        cell.vwTags.addTag(tag.name)
+                    }
                 }
-                
             }
-        }else{
-            cell.vwTags.removeAllTags()
         }
         return cell
     }

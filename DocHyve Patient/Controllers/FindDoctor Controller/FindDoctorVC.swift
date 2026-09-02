@@ -279,6 +279,7 @@ class FindDoctorVC: ParentViewController {
         vwAppt.alpha = 0
     }
     @IBAction func btnBookApptAction(_ sender: Any) {
+        if blockBookingIfNeeded() { return }
         vwOverlay.alpha = 0
         vwAppt.alpha = 0
         

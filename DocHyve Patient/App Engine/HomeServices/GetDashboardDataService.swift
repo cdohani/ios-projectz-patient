@@ -110,25 +110,54 @@ extension GetDashboardDataService {
                             data.data.userInfo.age = val
                         }
                         if let insuranceData = userInfo["insurances"] as? [[String: Any]] {
-                           
                             for item in insuranceData{
-                                if let val = item["name"] as? String {
-                                    data.data.userInfo.insurance.append(val)
+                                let insurance = Self.parseInsurance(from: item)
+                                data.data.userInfo.arrInsurances.append(insurance)
+                                if !insurance.name.isEmpty {
+                                    data.data.userInfo.insurance.append(insurance.name)
                                 }
                             }
                         }
                         
                         if let singleInsurance = userInfo["single_insurance"] as? [String: Any] {
-                            
-                            if let val = singleInsurance["name"] as? String {
-                                data.data.userInfo.singleInsurance = val
-                            }
+                            let insurance = Self.parseInsurance(from: singleInsurance)
+                            data.data.userInfo.singleInsuranceInfo = insurance
+                            data.data.userInfo.singleInsurance = insurance.name
                         }
                         if let val = userInfo["is_profile_complete"] as? Int {
                             data.data.userInfo.isProfileUpdated = val
                         }
                         
                     }
+                    if let bookingBlock = dataDic["booking_block"] as? [String: Any] {
+                        if let val = bookingBlock["is_blocked"] as? Bool {
+                            data.data.bookingBlock.isBlocked = val
+                        }
+                        if let val = Self.intValue(from: bookingBlock["consecutive_no_shows"]) {
+                            data.data.bookingBlock.consecutiveNoShows = val
+                        }
+                        if let val = Self.intValue(from: bookingBlock["threshold"]) {
+                            data.data.bookingBlock.threshold = val
+                        }
+                        if let val = bookingBlock["blocked_at"] as? String {
+                            data.data.bookingBlock.blockedAt = val
+                        }
+                        if let val = bookingBlock["reason"] as? String {
+                            data.data.bookingBlock.reason = val
+                        }
+                        if let val = bookingBlock["unblocked_at"] as? String {
+                            data.data.bookingBlock.unblockedAt = val
+                        }
+                    }
+//                    // TODO: remove after no-show block testing
+//                    data.data.bookingBlock.consecutiveNoShows = 4
+//                    data.data.bookingBlock.isBlocked = true
+//                    data.data.bookingBlock.threshold = 4
+//                    UserDefaults.standard.isBookingBlocked = true
+//                    UserDefaults.standard.consecutiveNoShows = 4
+//                    UserDefaults.standard.noShowThreshold = 4
+//                    print("DEBUG booking_block test → blocked: \(data.data.isAppointmentBlocked), consecutive: \(data.data.bookingBlock.consecutiveNoShows), threshold: \(data.data.bookingBlock.threshold)")
+                    
                     if let appointmnetInfo = dataDic["appointment"] as? [String: Any] {
                         
                         if let val = appointmnetInfo["id"] as? Int {
@@ -175,6 +204,50 @@ extension GetDashboardDataService {
             return data
         }
         return data
+    }
+    
+    fileprivate static func intValue(from value: Any?) -> Int? {
+        if let intValue = value as? Int { return intValue }
+        if let number = value as? NSNumber { return number.intValue }
+        if let stringValue = value as? String { return Int(stringValue) }
+        return nil
+    }
+    
+    fileprivate static func parseInsurance(from item: [String: Any]) -> DashboardInsuranceModel {
+        var insurance = DashboardInsuranceModel()
+        if let val = intValue(from: item["id"]) {
+            insurance.id = val
+        }
+        if let val = item["name"] as? String {
+            insurance.name = val
+        }
+        if let val = item["type"] as? String {
+            insurance.type = val
+        }
+        if let val = item["is_primary"] as? Bool {
+            insurance.isPrimary = val
+        }
+        if let plans = item["plans"] as? [[String: Any]] {
+            for planItem in plans {
+                var plan = DashboardInsurancePlanModel()
+                if let val = intValue(from: planItem["id"]) {
+                    plan.id = val
+                }
+                if let val = planItem["name"] as? String {
+                    plan.name = val
+                }
+                if let detail = planItem["detail"] as? [String: Any] {
+                    if let val = detail["description"] as? String {
+                        plan.description = val
+                    }
+                    if let val = detail["detail_description"] as? String {
+                        plan.detailDescription = val
+                    }
+                }
+                insurance.plans.append(plan)
+            }
+        }
+        return insurance
     }
 }
 

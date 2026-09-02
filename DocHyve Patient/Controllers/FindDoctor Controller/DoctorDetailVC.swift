@@ -393,6 +393,7 @@ class DoctorDetailVC: ParentViewController {
         
     }
     @IBAction func btnBookApptAction(_ sender: Any) {
+        if blockBookingIfNeeded() { return }
         vwOverlay.alpha = 0
         vwAppt.alpha = 0
         let nextVC = getBookApptVC()
@@ -519,13 +520,9 @@ extension DoctorDetailVC :UICollectionViewDelegate, UICollectionViewDataSource{
             }else{
                 vwOverlay.alpha = 0.3
                 vwLogin.alpha = 1
-            }
-            
-            
+            } 
         }
-       
     }
-  
 }
 extension DoctorDetailVC : UICollectionViewDelegateFlowLayout{
 

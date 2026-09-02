@@ -185,13 +185,35 @@ class ParentViewController: UIViewController {
     //MARK:- Alert View Methods
     
     //This method is going to be used for alert view
+    @discardableResult
+    func blockBookingIfNeeded() -> Bool {
+        guard UserDefaults.standard.isAppointmentBookingBlocked else { return false }
+        showAlertView(message: Constants.GenericStrings.accountBlockedDueToNoShows)
+        return true
+    }
+    
     func showAlertView(message: String) {
         
         let alertController = UIAlertController(title: Constants.GenericStrings.alertTitle, message: message, preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: Constants.GenericStrings.ok, style: .default, handler: nil)
         
         alertController.addAction(defaultAction)
-        present(alertController, animated: true, completion: nil)
+        let presenter = topMostViewController() ?? self
+        if presenter.presentedViewController == nil {
+            presenter.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    private func topMostViewController() -> UIViewController? {
+        var top = UIApplication.shared.connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .flatMap { $0.windows }
+            .first(where: { $0.isKeyWindow })?
+            .rootViewController
+        while let presented = top?.presentedViewController {
+            top = presented
+        }
+        return top
     }
     
  

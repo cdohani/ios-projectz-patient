@@ -134,6 +134,28 @@ extension UIViewController: @retroactive UIImagePickerControllerDelegate, @retro
         imagePicker.completion = completion
     }
     
+    /// Opens camera or gallery directly (no intermediate source sheet).
+    func showImagePicker(
+        sourceType: UIImagePickerController.SourceType,
+        completion: @escaping ([UIImage]?, [String]?) -> Void
+    ) {
+        guard UIImagePickerController.isSourceTypeAvailable(sourceType) else {
+            let message = sourceType == .camera
+                ? "Camera is not available on this device."
+                : "Gallery is not available."
+            let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true)
+            return
+        }
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = sourceType
+        imagePicker.completion = completion
+        present(imagePicker, animated: true)
+    }
+    
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         var image: UIImage?
         var imageName: String?

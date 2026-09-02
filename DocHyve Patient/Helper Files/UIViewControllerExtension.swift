@@ -84,6 +84,10 @@ extension UIViewController {
         let vc = UIStoryboard.home.instantiateViewController(withIdentifier: "SplashVC") as! SplashVC
         return vc
     }
+    
+    class func getOnBoardingVC() -> OnBoardingVC {
+        return OnBoardingVC(nibName: "OnBoardingVC", bundle: nil)
+    }
     class func getLoginVC() -> LoginVC {
         let vc = UIStoryboard.home.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
         return vc
@@ -311,6 +315,10 @@ extension UIViewController {
         return vc
     }
     
+    func getLabReportVC() -> LabReportVC {
+        LabReportVC()
+    }
+
     func getAccountDeactivateReasonVC() -> AccountDeactivateReasonVC {
         let vc = UIStoryboard.account.instantiateViewController(withIdentifier: "AccountDeactivateReasonVC") as! AccountDeactivateReasonVC
         return vc

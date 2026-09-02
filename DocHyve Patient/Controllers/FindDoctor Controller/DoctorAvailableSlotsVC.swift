@@ -358,7 +358,7 @@ class DoctorAvailableSlotsVC: ParentViewController {
         vwBookAppointment.alpha = 0
     }
     @IBAction func btnBookAppointmentAction(_ sender: Any) {
-        
+        if blockBookingIfNeeded() { return }
         vwOverlay.alpha = 0
         vwBookAppointment.alpha = 0
         let nextVC = getBookApptVC()
